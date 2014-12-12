@@ -11,4 +11,5 @@ local lcf = ffi.C
 function OfflineAllPlayer()
 end
 
-
+function post_init()
+end
