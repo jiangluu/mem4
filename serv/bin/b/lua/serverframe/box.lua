@@ -88,8 +88,6 @@ function o.reg_handle(message_id,f)
 		local r = f(ac)
 		
 		-- 检查成就
-		pcall(ach.check_all,ac)
-		pcall(daily.check_all,ac)
 		
 		local tran_name = string.format('msg%d',message_id)
 		prof.incr_counter(tran_name)
