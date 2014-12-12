@@ -83,15 +83,15 @@ o.exit_message = {}
 function o.reg_handle(message_id,f)
 	local function wraper(ac)
 		ac._cur_tran = tonumber(message_id)
-		local begin_time = prof.cur_usec()
+		--local begin_time = prof.cur_usec()
 		
 		local r = f(ac)
 		
 		-- 检查成就
 		
 		local tran_name = string.format('msg%d',message_id)
-		prof.incr_counter(tran_name)
-		prof.commit_transaction(tran_name,begin_time)
+		--prof.incr_counter(tran_name)
+		--prof.commit_transaction(tran_name,begin_time)
 		
 		return r
 	end
