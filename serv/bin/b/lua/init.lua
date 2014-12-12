@@ -50,6 +50,7 @@ if isServ() then
 	jlpcall(dofile,g_lua_dir.."serverframe/box.lua")
 	jlpcall(dofile,g_lua_dir.."serverframe/profiler.lua")
 	jlpcall(dofile,g_lua_dir.."serverframe/player.lua")
+	jlpcall(dofile,g_lua_dir.."serverframe/msgs.lua")
 	
 end
 
