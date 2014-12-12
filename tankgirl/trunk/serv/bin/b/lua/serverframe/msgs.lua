@@ -9,6 +9,7 @@ function regAllHandlers()
 				jlpcall(dofile,g_lua_dir..'msg/'..file)
 				if nil~=onMsg then
 					box.reg_handle(tonumber(msg_id),onMsg)
+					print(file..'  registed')
 				end
 				onMsg = nil
 			end
