@@ -1,4 +1,6 @@
 
+local lcf = ffi.C
+
 function onMsg(me)
 	
 	print('msg_1 aaaaaaaaaaaaaaaaaaaaaaaaaaaa')
