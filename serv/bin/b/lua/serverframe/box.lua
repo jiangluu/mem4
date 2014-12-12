@@ -82,7 +82,9 @@ o.exit_message = {}
 
 function o.reg_handle(message_id,f)
 	local function wraper(ac)
-		ac._cur_tran = tonumber(message_id)
+		if ac then
+			ac._cur_tran = tonumber(message_id)
+		end
 		--local begin_time = prof.cur_usec()
 		
 		local r = f(ac)
@@ -157,6 +159,7 @@ function o.on_message(message_id)
 				-- 如果没有actor，暂不支持事务
 				local err,ret = pcall(hd,nil)
 				if false==err then
+					print(ret)
 					return 1
 				else
 					return ret
