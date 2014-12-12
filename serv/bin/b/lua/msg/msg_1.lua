@@ -15,7 +15,7 @@ function onMsg(me)
 	apb.push_user('test',7)
 	
 	local s = apb.end_push(apb.user)
-	print(s)
+	print(ffi.string(s.buffer,s.len))
 	
 	lcf.cur_stream_push_string(ffi.cast('const char*',s.buffer),s.len)
 	lcf.cur_stream_write_back()
