@@ -1,0 +1,14 @@
+
+option cc_generic_services = false;
+option java_generic_services = false;
+option py_generic_services = false;
+
+
+message User {
+  optional uint64 id = 1;		// Unique ID number for this User
+  optional string name = 2;        
+  optional string phone = 3;
+  repeated int32 test = 4;
+}
+
+
