@@ -4,6 +4,16 @@ local lcf = ffi.C
 function onMsg(me)
 	print('MSG 1 recv')
 	
+	apb.begin_push_user()
+	
+	apb.push_user('id_','u1')
+	apb.push_user('name_','jiangwei')
+	apb.push_user('exp_',88)
+	apb.push_user('lv_',2)
+	apb.push_user('diamond_',10)
+	
+	apb.end_push_user()
+	
 	lcf.cur_stream_write_back()
 	
 	--[[
