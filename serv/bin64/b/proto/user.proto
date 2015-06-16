@@ -1,0 +1,22 @@
+
+option cc_generic_services = false;
+option java_generic_services = false;
+option py_generic_services = false;
+
+
+message Item {
+	required uint32 item_id_ = 1;
+	optional uint32 num_ = 2;
+	optional uint32 lv_ = 3;
+}
+
+message User {
+	optional uint64 id_ = 1;		// Unique ID number for this User
+	optional string name_ = 2;       
+	optional uint32 exp_ = 3;
+	optional uint32 lv_ = 4;
+	optional uint32 diamond_ = 5;
+	repeated Item bag_ = 6;
+}
+
+
