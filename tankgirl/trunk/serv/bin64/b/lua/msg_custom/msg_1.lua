@@ -1,7 +1,12 @@
 
+local lcf = ffi.C
+
 function onMsg(me)
-	print('BBBBBBBBBBBBBBBBBBBBBB')
+	print('MSG 1 recv')
 	
+	lcf.cur_stream_write_back()
+	
+	--[[
 	local key = l_cur_stream_get_slice()
 	
 	local player_data_bin = redis.get(0,key)
@@ -10,6 +15,7 @@ function onMsg(me)
 		
 		me.data = player_data
 	end
+	--]]
 	
 	return 0
 end
