@@ -1,3 +1,8 @@
+/*
+Copyright (c) 2012-2014 The SSDB Authors. All rights reserved.
+Use of this source code is governed by a BSD-style license that can be
+found in the LICENSE file.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -5,6 +10,7 @@
 #include <errno.h>
 #include <string>
 #include <vector>
+#include <map>
 #include "link.h"
 #include "util/fde.h"
 #include "util/log.h"
@@ -17,10 +23,9 @@ struct Data
 	std::string num;
 };
 
-std::vector<Data *> *ds;
+std::map<std::string, Data *> *ds;
 Fdevents *fdes;
 std::vector<Link *> *free_links;
-std::vector<Link *> *busy_links;
 
 
 void welcome(){
@@ -43,8 +48,8 @@ void usage(int argc, char **argv){
 
 void init_data(int num){
 	srand(time(NULL));
-	ds = new std::vector<Data *>();
-	for(int i=0; i<num; i++){
+	ds = new std::map<std::string, Data *>();
+	while(ds->size() < num){
 		Data *d = new Data();
 		char buf[1024];
 
@@ -55,19 +60,18 @@ void init_data(int num){
 		d->key = buf;
 		snprintf(buf, sizeof(buf), "v%0100d", n);
 		d->val = buf;
-		ds->push_back(d);
+		ds->insert(make_pair(d->key, d));
 	}
 }
 
 void init_links(int num, const char *ip, int port){
 	fdes = new Fdevents();
 	free_links = new std::vector<Link *>();
-	busy_links = new std::vector<Link *>();
 
 	for(int i=0; i<num; i++){
 		Link *link = Link::connect(ip, port);
 		if(!link){
-			printf("connect error! %s\n", strerror(errno));
+			fprintf(stderr, "connect error! %s\n", strerror(errno));
 			exit(0);
 		}
 		fdes->set(link->fd(), FDEVENT_IN, 0, link);
@@ -75,55 +79,65 @@ void init_links(int num, const char *ip, int port){
 	}
 }
 
+void send_req(Link *link, const std::string &cmd, const Data *d){
+	if(cmd == "set"){
+		link->send(cmd, d->key, d->val);
+	}else if(cmd == "get"){
+		link->send(cmd, d->key);
+	}else if(cmd == "del"){
+		link->send(cmd, d->key);
+	}else if(cmd == "hset"){
+		link->send(cmd, "TEST", d->key, d->val);
+	}else if(cmd == "hget"){
+		link->send(cmd, "TEST", d->key);
+	}else if(cmd == "hdel"){
+		link->send(cmd, "TEST", d->key);
+	}else if(cmd == "zset"){
+		link->send(cmd, "TEST", d->key, d->num);
+	}else if(cmd == "zget"){
+		link->send(cmd, "TEST", d->key);
+	}else if(cmd == "zdel"){
+		link->send(cmd, "TEST", d->key);
+	}else if(cmd == "qpush"){
+		link->send(cmd, "TEST", d->key);
+	}else if(cmd == "qpop"){
+		link->send(cmd, "TEST");
+	}else{
+		log_error("bad command!");
+		exit(0);
+	}
+	link->flush();
+}
+
 void bench(std::string cmd){
-	int total = ds->size();
+	int total = (int)ds->size();
 	int finished = 0;
 	int num_sent = 0;
 	
 	printf("========== %s ==========\n", cmd.c_str());
 
+	std::map<std::string, Data *>::iterator it;
+	it = ds->begin();
+	
 	double stime = millitime();
 	while(1){
-		while(!free_links->empty() && num_sent < ds->size()){
-			Link *link = free_links->back();
-			free_links->pop_back();
-
-			Data *d = ds->at(num_sent);
+		while(!free_links->empty()){
+			if(num_sent == total){
+				break;
+			}
 			num_sent ++;
 
-			if(cmd == "set"){
-				link->send(cmd, d->key, d->val);
-			}else if(cmd == "get"){
-				link->send(cmd, d->key);
-			}else if(cmd == "del"){
-				link->send(cmd, d->key);
-			}else if(cmd == "hset"){
-				link->send(cmd, "h", d->key, d->val);
-			}else if(cmd == "hget"){
-				link->send(cmd, "h", d->key);
-			}else if(cmd == "hdel"){
-				link->send(cmd, "h", d->key);
-			}else if(cmd == "zset"){
-				link->send(cmd, "z", d->key, d->num);
-			}else if(cmd == "zget"){
-				link->send(cmd, "z", d->key);
-			}else if(cmd == "zdel"){
-				link->send(cmd, "z", d->key);
-			}else if(cmd == "qpush"){
-				link->send(cmd, "h", d->key, d->val);
-			}else if(cmd == "qpop"){
-				link->send(cmd, "h", d->key);
-			}else{
-				printf("bad command!\n");
-				exit(0);
-			}
-			link->flush();
+			Link *link = free_links->back();
+			free_links->pop_back();
+			
+			send_req(link, cmd, it->second);
+			it ++;
 		}
 
 		const Fdevents::events_t *events;
 		events = fdes->wait(50);
 		if(events == NULL){
-			log_fatal("events.wait error: %s", strerror(errno));
+			log_error("events.wait error: %s", strerror(errno));
 			break;
 		}
 
@@ -133,19 +147,15 @@ void bench(std::string cmd){
 
 			int len = link->read();
 			if(len <= 0){
-				log_fatal("fd: %d, read: %d, delete link", link->fd(), len);
+				log_error("fd: %d, read: %d, delete link", link->fd(), len);
 				exit(0);
 			}
 
 			const std::vector<Bytes> *resp = link->recv();
 			if(resp == NULL){
-				printf("error\n");
+				log_error("error");
 				break;
 			}else if(resp->empty()){
-				if(link->read() <= 0){
-					printf("read end\n");
-					break;
-				}
 				continue;
 			}else{
 				if(resp->at(0) != "ok"){
