@@ -11,7 +11,7 @@ message Item {
 }
 
 message User {
-	optional uint64 id_ = 1;		// Unique ID number for this User
+	optional string id_ = 1;		// Unique ID number for this User
 	optional string name_ = 2;       
 	optional uint32 exp_ = 3;
 	optional uint32 lv_ = 4;
