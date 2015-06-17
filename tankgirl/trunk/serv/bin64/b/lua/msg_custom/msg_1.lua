@@ -18,13 +18,13 @@ function onMsg(me)
 	bag = lcf.pbc_wmessage_message(apb.user,'bag_')
 	apb.push(bag,'item_id_',3)
 	
-	local s = apb.end_push(apb.user)
-	local bin = ffi.string(ffi.cast('const char*',s.buffer),s.len)
-	local fh = io.open('msg_1.out','w+')
-	fh:write(bin)
-	fh:close()
+	-- local s = apb.end_push(apb.user)
+	-- local bin = ffi.string(ffi.cast('const char*',s.buffer),s.len)
+	-- local fh = io.open('msg_1.out','w+')
+	-- fh:write(bin)
+	-- fh:close()
 	
-	--apb.end_push_user()
+	apb.end_push_user()
 	
 	lcf.cur_stream_write_back()
 	
