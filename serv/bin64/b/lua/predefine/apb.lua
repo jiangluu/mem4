@@ -35,7 +35,11 @@ function o.init()
 end
 
 function o.begin_push_user()
-	o.begin_push(o.user)
+	if nil~=o.user then
+		lcf.pbc_wmessage_delete(o.user)
+		o.user = nil
+	end
+	o.user = lcf.pbc_wmessage_new(o.env,'User')
 end
 
 function o.push_user(key,d)
@@ -46,9 +50,6 @@ function o.end_push_user()
 	o.end_push2(o.user)
 end
 
-function o.begin_push(m)
-	lcf.pbc_wmessage_reset(m)
-end
 
 function o.push(m,key,d)
 	key = tostring(key)
