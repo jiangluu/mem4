@@ -77,6 +77,30 @@ function o.clean()
 	end
 end
 
+function o.table_to_wm(t,type_name)
+	local aa = nil
+	if 'string'==type(type_name) then
+		aa = o.new_w(type_name)
+	else
+		aa = type_name
+	end
+	
+	for k,v in pairs(t) do
+		if '_'~=string.sub(k,1,1) then
+			if 'table'==type(v) then
+				local child = lcf.pbc_wmessage_message(aa,k)
+				if child then
+					o.table_to_wm(v,child)
+				end
+			else
+				o.push(aa,k,v)
+			end
+		end
+	end
+	
+	return aa
+end
+
 function o.begin_push_user()
 	if nil~=o.user then
 		lcf.pbc_wmessage_delete(o.user)
