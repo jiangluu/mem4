@@ -88,9 +88,18 @@ function o.table_to_wm(t,type_name)
 	for k,v in pairs(t) do
 		if '_'~=string.sub(k,1,1) then
 			if 'table'==type(v) then
-				local child = lcf.pbc_wmessage_message(aa,k)
-				if child then
-					o.table_to_wm(v,child)
+				if #v>0 then
+					for i=1,#v do
+						local child = lcf.pbc_wmessage_message(aa,k)
+						if child then
+							o.table_to_wm(v[i],child)
+						end
+					end
+				else
+					local child = lcf.pbc_wmessage_message(aa,k)
+					if child then
+						o.table_to_wm(v,child)
+					end
 				end
 			else
 				o.push(aa,k,v)
