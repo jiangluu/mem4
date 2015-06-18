@@ -21,6 +21,8 @@ function onMsg(me)
 	
 	lcf.cur_stream_write_back()
 	
+	apb.clean()
+	
 	-- local s = apb.end_push(apb.user)
 	-- local bin = ffi.string(ffi.cast('const char*',s.buffer),s.len)
 	-- local fh = io.open('msg_1.out','w+')
