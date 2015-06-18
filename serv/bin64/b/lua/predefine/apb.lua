@@ -33,21 +33,35 @@ function o.init()
 	o.to_free = {}
 end
 
+--[[
+function o.wrap_cdata_w(cdata)
+	if nil==o.__meta_w then
+		local function m_newindex(t,k,v)
+			o.push(t.__m,k,v)
+		end
+		
+		local function m_tostring(t)
+			local aa = o.slice
+			local r = lcf.pbc_wmessage_buffer(t.__m,aa)
+			if nil==r then
+				return nil
+			end
+			
+			return ffi.string(aa.buffer,aa.len)
+		end
+		
+		o.__meta_w = { __newindex=m_newindex,__tostring=m_tostring }
+	end
+	
+	local t = { __m=cdata }
+	t = setmetatable(t,o.__meta_w)
+	
+	return t
+end
+--]]
+
 function o.new_w(type_name)
 	local aa = lcf.pbc_wmessage_new(o.env,type_name)
-	table.insert(o.to_free,aa)
-	
-	return aa
-end
-
--- test
-function o.new_w2(type_name)
-	local aa = lcf.pbc_wmessage_new(o.env,type_name)
-	local function m_index(ud,k)
-		return 'aa'
-	end
-	aa = setmetatable(aa,{ __index=m_index })
-	print(type(aa),aa)
 	table.insert(o.to_free,aa)
 	
 	return aa
