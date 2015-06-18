@@ -30,8 +30,37 @@ function o.init()
 	o.slice.len = 8192	-- 8192 should be enough
 	o.slice.buffer = ffi.new('char[?]',o.slice.len)
 	
-	-- 准备最常用proto
-	o.user = lcf.pbc_wmessage_new(o.env,'User')
+	o.to_free = {}
+end
+
+function o.new_w(type_name)
+	local aa = lcf.pbc_wmessage_new(o.env,type_name)
+	table.insert(o.to_free,aa)
+	
+	return aa
+end
+
+-- test
+function o.new_w2(type_name)
+	local aa = lcf.pbc_wmessage_new(o.env,type_name)
+	local function m_index(ud,k)
+		return 'aa'
+	end
+	aa = setmetatable(aa,{ __index=m_index })
+	print(type(aa),aa)
+	table.insert(o.to_free,aa)
+	
+	return aa
+end
+
+function o.clean()
+	local num = #o.to_free
+	for i=1,num do
+		lcf.pbc_wmessage_delete(o.to_free[i])
+	end
+	for i=1,num do
+		table.remove(o.to_free)
+	end
 end
 
 function o.begin_push_user()
