@@ -361,6 +361,9 @@ _writer[128+11] = function(msg) return _writer.uint52_repeated end
 local _encode_type_meta = {}
 
 function _encode_type_meta:__index(key)
+	if '-'==string.sub(key,1,1) then
+		return nil
+	end
 	local t, msg = c._env_type(P, self._CType, key)
 	local func = assert(_writer[t],key)(msg)
 	self[key] = func
