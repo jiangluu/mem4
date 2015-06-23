@@ -14,8 +14,8 @@ function PostInit()
 	
 	-- 发送服务自举消息
 	l_gx_cur_writestream_cleanup()
-	l_gx_cur_writestream_put_slice(gGXContextID)
-	l_gx_cur_writestream_put_slice(getMyPort())
+	l_gx_cur_stream_push_slice(gGXContextID)
+	l_gx_cur_stream_push_slice(getMyPort())
 	lcf.gx_cur_writestream_send_to(r,8011)
 	
 	return 0
