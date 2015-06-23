@@ -16,12 +16,10 @@ function onMsg(me)
 	
 	me.bag_ = bag
 	
-	local w = apb.table_to_wm(me,'User')
-	apb.end_push2(w)
+	local bin = pb.encode('User',me)
 	
+	lcf.cur_stream_push_string(bin,#bin)
 	lcf.cur_stream_write_back()
-	
-	apb.clean()
 	
 	-- local s = apb.end_push(apb.user)
 	-- local bin = ffi.string(ffi.cast('const char*',s.buffer),s.len)
