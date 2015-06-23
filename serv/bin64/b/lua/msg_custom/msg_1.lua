@@ -4,6 +4,7 @@ local lcf = ffi.C
 function onMsg(me)
 	print('MSG 1 recv')
 	
+	local me = {}
 	me.id_ = 'u1'
 	me.name_ = 'jiangwei'
 	me.exp_ = 88
