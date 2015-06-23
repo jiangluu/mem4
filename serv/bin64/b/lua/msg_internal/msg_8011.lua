@@ -16,16 +16,16 @@ function onMsg()
 			local index = v[3]
 			
 			lcf.gx_cur_writestream_cleanup()
-			l_gx_cur_writestream_put_slice(node_id)
-			l_gx_cur_writestream_put_slice(port)
+			l_gx_cur_stream_push_slice(node_id)
+			l_gx_cur_stream_push_slice(port)
 			lcf.gx_cur_stream_push_int16(1)		-- 节点状态
 			
 			lcf.gx_cur_writestream_send_to(index,8013)
 			
 			
 			lcf.gx_cur_writestream_cleanup()
-			l_gx_cur_writestream_put_slice(v[1])
-			l_gx_cur_writestream_put_slice(v[2])
+			l_gx_cur_stream_push_slice(v[1])
+			l_gx_cur_stream_push_slice(v[2])
 			lcf.gx_cur_stream_push_int16(1)		-- 节点状态
 			
 			lcf.gx_cur_writestream_syncback2(8013)
