@@ -244,8 +244,10 @@ local encode_type_cache = {}
 local function encode_message(CObj, message_type, t)
 	local type = encode_type_cache[message_type]
 	for k,v in pairs(t) do
-		local func = type[k]
-		func(CObj, k , v)
+			if '_'~=string.sub(k,1,1) then
+				local func = type[k]
+				func(CObj, k , v)
+			end
 	end
 end
 
@@ -361,9 +363,6 @@ _writer[128+11] = function(msg) return _writer.uint52_repeated end
 local _encode_type_meta = {}
 
 function _encode_type_meta:__index(key)
-	if '_'==string.sub(key,1,1) then
-		return nil
-	end
 	local t, msg = c._env_type(P, self._CType, key)
 	local func = assert(_writer[t],key)(msg)
 	self[key] = func
