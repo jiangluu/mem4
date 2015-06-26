@@ -35,9 +35,9 @@ function o.post_init()
 	end
 	
 	local function send_cmd(cmd,btn_title)
-		if not make_sure_target() then
-			error('NO target set')
-		end
+		-- if not make_sure_target() then
+			-- error('NO target set')
+		-- end
 		
 		if 'table'==type(cmd) and #cmd>=1 and nil~=tonumber(cmd[1]) then
 			ssh.update_all_file(getRouterPort())
@@ -60,10 +60,7 @@ function o.post_init()
 				end
 			end
 			
-			for i=1,#o.target_app do
-				local aa = o.target_app[i]
-				lcf.gx_cur_writestream_route_to(aa,msg_id)
-			end
+			lcf.gx_cur_writestream_route_to('S0',msg_id)
 		else
 			return
 		end
