@@ -18,12 +18,12 @@ function onMsg(me)
 		local serialized = pb.encode('SimpleParam',data_to_send_back)		-- 调用protobuf序列化
 		
 		lcf.cur_stream_push_string(serialized,#serialized)	-- 放入发送缓冲
-		lcf.cur_stream_broadcast(14)										-- 广播出去（14号消息）
+		lcf.cur_stream_broadcast(13+1)									-- 广播出去（14号消息）
 		
 	elseif 2==chat_type then
 		-- TODO: 公会聊天
 		
-		lcf.cur_stream_write_back()		-- 公会聊天功能未实现，这里只是返回给客户端一个空的应答
+		lcf.cur_stream_write_back()		-- 公会聊天功能未实现，这里只是返回给客户端一个空的应答，消息ID是13+1，无内容
 	end
 	
 	return 0
