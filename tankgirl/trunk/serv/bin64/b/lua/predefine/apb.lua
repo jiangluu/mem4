@@ -5,6 +5,7 @@ pb = o
 
 
 local filename = 'proto/user.pb'
+local filename2 = 'proto/msg_body.pb'
 
 
 --[[
@@ -19,6 +20,7 @@ pb.register_file()
 function o.init()
 	-- 注册proto
 	o.register_file(filename)
+	o.register_file(filename2)
 end
 
 function o.test()
