@@ -9,9 +9,8 @@ function onMsg()
 	if 'handle'==op then
 		regMsgHandlers()
 		regMsgHandlers2()
-		regAllEvents()
 	elseif 'data'==op then
-		g_reload_sd()
+		-- TODO
 	elseif 'all'==op then
 		jlpcall(dofile,g_lua_dir.."predefine/init.lua")
 	else
