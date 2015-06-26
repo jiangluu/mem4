@@ -1,38 +1,30 @@
 
+-- 聊天
+
 local lcf = ffi.C
 
-
-
--- ChatNoTarget 	13 	<<(WORD)chat_type<<(string)text 	chat_type:1-本服 text：聊天内容
 function onMsg(me)
 	
-	local chat_type = lcf.cur_stream_get_int16()
-	local bin = l_cur_stream_get_slice()
-	local aa = box.unSerialize(bin)
-	local bin2 = box.serialize(aa)
-	--print('say',bin,bin_len)
+	local bin = l_cur_stream_get_slice()							-- 得到客户端发送的字节序列
+	local param = pb.decode('SimpleParam',bin)		-- 调用protobuf反序列化
 	
-	if 1==chat_type then
+	if 1==param.uint1_ then
 		-- 普通聊天
-		lcf.cur_write_stream_cleanup()
-		lcf.cur_stream_push_int16(chat_type)
-		lcf.cur_stream_push_string(me.basic.name,0)
-		lcf.cur_stream_push_int64(tonumber(me.basic.usersn))
-		lcf.cur_stream_push_string(bin,#bin)
-		--lcf.cur_stream_write_back()
-		--lcf.cur_stream_broadcast(14)
+		local data_to_send_back = {}								-- 要发送回客户端的数据初始化
+		data_to_send_back.uint1_ = 1								-- 聊天类型是1（普通）
+		data_to_send_back.string1_ = me.name			-- 说话人名字是我
+		data_to_send_back.string2_ = param.string1_	-- 说话内容是刚才客户端发上来的
 		
-		lcf.cur_stream_write_back();
+		local serialized = pb.encode('SimpleParam',data_to_send_back)		-- 调用protobuf序列化
 		
-		ach.key_inc4(me,'chatn')
+		lcf.cur_stream_push_string(serialized,#serialized)	-- 放入发送缓冲
+		lcf.cur_stream_broadcast(14)										-- 广播出去（14号消息）
+		
 	elseif 2==chat_type then
-		-- 公会聊天
-		if nil==me.basic.guild then
-			return 1
-		end
+		-- TODO: 公会聊天
+		
+		lcf.cur_stream_write_back()		-- 公会聊天功能未实现，这里只是返回给客户端一个空的应答
 	end
-	
-	
 	
 	return 0
 end
