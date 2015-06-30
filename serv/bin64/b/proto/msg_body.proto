@@ -1,0 +1,23 @@
+
+option cc_generic_services = false;
+option java_generic_services = false;
+option py_generic_services = false;
+
+
+message SimpleParam {
+	optional uint32 uint1_ = 1;
+	optional uint32 uint2_ = 2;
+	optional uint64 uint64_1_ = 3;
+	optional uint64 uint64_2_ = 4;
+	optional double double1_ = 5;
+	optional double double2_ = 6;
+	optional string string1_ = 7;
+	optional string string2_ = 8;
+}
+
+message RepeatParam {
+	repeated uint32 int_ = 1;
+	repeated uint64 int64_ = 2;
+	repeated double double_ = 3;
+	repeated string string_ = 4;
+}
