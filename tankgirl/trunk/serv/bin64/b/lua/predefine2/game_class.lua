@@ -195,9 +195,11 @@ function o.init2()
 		assert(sd)
 		
 		print('slave OK',sd)
-		-- for k,v in pairs(sd) do
-			-- print(k,'==>',v)
-		-- end
+		for k,v in pairs(sd) do
+			print(k,'==>',v)
+		end
+		
+		print('sd.achieve',sd.achieve)
 	end
 end
 
