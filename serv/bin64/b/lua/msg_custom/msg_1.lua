@@ -5,10 +5,11 @@ function onMsg(me)
 	print('MSG 1 recv')
 	
 	local bin = l_cur_stream_get_slice()							-- 得到客户端发送的字节序列
-	local param = pb.decode('SimpleParam',bin)		-- 调用protobuf反序列化
+	-- local param = pb.decode('SimpleParam',bin)		-- 调用protobuf反序列化
 	
-	local key = param.string1_							-- 客户端发送的登录key
-	local player_data_bin = redis.get(0,key)		-- 从redis读取数据
+	-- local key = param.string1_							-- 客户端发送的登录key
+	-- local player_data_bin = redis.get(0,key)		-- 从redis读取数据
+	local player_data_bin = nil
 	
 	if nil==player_data_bin then
 		-- 未从数据层读到数据，认为这是个新号，初始化玩家数据
