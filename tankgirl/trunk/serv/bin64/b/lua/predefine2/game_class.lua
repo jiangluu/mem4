@@ -140,7 +140,7 @@ function o.make_table_readonly(t)
 end
 
 function o.init()
-	if 0==g_box_id then
+	if nil==g_box_id then
 	
 	io.output('../aaa.txt')
 	o.read_and_set('scene',g_data_dir..'scene.bytes')
@@ -182,7 +182,7 @@ function o.init2()
 	local pointer_index = 10
 	local ap = require('atabletopointer')
 	
-	if 0==g_box_id then
+	if nil==g_box_id then
 		-- master
 		--sd = table.deepclone(o2)
 		sd = o2

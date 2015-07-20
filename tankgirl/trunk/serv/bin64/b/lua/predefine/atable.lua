@@ -1,16 +1,21 @@
 
+local ap = require('atabletopointer')
+
+local pairs_bak = pairs
+pairs = function(t)
+	local typr = type(t)
+	if 'table'==typr then
+		return next,t,nil
+	elseif 'userdata'==typr then
+		return ap.pairs(t)
+	end
+end
+
 -- 下面是企图修正5.1里table其实无视__len的行为
 table.getn2 = table.getn
 table.getn = function(o)
 	if nil==o then
 		return 0
-	end
-	
-	local meta = getmetatable(o)
-	-- if meta and meta.__len then
-		-- return meta.__len(o)
-	if meta then
-		local notuse = o[1]	-- 触发 __index
 	end
 	
 	return #o
