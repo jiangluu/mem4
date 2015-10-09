@@ -14,20 +14,19 @@ local protofiles = {
 }
 
 local metas = {
-	p01_common = {typr='com.artme.data.CommonSheet'},
-	p01_lv = {typr='com.artme.data.LvSheet'},
-	p01_purchase = {typr='com.artme.data.PurchaseSheet'},
+	--p01_common = {typr='com.artme.data.CommonSheet'},
+	p01_lv = {typr='com.artme.data.LvSheet',key='lv'},
+	p01_purchase = {typr='com.artme.data.PurchaseSheet',key='buy_num'},
 	p02_unit = {typr='com.artme.data.UnitSheet'},
-	p02_unit_evo = {typr='com.artme.data.UEvoSheet'},
-	p02_unit_lv = {typr='com.artme.data.ULvSheet'},
-	p05_dis_item = {typr='com.artme.data.DisItemSheet'},
-	p05_dis_lv = {typr='com.artme.data.DisLvSheet'},
+	p02_unit_evo = {typr='com.artme.data.UEvoSheet',key='star_lv'},
+	p02_unit_lv = {typr='com.artme.data.ULvSheet',key='lv'},
+	p05_dis_item = {typr='com.artme.data.DisItemSheet',key='item_id'},
+	p05_dis_lv = {typr='com.artme.data.DisLvSheet',key='dis_lv'},
 	p05_dis_play = {typr='com.artme.data.DisPlaySheet'},
 	p05_dis_script = {typr='com.artme.data.DisScriptSheet'},
-	p05_dis_support = {typr='com.artme.data.DisSupportSheet'},
-	p05_dis_type = {typr='com.artme.data.DisTypeSheet'},
+	p05_dis_support = {typr='com.artme.data.DisSupportSheet',key='item_id'},
+	p05_dis_type = {typr='com.artme.data.DisTypeSheet',key='dis_type'},
 }
-
 -- CONFIG SEGMENT END
 
 function o.register()
@@ -73,7 +72,8 @@ function o.read_a_dat(dat_name,meta)
 	
 	for i=1,#lua_t.value do
 		local v = lua_t.value[i]
-		d[v.id] = v
+		local key_name = meta.key or 'id'
+		d[v[key_name]] = v
 	end
 	
 	print(string.format('%s loaded %d row',level1,#lua_t.value))
