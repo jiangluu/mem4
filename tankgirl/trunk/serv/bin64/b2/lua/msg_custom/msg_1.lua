@@ -40,7 +40,12 @@ function onMsg(me)
 		
 		-- 初始化玩家数据结束
 		
-		local bin2 = pb.encode('com.artme.data.User',me)				-- 调用protobuf序列化
+		local ok,bin2 = pcall(pb.encode,'com.artme.data.User',me)				-- 调用protobuf序列化
+		if not ok then
+			print(debug.traceback())
+			print(bin2)
+			return 1
+		end
 		lcf.cur_stream_push_string(bin2,#bin2)		-- 放入发送缓冲
 		lcf.cur_stream_write_back()							-- 返回消息给客户端，消息ID是1+1，内容是放入发送缓冲的字节
 		
