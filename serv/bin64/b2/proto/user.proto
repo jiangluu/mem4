@@ -1,22 +1,50 @@
+package com.artme.data;
 
-option cc_generic_services = false;
-option java_generic_services = false;
-option py_generic_services = false;
-
-
-message Item {
-	required uint32 item_id_ = 1;
-	optional uint32 num_ = 2;
-	optional uint32 lv_ = 3;
-}
+option java_package = "com.artme.data";
+option java_outer_classname = "Status";
 
 message User {
-	optional string id_ = 1;		// Unique ID number for this User
-	optional string name_ = 2;       
-	optional uint32 exp_ = 3;
-	optional uint32 lv_ = 4;
-	optional uint32 diamond_ = 5;
-	repeated Item bag_ = 6;
+	message Hero {
+		optional int32 	id		= 1;
+		optional string name	= 2;
+		optional int32 	level	= 3;
+		optional float 	hp		= 4;
+		optional float 	attack	= 5;
+	}
+
+	message Rune {
+		optional int32 id		= 1;
+		optional int32 level	= 2;
+	}
+
+	message Skill {
+		optional int32 id		= 1;
+	}
+
+	message Harem {
+		repeated Hero heros		= 1;
+	}
+
+	message Package {
+		repeated int32 itemIDs	= 1;
+	}
+
+	message Formation {
+		repeated int32 heroIDs	= 1;
+		repeated Rune runes		= 2;
+	}
+
+	optional string userId		= 1;
+	optional string displayName = 2;
+	optional int32 curExp		= 3;
+	optional int32 level		= 4;
+	optional int32 energy		= 5;
+	optional string icon		= 6;
+	optional int32 coin			= 7;
+	optional int32 diamond		= 8;
+	optional int32 attribute	= 9;
+	optional Harem harem		= 10;
+	optional Package package	= 11;
+	repeated Formation formation =12;
+	
 }
-
-
