@@ -1,0 +1,49 @@
+package com.artme.data;
+
+option java_package = "com.artme.data";
+option java_outer_classname = "P01Base";
+
+
+message Common {
+  required float    energy_recov    = 1;   // 每秒恢复能量
+  required int32    energy_buy      = 2;   // 每次购买能量
+  required int32    gold_base       = 3;   // 购买金币基数
+  required int32    gold_lv         = 4;   // 购买金币的等级系数
+  required int32    hero_slot1      = 5;   // 魔娘1格解锁等级
+  required int32    hero_slot2      = 6;   // 魔娘2格解锁等级
+  required int32    hero_slot3      = 7;   // 魔娘3格解锁等级
+  required int32    hero_slot4      = 8;   // 魔娘4格解锁等级
+  required int32    hero_slot5      = 9;   // 魔娘5格解锁等级
+  required int32    rune_slot1      = 10;  // 符文1格解锁等级
+  required int32    rune_slot2      = 11;  // 符文2格解锁等级
+  required int32    rune_slot3      = 12;  // 符文3格解锁等级
+}
+
+message CommonSheet {
+  repeated Common value = 1;
+}
+
+message Lv {
+  required int32    lv            = 1;  // 魔王等级
+  required int32    exp           = 2;  // 升级一级需求总经验
+  required int32    energybonus   = 3;  // 升级当前等级奖励能量
+  required int32    energylimit   = 4;  // 能量上限
+}
+
+message LvSheet {
+  repeated Lv value = 1;
+}
+
+message Purchase {
+  required int32    buy_num       = 1;  // 购买次数
+  required int32    energy_price  = 2;  // 能量价格
+  required int32    gold_price    = 3;  // 金币购买价格
+}  
+
+message PurchaseSheet {
+  repeated Purchase value = 1;
+}
+
+
+
+

@@ -1,0 +1,101 @@
+package com.artme.data;
+
+option java_package = "com.artme.data";
+option java_outer_classname = "P02Unit";
+
+
+message Unit {
+  enum UnitType {   // 单位类型
+    Overlord      = 1;   // 魔王
+    Hero          = 2;   // 魔娘
+    Tower         = 3;   // 塔
+    Soldier       = 4;   // 杂兵/召唤物
+  }
+
+  enum Status {     // 形态
+    Ordinary      = 1;   // 普通
+    Devil         = 2;   // 魔化
+  }
+
+  enum AttrType {   // 属性类型
+    Earth       = 1;   // 地
+    Water       = 2;   // 水
+    Fire        = 3;   // 火
+    Wind        = 4;   // 风
+    Siege       = 5;   // 攻城
+    Fortified   = 6;   // 建筑
+  }
+
+  enum AIType {     // AI类型
+    NormalAI        = 1;   // 普通型AI
+    SiegeAI         = 2;   // 攻城型AI
+    SuicideAI       = 3;   // 自爆型AI
+    AssassinAI      = 4;   // 刺杀型AI
+  }
+
+  enum DISType {   // 调教类型
+    Pride         = 1;   // 高傲类
+    Mild          = 2;   // 温柔类
+    Brave         = 3;   // 凶狠类
+    Naive         = 4;   // 天真类
+    Cold          = 5;   // 阴沉类
+  }
+
+  required int32    id            = 1;   // 序号
+  required UnitType type          = 2;   // 单位类型
+  required string   name          = 3;   // 名称
+  required Status   status        = 4;   // 形态（1普通2魔化）
+  required int32    devil_id      = 5;   // 魔化形态ID
+  required AttrType attr_type     = 6;   //属性类型
+  required float    baseHp        = 7;   //基础生命
+  required float    baseAtt       = 8;   //基础攻击
+  required float    baseDef       = 9;   //基础防御
+  required float    growHp        = 10;  //生命成长
+  required float    growAtt       = 11;  //攻击成长
+  required float    growDef       = 12;  //防御成长
+  required float    search_r      = 13;  //索敌范围
+  required float    speed         = 14;  //移动速度（m/s）
+  required AIType   ai_type       = 15;  //AI类型
+  required float    att_r         = 16;  //攻击范围
+  required float    limited_r     = 17;  //攻击范围限制
+  required float    interval_s    = 18;  //攻击间隔
+  required float    reg_s         = 19;  //生命恢复每秒
+  required DISType  dis_type      = 20;  //调教类型
+  required int32    dis_1st       = 21;  //初次调教所需经验
+  required float    dis_up        = 22;  //调教经验加成
+  required int32    port_1        = 23;  //立绘编号
+  required int32    port_2        = 24;  //破衣立绘
+  required int32    model         = 25;  //模型ID
+  required int32    skill_1       = 26;  //技能1
+  required int32    skill_2       = 27;  //技能2
+  required int32    skill_3       = 28;  //技能3
+  required int32    skill_4       = 29;  //技能4
+ 
+}
+
+message UnitSheet {
+  repeated Unit value = 1;
+}
+
+message ULv {
+  required int32    lv           = 1;   // 等级
+  required int32    exp          = 2;   // 到下一级经验
+}
+
+message ULvSheet {
+  repeated ULv value = 1;
+}
+
+message UEvo {
+  required int32    star_lv      = 1;   // 进化等级
+  required string   star_des     = 2;   // 进化等级描述
+  required int32    stone        = 3;   // 进化需求灵魂石
+  required float    evo_para     = 4;   // 进化系数
+  required int32    cost         = 5;   //进化消耗金币
+  required int32    limit_lv     = 6;   //要求魔娘等级
+}
+
+message UEvoSheet {
+  repeated UEvo value = 1;
+}
+
