@@ -1,0 +1,81 @@
+package com.artme.data;
+
+option java_package = "com.artme.data";
+option java_outer_classname = "P05Discipline";
+
+
+message DisLv {
+  required int32    dis_lv             = 1;   // 调教等级
+  required int32    dis_exp            = 2;   // 升下一级经验
+  required string   dis_name           = 3;   // 调教等级描述
+  required int32    dis_hp             = 4;   // 生命增加
+  required int32    dis_att            = 5;   // 攻击增加
+  required int32    dis_def            = 6;   // 防御增加
+  required int32    dis_skillunlock    = 7;   // 开启技能个数
+}
+
+message DisLvSheet {
+  repeated DisLv value = 1;
+}
+
+message DisType {
+  required int32    dis_type           = 1;   // 类型id
+  required string   dis_des            = 2;   // 调教类型
+  required int32    effect1            = 3;   // 效果类型1（痛感型）
+  required int32    effect2            = 4;   // 效果类型2（羞耻型）
+  required int32    effect3            = 5;   // 效果类型3（忍耐性）
+  required int32    effect4            = 6;   // 效果类型4（洗脑型）
+}
+
+message DisTypeSheet {
+  repeated DisType value = 1;
+}
+
+message DisItem {
+  required int32    item_id      = 1;   // 道具Id
+  required string   name         = 2;   // 道具名称
+  required int32    type         = 3;   // 调教道具类型（1痛感型，2羞耻型，3忍耐性，4洗脑型）
+  required int32    exp          = 4;   // 基础经验值
+  required int32    cd           = 5;   // 冷却时间/秒
+ 
+}
+
+message DisItemSheet {
+  repeated DisItem value = 1;
+}
+
+message DisSupport {
+  required int32    item_id     = 1;   // 道具Id
+  required string   name        = 2;   // 道具名称
+  required int32    pos         = 3;   // 辅助位置1或2
+  required int32    up1         = 4;   // 痛感型加成
+  required int32    up2         = 5;   // 羞耻型加成
+  required int32    up3         = 6;   // 忍耐型加成
+  required int32    up4         = 7;   // 洗脑型加成
+}
+
+message DisSupportSheet {
+  repeated DisSupport value = 1;
+}
+
+message DisPlay {
+  required int32    id      = 1;   // id
+  required string   des     = 2;   // 操作效果
+  required int32    add     = 3;   // 加成率
+}
+
+message DisPlaySheet {
+  repeated DisPlay value = 1;
+}
+
+message DisScript {
+  required int32    id           = 1;   // id
+  required int32    upperrang    = 2;   // 上限值
+  required string   script       = 3;   // 对应角色的台词
+}
+
+message DisScriptSheet {
+  repeated DisScript value = 1;
+}
+
+
