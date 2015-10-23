@@ -26,15 +26,15 @@ function onMsg(me)
 		me.coin = 9999
 		me.energy = 999
 		
-		local bag = {}
-		table.insert(bag,{ itemIDs=2 })
-		table.insert(bag,{ itemIDs=3 })
+		-- local bag = {}
+		-- table.insert(bag,{ itemIDs=2 })
+		-- table.insert(bag,{ itemIDs=3 })
 		
-		me.package = bag
+		-- me.package = bag
 		
-		local harem = {}
-		table.insert(harem,{id=1,name='雅儿贝德',level=1,hp=33})
-		table.insert(harem,{id=2,name='夏提雅',level=80,hp=65535})
+		local harem = { heros={} }
+		table.insert(harem.heros,{id=1,name='雅儿贝德',level=1,hp=33})
+		table.insert(harem.heros,{id=2,name='夏提雅',level=80,hp=65535})
 		me.harem = harem
 		
 		
