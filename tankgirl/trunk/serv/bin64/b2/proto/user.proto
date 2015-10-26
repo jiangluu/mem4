@@ -31,7 +31,7 @@ message User {
 
 	message Formation {
 		repeated int32 heroIDs	= 1;
-		repeated Rune runes		= 2;
+		repeated int32 runeIDs  = 2;
 	}
 
 	optional string userId		= 1;
@@ -45,6 +45,6 @@ message User {
 	optional int32 attribute	= 9;
 	optional Harem harem		= 10;
 	optional Package package	= 11;
-	repeated Formation formation =12;
+	repeated Formation formations =12;
 	
 }
