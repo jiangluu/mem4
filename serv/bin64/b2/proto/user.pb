@@ -1,7 +1,7 @@
 
-ü
+ä
 
-User.protocom.artme.data"Ã
+User.protocom.artme.data"«
 User
 userId (	
 displayName (	
@@ -14,8 +14,9 @@ User.protocom.artme.data"Ã
 	attribute	 ()
 harem
  (2.com.artme.data.User.Harem-
-package (2.com.artme.data.User.Package1
-	formation (2.com.artme.data.User.FormationK
+package (2.com.artme.data.User.Package2
+
+formations (2.com.artme.data.User.FormationK
 Hero
 
 id (
@@ -34,8 +35,8 @@ User.protocom.artme.data"Ã
 Harem(
 heros (2.com.artme.data.User.Hero
 Package
-itemIDs (F
+itemIDs (-
 	Formation
-heroIDs ((
-runes (2.com.artme.data.User.RuneB
+heroIDs (
+runeIDs (B
 com.artme.dataBStatus
