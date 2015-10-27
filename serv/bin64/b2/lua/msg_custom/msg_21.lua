@@ -30,6 +30,7 @@ function onMsg(me)
 		bin = pb.encode('com.artme.data.User',me2)
 		
 		lcf.cur_write_stream_cleanup()
+		lcf.cur_stream_push_int32(c_frame_no)
 		lcf.cur_stream_push_string(bin,#bin)
 		lcf.cur_stream_write_back2(4)
 		
