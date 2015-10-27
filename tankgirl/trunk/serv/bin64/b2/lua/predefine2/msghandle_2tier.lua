@@ -5,7 +5,7 @@ local hd4 = {}
 
 
 local function gen_first_tier_common_handle(ud)
-	return function first_tier_common_handle(me)
+	local function first_tier_common_handle(me)
 		local c_frame_no = lcf.cur_stream_get_int32()
 		
 		local sub_command_id = lcf.cur_stream_get_int16()
@@ -50,6 +50,8 @@ local function gen_first_tier_common_handle(ud)
 		return -1
 
 	end
+
+	return first_tier_common_handle
 end
 
 
