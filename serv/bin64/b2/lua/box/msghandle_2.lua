@@ -3,6 +3,9 @@ local lcf = ffi.C
 
 local hd1 = {}
 
+nan_hd = hd1	-- shows as global for 2tier msg
+
+
 function on_message_2(con_index, mid)
 		local hd = hd1[mid]
 		if hd then
