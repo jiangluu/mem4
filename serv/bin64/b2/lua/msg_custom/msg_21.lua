@@ -10,6 +10,7 @@ function onMsg(me)
 	print('msg 21',c_frame_no,sub_command_id)
 	
 	if 1==sub_command_id then
+		--[[
 		local formation_id = lcf.cur_stream_get_int16()
 		local bin = l_cur_stream_get_slice()
 		
@@ -29,6 +30,11 @@ function onMsg(me)
 		
 		bin = pb.encode('com.artme.data.User',me2)
 		
+		lcf.cur_stream_push_string(bin,#bin)
+		lcf.cur_stream_write_back2(4)
+		--]]
+
+		local bin = pb.encode('com.artme.data.User',me)
 		lcf.cur_stream_push_string(bin,#bin)
 		lcf.cur_stream_write_back2(4)
 		
