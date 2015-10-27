@@ -1,15 +1,9 @@
 
 local lcf = ffi.C
 
-function onMsg(me)
-	local c_frame_no = lcf.cur_stream_get_int32()
+function onMsg(me,merge)
+	print('msg 21_1')
 	
-	local sub_command_id = lcf.cur_stream_get_int16()
-	
-	
-	print('msg 21',c_frame_no,sub_command_id)
-	
-	if 1==sub_command_id then
 		local formation_id = lcf.cur_stream_get_int16()
 		local bin = l_cur_stream_get_slice()
 		
@@ -24,23 +18,7 @@ function onMsg(me)
 		
 		me.formations[forma_id] = forma
 		
-		local me2 = {}
-		me2.formations = me.formations
-		
-		bin = pb.encode('com.artme.data.User',me2)
-		
-		lcf.cur_write_stream_cleanup()
-		lcf.cur_stream_push_int32(c_frame_no)
-		lcf.cur_stream_push_string(bin,#bin)
-		lcf.cur_stream_write_back2(4)
-		
-	end
-	
-	
-	lcf.cur_write_stream_cleanup()
-	lcf.cur_stream_push_int32(c_frame_no)
-	lcf.cur_stream_push_int16(0)
-	lcf.cur_stream_write_back()
+		merge.formations = me.formations
 	
 	return 0
 end
