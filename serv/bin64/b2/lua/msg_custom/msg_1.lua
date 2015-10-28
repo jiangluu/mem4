@@ -37,6 +37,10 @@ function onMsg(me)
 		table.insert(harem.heros,{id=2,name='夏提雅',level=80,hp=65535})
 		me.harem = harem
 		
+
+		me.formations = {}
+		table.insert(me.formations,{ heroIDs={1,2,3,4,5},runeIDs={1,2,3} })
+		table.insert(me.formations,{ heroIDs={1,2,3,4,5},runeIDs={1,2,3} })
 		
 		-- 初始化玩家数据结束
 		
