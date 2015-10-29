@@ -7,7 +7,7 @@ function onMsg(me,merge)
 		local formation_id = lcf.cur_stream_get_int16()
 		local bin = l_cur_stream_get_slice()
 		
-		local forma = pb.decode('com.artme.data.User.Formation',bin)
+		local forma = pb.decode('A2Data.User.Formation',bin)
 		assert(forma)
 		
 		
