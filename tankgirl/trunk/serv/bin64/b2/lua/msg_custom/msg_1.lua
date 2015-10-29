@@ -6,15 +6,18 @@ function onMsg(me)
 	
 	local typ = lcf.cur_stream_get_int16()
 	local bin = l_cur_stream_get_slice()							-- 得到客户端发送的字节序列
+	local is_reset = lcf.cur_stream_get_int16()
 	
 	print(typ,bin)
-	-- local param = pb.decode('SimpleParam',bin)		-- 调用protobuf反序列化
 	
-	-- local key = param.string1_							-- 客户端发送的登录key
-	-- local player_data_bin = redis.get(0,key)		-- 从redis读取数据
 	local player_data_bin = nil
+	local sn = redis.get(0,'weak'..key)		-- 从redis读取数据
 	
-	if nil==player_data_bin then
+	if sn then
+		player_data_bin = redis.get(0,sn)
+	end
+	
+	if 1==is_reset or nil==player_data_bin then
 		-- 未从数据层读到数据，认为这是个新号，初始化玩家数据
 		local sn = redis.command_and_wait(0,'INCR c_usersn')		-- 得到一个自增长序号
 		
