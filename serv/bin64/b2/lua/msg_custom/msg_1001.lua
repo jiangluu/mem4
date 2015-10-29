@@ -4,7 +4,7 @@
 local lcf = ffi.C
 
 function onMsg(me)
-	print('1001 offline',me.id_)
+	print('1001 offline',me.userId)
 	
 	if me.userId then
 		local bin2 = pb.encode('A2Data.User',me)				-- 调用protobuf序列化
