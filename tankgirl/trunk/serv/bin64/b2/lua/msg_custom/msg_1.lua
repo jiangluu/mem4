@@ -101,7 +101,7 @@ function onMsg(me)
 
 		-- 初始化玩家数据结束
 		
-		local ok,bin2 = pcall(pb.encode,'com.artme.data.User',me)				-- 调用protobuf序列化
+		local ok,bin2 = pcall(pb.encode,'A2Data.User',me)				-- 调用protobuf序列化
 		if not ok then
 			print(debug.traceback())
 			print(bin2)
@@ -113,7 +113,7 @@ function onMsg(me)
 	else
 		-- 读到了以前的存盘数据
 		
-		local player_data = pb.decode('com.artme.data.User',player_data_bin)		-- 调用protobuf反序列化
+		local player_data = pb.decode('A2Data.User',player_data_bin)		-- 调用protobuf反序列化
 		
 		for k,v in pairs(player_data) do		-- 遍历数据，复制到me上
 			me[k] = v
