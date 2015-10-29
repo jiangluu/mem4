@@ -21,7 +21,7 @@ local function gen_first_tier_common_handle(ud)
 			if ok then
 				if 0==ret then
 					-- logic suc, push merge data
-					local bin = pb.encode('com.artme.data.User',for_merge)
+					local bin = pb.encode('A2Data.User',for_merge)
 
 					lcf.cur_write_stream_cleanup()
 					lcf.cur_stream_push_int32(c_frame_no)
