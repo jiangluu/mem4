@@ -9,7 +9,7 @@ function onMsg(me)
 	local is_reset = lcf.cur_stream_get_int16()
 	
 	print(typ,bin)
-	local db_key = 'weak'..key
+	local db_key = 'weak'..bin
 	
 	local player_data_bin = nil
 	local sn = redis.get(0,db_key)		-- 从redis读取数据
