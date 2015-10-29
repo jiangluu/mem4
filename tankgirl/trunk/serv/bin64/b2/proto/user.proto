@@ -1,7 +1,6 @@
-package com.artme.data;
+package A2Data;
 
-option java_package = "com.artme.data";
-option java_outer_classname = "Status";
+option java_package = "A2Data";
 
 message User {
 	message Hero {

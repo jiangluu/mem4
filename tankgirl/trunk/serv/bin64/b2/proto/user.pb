@@ -1,7 +1,7 @@
 
-ä
+¬
 
-User.protocom.artme.data"«
+User.protoA2Data"‹
 User
 userId (	
 displayName (	
@@ -11,12 +11,12 @@ User.protocom.artme.data"«
 icon (	
 coin (
 diamond (
-	attribute	 ()
+	attribute	 (!
 harem
- (2.com.artme.data.User.Harem-
-package (2.com.artme.data.User.Package2
+ (2.A2Data.User.Harem%
+package (2.A2Data.User.Package*
 
-formations (2.com.artme.data.User.FormationK
+formations (2.A2Data.User.FormationK
 Hero
 
 id (
@@ -31,12 +31,12 @@ formations (2.com.artme.data.User.FormationK
 level (
 Skill
 
-id (1
-Harem(
-heros (2.com.artme.data.User.Hero
+id ()
+Harem 
+heros (2.A2Data.User.Hero
 Package
 itemIDs (-
 	Formation
 heroIDs (
-runeIDs (B
-com.artme.dataBStatus
+runeIDs (B
+A2Data
