@@ -9,9 +9,10 @@ function onMsg(me)
 	local is_reset = lcf.cur_stream_get_int16()
 	
 	print(typ,bin)
+	local db_key = 'weak'..key
 	
 	local player_data_bin = nil
-	local sn = redis.get(0,'weak'..key)		-- 从redis读取数据
+	local sn = redis.get(0,db_key)		-- 从redis读取数据
 	
 	if sn then
 		player_data_bin = redis.get(0,sn)
@@ -19,7 +20,10 @@ function onMsg(me)
 	
 	if 1==is_reset or nil==player_data_bin then
 		-- 未从数据层读到数据，认为这是个新号，初始化玩家数据
+		print('初始化玩家数据')
 		local sn = redis.command_and_wait(0,'INCR c_usersn')		-- 得到一个自增长序号
+		
+		redis.set(0,db_key, 'u'..sn)
 		
 		me.userId = 'u'..sn
 		me.displayName = 'guest'..sn
