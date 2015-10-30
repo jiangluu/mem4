@@ -1,7 +1,7 @@
 
-¬
+Õ
 
-User.protoA2Data"‹
+User.protoA2Data"´
 User
 userId (	
 displayName (	
@@ -13,29 +13,31 @@ User.protoA2Data"‹
 diamond (
 	attribute	 (!
 harem
- (2.A2Data.User.Harem%
-package (2.A2Data.User.Package*
+ (2.A2Data.User.Harem 
+items (2.A2Data.User.Item*
 
-formations (2.A2Data.User.FormationK
+formations (2.A2Data.User.Formationa
 Hero
 
-id (
-name (	
-level (
-
-hp (
-attack (!
+id (
+level (
+speed (
+att_R (
+dis_lv (
+skill_lv (!
 Rune
 
 id (
-level (
+level ("
 Skill
 
-id ()
+id (
+level ()
 Harem 
-heros (2.A2Data.User.Hero
-Package
-itemIDs (-
+heros (2.A2Data.User.Hero#
+Item
+itemID (
+num (-
 	Formation
 heroIDs (
 runeIDs (B
