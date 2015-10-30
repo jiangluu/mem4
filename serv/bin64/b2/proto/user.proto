@@ -5,10 +5,12 @@ option java_package = "A2Data";
 message User {
 	message Hero {
 		optional int32 	id		= 1;
-		optional string name	= 2;
-		optional int32 	level	= 3;
-		optional float 	hp		= 4;
-		optional float 	attack	= 5;
+		optional int32 	level	= 2;
+		optional float 	speed   = 3;
+		optional float 	att_R   = 4;
+		optional int32  dis_lv  = 5; 
+		repeated int32  skill_lv = 6;
+		
 	}
 
 	message Rune {
@@ -18,14 +20,16 @@ message User {
 
 	message Skill {
 		optional int32 id		= 1;
+		optional int32 level	= 2;
 	}
 
 	message Harem {
 		repeated Hero heros		= 1;
 	}
 
-	message Package {
-		repeated int32 itemIDs	= 1;
+	message Item {
+		optional int32 itemID	= 1;
+		optional int32 num		= 2;
 	}
 
 	message Formation {
@@ -43,7 +47,7 @@ message User {
 	optional int32 diamond		= 8;
 	optional int32 attribute	= 9;
 	optional Harem harem		= 10;
-	optional Package package	= 11;
+	repeated Item items			= 11;
 	repeated Formation formations =12;
 	
 }
