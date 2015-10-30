@@ -9,7 +9,7 @@ function onMsg(me,merge)
 		local bin = string.rep('abcd',498)
 		
 		for i=1,12 do
-			lcf.cur_writestream_cleanup()
+			lcf.cur_write_stream_cleanup()
 			lcf.cur_stream_push_string(bin,#bin)		-- 放入发送缓冲
 			lcf.cur_stream_write_back()
 		end
