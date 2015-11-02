@@ -29,77 +29,36 @@ function onMsg(me)
 		
 		-- ========  初始化玩家数据开始 ========
 		me.displayName = 'guest'..sn
-		me.curExp = 88
+		me.curExp = 0
 		me.level = 1
 		me.diamond = 100
 		me.coin = 9999
 		me.energy = 999
 		
-		-- local bag = {}
-		-- table.insert(bag,{ itemIDs=2 })
-		-- table.insert(bag,{ itemIDs=3 })
+		local bag = {}
+		table.insert(bag,{ itemID=10001 ,num=1000 })
+		table.insert(bag,{ itemID=10002 ,num=5000 })
+		table.insert(bag,{ itemID=10003 ,num=50 })
+		table.insert(bag,{ itemID=10004 ,num=5 })
+		table.insert(bag,{ itemID=10011 ,num=10 })
 		
-		-- me.package = bag
+		me.items = bag
 		
 		local harem = { heros={} }
-		table.insert(harem.heros,{id=1001,name='艾丽卡',level=1,hp=33, att_R=123})
-		table.insert(harem.heros,{id=1002,name='卡玫尔',level=2,hp=12, att_R=123})
-		table.insert(harem.heros,{id=1003,name='萝拉',level=3,hp=32, att_R=123})
-		table.insert(harem.heros,{id=1004,name='柚夜',level=4,hp=34, att_R=123})
-		table.insert(harem.heros,{id=1005,name='西弥斯',level=5,hp=45, att_R=123})
-		table.insert(harem.heros,{id=1007,name='蔻蔻洛',level=6,hp=53, att_R=123})
-		table.insert(harem.heros,{id=1008,name='柯纳罕',level=7,hp=13, att_R=123})
-		table.insert(harem.heros,{id=1009,name='帕拉斯',level=8,hp=37, att_R=123})
-		table.insert(harem.heros,{id=1010,name='亚述',level=9,hp=23, att_R=123})
-		table.insert(harem.heros,{id=1013,name='珂赛特',level=10,hp=44, att_R=123})
-		table.insert(harem.heros,{id=1014,name='艾妮',level=11,hp=123, att_R=123})
-		table.insert(harem.heros,{id=1015,name='嘉比儿',level=12,hp=25, att_R=123})
-		table.insert(harem.heros,{id=1016,name='诗蒂雅',level=13,hp=53, att_R=123})
-		table.insert(harem.heros,{id=1017,name='凛',level=14,hp=56, att_R=123})
-		table.insert(harem.heros,{id=1031,name='米可',level=15,hp=86, att_R=123})
-		table.insert(harem.heros,{id=1032,name='艾娜斯',level=16,hp=838, att_R=123})
-		table.insert(harem.heros,{id=1034,name='帕尔希',level=17,hp=929, att_R=123})
-		table.insert(harem.heros,{id=1036,name='薇莉雅',level=18,hp=63, att_R=123})
-		table.insert(harem.heros,{id=1038,name='狄丽尔',level=19,hp=85, att_R=123})
-		table.insert(harem.heros,{id=1039,name='戈林尔',level=21,hp=23, att_R=123})
-		table.insert(harem.heros,{id=1040,name='妮姆妮姆',level=22,hp=34, att_R=123})
-		table.insert(harem.heros,{id=1041,name='毕库理',level=23,hp=345, att_R=123})
-		table.insert(harem.heros,{id=1042,name='嘉尔姆',level=24,hp=647, att_R=123})
-		table.insert(harem.heros,{id=1043,name='艾尔萨雷雅',level=25,hp=78, att_R=123})
-		table.insert(harem.heros,{id=1044,name='嘉格丽',level=26,hp=34, att_R=123})
-		table.insert(harem.heros,{id=1045,name='莉莉丝',level=27,hp=67, att_R=123})
-		table.insert(harem.heros,{id=1046,name='贝露丹',level=28,hp=236, att_R=123})
-		table.insert(harem.heros,{id=1047,name='库玛',level=29,hp=72, att_R=123})
-		table.insert(harem.heros,{id=1049,name='美杜莎',level=30,hp=83, att_R=123})
-		table.insert(harem.heros,{id=1051,name='早苗',level=31,hp=23, att_R=123})
-		table.insert(harem.heros,{id=1006,name='涅涅',level=32,hp=56, att_R=123})
-		table.insert(harem.heros,{id=1012,name='西比尔',level=33,hp=82, att_R=123})
-		table.insert(harem.heros,{id=1018,name='理莎',level=34,hp=35, att_R=123})
-		table.insert(harem.heros,{id=1019,name='木木',level=35,hp=93, att_R=123})
-		table.insert(harem.heros,{id=1020,name='圣洛玛',level=36,hp=858, att_R=123})
-		table.insert(harem.heros,{id=1021,name='阿格莱亚',level=37,hp=120, att_R=123})
-		table.insert(harem.heros,{id=1022,name='旦卫莉',level=38,hp=23, att_R=123})
-		table.insert(harem.heros,{id=1024,name='乌托',level=39,hp=73, att_R=123})
-		table.insert(harem.heros,{id=1025,name='安娜',level=40,hp=52, att_R=123})
-		table.insert(harem.heros,{id=1026,name='洛伊',level=41,hp=53, att_R=123})
-		table.insert(harem.heros,{id=1027,name='爱瑟',level=42,hp=81, att_R=123})
-		table.insert(harem.heros,{id=1028,name='妖奇',level=43,hp=57, att_R=123})
-		table.insert(harem.heros,{id=1029,name='塞莉亚',level=44,hp=48, att_R=123})
-		table.insert(harem.heros,{id=1030,name='风名铃',level=45,hp=49, att_R=123})
-		table.insert(harem.heros,{id=1033,name='贝雅儿',level=46,hp=28, att_R=123})
-		table.insert(harem.heros,{id=1035,name='希德',level=47,hp=125, att_R=123})
-		table.insert(harem.heros,{id=1037,name='夏柏',level=48,hp=171, att_R=123})
-		table.insert(harem.heros,{id=1048,name='蜂人',level=49,hp=19, att_R=123})
-		table.insert(harem.heros,{id=1050,name='真夏',level=50,hp=56, att_R=123})
+		table.insert(harem.heros,{id=1001,level=1,speed=1.2,att_R=50,dis_lv=1,skill_lv={1,1,1,1},star_lv=1})
+		table.insert(harem.heros,{id=1002,level=10,speed=1.2,att_R=50,dis_lv=1,skill_lv={10,10,10,10},star_lv=2})
+		table.insert(harem.heros,{id=1036,level=10,speed=1.2,att_R=50,dis_lv=1,skill_lv={10,10,10,10},star_lv=2})
+		table.insert(harem.heros,{id=1050,level=15,speed=1.2,att_R=50,dis_lv=1,skill_lv={20,20,20,20},star_lv=3})
+		table.insert(harem.heros,{id=1049,level=15,speed=1.2,att_R=50,dis_lv=1,skill_lv={20,20,20,20},star_lv=3})
+		table.insert(harem.heros,{id=1051,level=20,speed=1.2,att_R=50,dis_lv=1,skill_lv={30,30,30,30},star_lv=4})
+		
 		me.harem = harem
 		
 
 		me.formations = {}
-		table.insert(me.formations,{ heroIDs={1001,1002,1003,1004,1005},runeIDs={1,2,3} })
-		table.insert(me.formations,{ heroIDs={1010,1016,1014,1031,1032},runeIDs={1,2,3} })
-		table.insert(me.formations,{ heroIDs={1040,1043,1013,1005,1017},runeIDs={1,2,3} })
-		table.insert(me.formations,{ heroIDs={1044,1047,1049,1051,1006},runeIDs={1,2,3} })
-		table.insert(me.formations,{ heroIDs={1017,1031,1039,1051,1010},runeIDs={1,2,3} })
+		table.insert(me.formations,{ heroIDs={1001,1002,1036,1050,1049},runeIDs={1,2,3} })
+		table.insert(me.formations,{ heroIDs={1002,1036,1050,1049,1051},runeIDs={1,2,3} })
+		
 
 		-- ======== 初始化玩家数据结束 ========
 		
