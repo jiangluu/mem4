@@ -5,8 +5,7 @@ function onMsg(me,merge)
 	print('msg 23_99')
 	
 		
-		--local bin = pb.encode('A2Data.User',me)
-		local bin = string.rep('abcd',75)
+		local bin = pb.encode('A2Data.User',me)
 		
 		for i=1,12 do
 			lcf.cur_write_stream_cleanup()
