@@ -21,7 +21,8 @@ pb.encode = o.encode
 
 function pb.decode(typr,aa)
 	local not_a_real_table = o.decode(typr,aa)
-	return o.extract(not_a_real_table)
+	o.extract(not_a_real_table)
+	return not_a_real_table
 end
 
 
