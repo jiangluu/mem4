@@ -6,11 +6,10 @@ message User {
 	message Hero {
 		optional int32 	id		= 1;
 		optional int32 	level	= 2;
-		optional float 	speed   = 3;
-		optional float 	att_R   = 4;
-		optional int32  dis_lv  = 5; 
-		repeated int32  skill_lv = 6;
-		optional int32  star_lv = 7;
+		optional int32  dis_lv  = 3; 
+		repeated int32  skill_lv = 4;
+		optional int32  star_lv = 5;
+		optional int32  skillLv =6;
 		
 	}
 
