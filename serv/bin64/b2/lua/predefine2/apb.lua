@@ -1,11 +1,10 @@
 
 local o = require('protobuf')
 
-pb = o
+pb = {}
 
 
 local filename = 'proto/user.pb'
-local filename2 = 'proto/msg_body.pb'
 
 
 --[[
@@ -17,13 +16,21 @@ pb.decode()
 pb.register_file()
 --]]
 
-function o.init()
-	-- 注册proto
-	o.register_file(filename)
-	o.register_file(filename2)
+pb.register_file = o.register_file
+pb.encode = o.encode
+
+function pb.decode(typr,aa)
+	local not_a_real_table = o.decode(typr,aa)
+	return o.extract(not_a_real_table)
 end
 
-function o.test()
+
+function pb.init()
+	-- 注册proto
+	o.register_file(filename)
+end
+
+function pb.test()
 	-- 注册proto
 	o.register_file(filename)
 	
@@ -64,4 +71,4 @@ function o.test()
 end
 
 
-o.init()
+pb.init()
