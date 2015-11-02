@@ -45,12 +45,12 @@ function onMsg(me)
 		me.items = bag
 		
 		local harem = { heros={} }
-		table.insert(harem.heros,{id=1001,level=1,speed=1.2,att_R=50,dis_lv=1,skill_lv={1,1,1,1},star_lv=1})
-		table.insert(harem.heros,{id=1002,level=10,speed=1.2,att_R=50,dis_lv=1,skill_lv={10,10,10,10},star_lv=2})
-		table.insert(harem.heros,{id=1036,level=10,speed=1.2,att_R=50,dis_lv=1,skill_lv={10,10,10,10},star_lv=2})
-		table.insert(harem.heros,{id=1050,level=15,speed=1.2,att_R=50,dis_lv=1,skill_lv={20,20,20,20},star_lv=3})
-		table.insert(harem.heros,{id=1049,level=15,speed=1.2,att_R=50,dis_lv=1,skill_lv={20,20,20,20},star_lv=3})
-		table.insert(harem.heros,{id=1051,level=20,speed=1.2,att_R=50,dis_lv=1,skill_lv={30,30,30,30},star_lv=4})
+		table.insert(harem.heros,{id=1001,level=1,speed=1.2,att_R=50,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,skillLv=1})
+		table.insert(harem.heros,{id=1002,level=10,speed=1.2,att_R=50,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,skillLv=1})
+		table.insert(harem.heros,{id=1036,level=10,speed=1.2,att_R=50,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,skillLv=1})
+		table.insert(harem.heros,{id=1050,level=15,speed=1.2,att_R=50,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,skillLv=1})
+		table.insert(harem.heros,{id=1049,level=15,speed=1.2,att_R=50,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,skillLv=1})
+		table.insert(harem.heros,{id=1051,level=20,speed=1.2,att_R=50,dis_lv=1,skill_lv={30,30,30,30},star_lv=4,skillLv=1})
 		
 		me.harem = harem
 		
