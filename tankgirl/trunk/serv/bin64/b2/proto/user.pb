@@ -1,7 +1,7 @@
 
-Õ
+æ
 
-User.protoA2Data"´
+User.protoA2Data"Å
 User
 userId (	
 displayName (	
@@ -16,7 +16,7 @@ User.protoA2Data"´
  (2.A2Data.User.Harem 
 items (2.A2Data.User.Item*
 
-formations (2.A2Data.User.Formationa
+formations (2.A2Data.User.Formationr
 Hero
 
 id (
@@ -24,7 +24,8 @@ formations (2.A2Data.User.Formationa
 speed (
 att_R (
 dis_lv (
-skill_lv (!
+skill_lv (
+star_lv (!
 Rune
 
 id (

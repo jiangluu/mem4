@@ -10,6 +10,7 @@ message User {
 		optional float 	att_R   = 4;
 		optional int32  dis_lv  = 5; 
 		repeated int32  skill_lv = 6;
+		optional int32  star_lv = 7;
 		
 	}
 
