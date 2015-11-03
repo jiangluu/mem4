@@ -11,8 +11,8 @@ function onMsg(me,merge)
 		assert(forma)
 		
 		print('========')
-		for i=1,#forma.heros do
-			print(forma.heros[i].di)
+		for i=1,#forma.heroIDs do
+			print(forma.heroIDs[i])
 		end
 		print('========')
 		
