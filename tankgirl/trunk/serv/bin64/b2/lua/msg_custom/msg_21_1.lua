@@ -4,7 +4,7 @@ local lcf = ffi.C
 function onMsg(me,merge)
 	print('msg 21_1')
 	
-		local formation_id = lcf.cur_stream_get_int16()
+		local formation_id = lcf.cur_stream_get_int16() + 1
 		local bin = l_cur_stream_get_slice()
 		
 		local forma = pb.decode('A2Data.User.Formation',bin)
