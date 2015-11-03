@@ -10,16 +10,15 @@ function onMsg(me,merge)
 		local forma = pb.decode('A2Data.User.Formation',bin)
 		assert(forma)
 		
-		print('========')
+		me.formations = me.formations or {}
+		
+		local forma_id = math.min(formation_id,#me.formations+1)
+		
+		print('========',formation_id,forma_id)
 		for i=1,#forma.heroIDs do
 			print(forma.heroIDs[i])
 		end
 		print('========')
-		
-		
-		me.formations = me.formations or {}
-		
-		local forma_id = math.min(formation_id,#me.formations+1)
 		
 		
 		me.formations[forma_id] = forma
