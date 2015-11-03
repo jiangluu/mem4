@@ -14,12 +14,6 @@ function onMsg(me,merge)
 		
 		local forma_id = math.min(formation_id,#me.formations+1)
 		
-		print('======== before')
-		local ff = me.formations[forma_id]
-		for i=1,#ff.heroIDs do
-			print(ff.heroIDs[i])
-		end
-		
 		print('========',formation_id,forma_id)
 		for i=1,#forma.heroIDs do
 			print(forma.heroIDs[i])
