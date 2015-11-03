@@ -13,6 +13,9 @@ function onMsg(me,merge_meta,merge)
 			-- lcf.cur_stream_write_back()
 		-- end
 		
+		local forma = { idx=2,heroIDs={1002,1036,1050,1049,1051},runeIDs={1,2,3} }
+		table.insert(merge_meta,'User.Formation')
+		table.insert(merge,forma)
 	
 	return 0
 end
