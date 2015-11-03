@@ -16,17 +16,26 @@ local function gen_first_tier_common_handle(ud)
 		local err_msg = 'second_tier handle NOT found'
 
 		if hd_second_tier then
+			local merge_meta = {}
 			local for_merge = {}
-			local ok,ret = pcall(hd_second_tier,me,for_merge)
+			local ok,ret = pcall(hd_second_tier,me,merge_meta,for_merge)
 			if ok then
 				if 0==ret then
 					-- logic suc, push merge data
-					local bin = pb.encode('A2Data.User',for_merge)
-
-					lcf.cur_write_stream_cleanup()
-					lcf.cur_stream_push_int32(c_frame_no)
-					lcf.cur_stream_push_string(bin,#bin)
-					lcf.cur_stream_write_back2(4)
+					for j=1,#merge_meta do
+						local t = rawget(for_merge,j)
+						if nil==t then
+							break
+						end
+						
+						local ok,bin = pcall(pb.encode, 'A2Data.' .. merge_meta[j],t)
+						if ok then
+							lcf.cur_write_stream_cleanup()
+							lcf.cur_stream_push_int32(c_frame_no)
+							lcf.cur_stream_push_string(bin,#bin)
+							lcf.cur_stream_write_back2(4)
+						end
+					end
 				end
 
 				lcf.cur_write_stream_cleanup()

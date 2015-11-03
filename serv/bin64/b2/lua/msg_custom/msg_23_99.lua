@@ -1,7 +1,7 @@
 
 local lcf = ffi.C
 
-function onMsg(me,merge)
+function onMsg(me,merge_meta,merge)
 	print('msg 23_99')
 	
 		
@@ -13,8 +13,6 @@ function onMsg(me,merge)
 			-- lcf.cur_stream_write_back()
 		-- end
 		
-		me.coin = me.coin + 1
-		merge.coin = me.coin
 	
 	return 0
 end
