@@ -23,7 +23,9 @@ function onMsg(me,merge)
 		
 		me.formations[forma_id] = forma
 		
-		merge.formations = me.formations
+		--merge.formations = me.formations
+		merge.formations = {}
+		merge.formations[2] = forma
 	
 	return 0
 end
