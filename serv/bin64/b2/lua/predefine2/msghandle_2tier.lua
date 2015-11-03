@@ -27,11 +27,13 @@ local function gen_first_tier_common_handle(ud)
 						if nil==t then
 							break
 						end
-						
-						local ok,bin = pcall(pb.encode, 'A2Data.' .. merge_meta[j],t)
+
+						local typr = merge_meta[j]
+						local ok,bin = pcall(pb.encode, 'A2Data.' .. typr,t)
 						if ok then
 							lcf.cur_write_stream_cleanup()
 							lcf.cur_stream_push_int32(c_frame_no)
+							lcf.cur_stream_push_string(typr,#typr)
 							lcf.cur_stream_push_string(bin,#bin)
 							lcf.cur_stream_write_back2(4)
 						end
