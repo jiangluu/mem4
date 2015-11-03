@@ -1,7 +1,7 @@
 
-Ù
+È
 
-User.protoA2Data"¸
+User.protoA2Data"§
 User
 userId (	
 displayName (	
@@ -12,8 +12,8 @@ User.protoA2Data"¸
 coin (
 diamond (
 	attribute	 (!
-harem
- (2.A2Data.User.Harem 
+heroes
+ (2.A2Data.User.Hero 
 items (2.A2Data.User.Item*
 
 formations (2.A2Data.User.Formatione
@@ -32,13 +32,13 @@ formations (2.A2Data.User.Formatione
 Skill
 
 id (
-level ()
-Harem 
-heros (2.A2Data.User.Hero#
-Item
+level (0
+Item
+inx (
 itemID (
-num (-
-	Formation
+num (:
+	Formation
+inx (
 heroIDs (
 runeIDs (B
 A2Data

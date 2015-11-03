@@ -23,16 +23,14 @@ message User {
 		optional int32 level	= 2;
 	}
 
-	message Harem {
-		repeated Hero heros		= 1;
-	}
-
 	message Item {
+		optional uint32 inx		= 3;
 		optional int32 itemID	= 1;
 		optional int32 num		= 2;
 	}
 
 	message Formation {
+		optional uint32 inx		= 3;
 		repeated int32 heroIDs	= 1;
 		repeated int32 runeIDs  = 2;
 	}
@@ -46,7 +44,7 @@ message User {
 	optional int32 coin			= 7;
 	optional int32 diamond		= 8;
 	optional int32 attribute	= 9;
-	optional Harem harem		= 10;
+	repeated Hero heroes		= 10;
 	repeated Item items			= 11;
 	repeated Formation formations =12;
 	
