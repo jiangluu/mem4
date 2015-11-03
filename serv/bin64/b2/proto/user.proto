@@ -24,13 +24,13 @@ message User {
 	}
 
 	message Item {
-		optional uint32 inx		= 3;
+		optional uint32 idx		= 3;
 		optional int32 itemID	= 1;
 		optional int32 num		= 2;
 	}
 
 	message Formation {
-		optional uint32 inx		= 3;
+		optional uint32 idx		= 3;
 		repeated int32 heroIDs	= 1;
 		repeated int32 runeIDs  = 2;
 	}

@@ -34,11 +34,11 @@ formations (2.A2Data.User.Formatione
 id (
 level (0
 Item
-inx (
+idx (
 itemID (
 num (:
 	Formation
-inx (
+idx (
 heroIDs (
 runeIDs (B
 A2Data
