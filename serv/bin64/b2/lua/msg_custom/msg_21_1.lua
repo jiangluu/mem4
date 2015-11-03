@@ -7,6 +7,14 @@ function onMsg(me,merge)
 		local formation_id = lcf.cur_stream_get_int16()
 		local bin = l_cur_stream_get_slice()
 		
+		print('======== before')
+		local ff = me.formations[1]
+		for i=1,#ff.heroIDs do
+			print(ff.heroIDs[i])
+		end
+		print('========')
+		
+		
 		local forma = pb.decode('A2Data.User.Formation',bin)
 		assert(forma)
 		
