@@ -4,6 +4,10 @@ local lcf = ffi.C
 local hd4 = {}
 
 
+local typr_2_int = {}
+typr_2_int['User'] = 1
+typr_2_int['User.Formation'] = 2
+
 local function gen_first_tier_common_handle(ud)
 	local function first_tier_common_handle(me)
 		local c_frame_no = lcf.cur_stream_get_int32()
@@ -28,12 +32,16 @@ local function gen_first_tier_common_handle(ud)
 							break
 						end
 
-						local typr = merge_meta[j]
-						local ok,bin = pcall(pb.encode, 'A2Data.' .. typr,t)
+						local typr = typr_2_int[merge_meta[j]]
+						if nil==typr then
+							break
+						end
+						
+						local ok,bin = pcall(pb.encode, 'A2Data.' .. merge_meta[j], t)
 						if ok then
 							lcf.cur_write_stream_cleanup()
 							lcf.cur_stream_push_int32(c_frame_no)
-							lcf.cur_stream_push_string(typr,#typr)
+							lcf.cur_stream_push_int16(typr)
 							lcf.cur_stream_push_string(bin,#bin)
 							lcf.cur_stream_write_back2(4)
 						end
