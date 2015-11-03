@@ -8,7 +8,7 @@ function onMsg(me)
 	
 	if me.userId then
 		print('======== 1001')
-		local forma = me.formations[1]
+		local forma = me.formations[0]
 		for i=1,#forma.heroIDs do
 			print(forma.heroIDs[i])
 		end

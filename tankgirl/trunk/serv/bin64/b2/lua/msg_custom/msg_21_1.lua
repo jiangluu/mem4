@@ -7,20 +7,18 @@ function onMsg(me,merge)
 		local formation_id = lcf.cur_stream_get_int16()
 		local bin = l_cur_stream_get_slice()
 		
-		print('======== before')
-		local ff = me.formations[1]
-		for i=1,#ff.heroIDs do
-			print(ff.heroIDs[i])
-		end
-		print('========')
-		
-		
 		local forma = pb.decode('A2Data.User.Formation',bin)
 		assert(forma)
 		
 		me.formations = me.formations or {}
 		
 		local forma_id = math.min(formation_id,#me.formations+1)
+		
+		print('======== before')
+		local ff = me.formations[forma_id]
+		for i=1,#ff.heroIDs do
+			print(ff.heroIDs[i])
+		end
 		
 		print('========',formation_id,forma_id)
 		for i=1,#forma.heroIDs do
