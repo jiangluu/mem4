@@ -1,7 +1,7 @@
 
 local lcf = ffi.C
 
-function onMsg(me,merge)
+function onMsg(me,merge_meta,merge)
 	print('msg 21_1')
 	
 		local formation_id = lcf.cur_stream_get_int16() + 1
@@ -13,6 +13,7 @@ function onMsg(me,merge)
 		me.formations = me.formations or {}
 		
 		local forma_id = math.min(formation_id,#me.formations+1)
+		forma.idx = forma_id
 		
 		print('========',formation_id,forma_id)
 		for i=1,#forma.heroIDs do
@@ -24,8 +25,8 @@ function onMsg(me,merge)
 		me.formations[forma_id] = forma
 		
 		--merge.formations = me.formations
-		merge.formations = {}
-		merge.formations[2] = forma
+		table.insert(merge_meta,'User.Formation')
+		table.insert(merge,forma)
 	
 	return 0
 end
