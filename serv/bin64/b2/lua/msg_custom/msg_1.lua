@@ -36,28 +36,26 @@ function onMsg(me)
 		me.energy = 999
 		
 		local bag = {}
-		table.insert(bag,{ itemID=10001 ,num=1000 })
-		table.insert(bag,{ itemID=10002 ,num=5000 })
-		table.insert(bag,{ itemID=10003 ,num=50 })
-		table.insert(bag,{ itemID=10004 ,num=5 })
-		table.insert(bag,{ itemID=10011 ,num=10 })
+		table.insert(bag,{ itemID=10001 ,num=1000 ,idx=1})
+		table.insert(bag,{ itemID=10002 ,num=5000 ,idx=2})
+		table.insert(bag,{ itemID=10003 ,num=50 ,idx=3})
+		table.insert(bag,{ itemID=10004 ,num=5 ,idx=4})
+		table.insert(bag,{ itemID=10011 ,num=10 ,idx=5})
 		
 		me.items = bag
 		
-		local harem = { heros={} }
-		table.insert(harem.heros,{id=1001,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,skillLv=1})
-		table.insert(harem.heros,{id=1002,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,skillLv=1})
-		table.insert(harem.heros,{id=1036,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,skillLv=1})
-		table.insert(harem.heros,{id=1050,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,skillLv=1})
-		table.insert(harem.heros,{id=1049,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,skillLv=1})
-		table.insert(harem.heros,{id=1051,level=20,dis_lv=1,skill_lv={30,30,30,30},star_lv=4,skillLv=1})
-		
-		me.harem = harem
+		me.heroes = {}
+		table.insert(me.heroes,{id=1001,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,skillLv=1})
+		table.insert(me.heroes,{id=1002,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,skillLv=1})
+		table.insert(me.heroes,{id=1036,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,skillLv=1})
+		table.insert(me.heroes,{id=1050,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,skillLv=1})
+		table.insert(me.heroes,{id=1049,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,skillLv=1})
+		table.insert(me.heroes,{id=1051,level=20,dis_lv=1,skill_lv={30,30,30,30},star_lv=4,skillLv=1})
 		
 
 		me.formations = {}
-		table.insert(me.formations,{ heroIDs={1001,1002,1036,1050,1049},runeIDs={1,2,3} })
-		table.insert(me.formations,{ heroIDs={1002,1036,1050,1049,1051},runeIDs={1,2,3} })
+		table.insert(me.formations,{ idx=1,heroIDs={1001,1002,1036,1050,1049},runeIDs={1,2,3} })
+		table.insert(me.formations,{ idx=2,heroIDs={1002,1036,1050,1049,1051},runeIDs={1,2,3} })
 		
 
 		-- ======== 初始化玩家数据结束 ========
