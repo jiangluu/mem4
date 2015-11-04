@@ -24,15 +24,17 @@ message User {
 	}
 
 	message Item {
-		optional uint32 idx		= 3;
+		optional int32 idx		= 3;
 		optional int32 itemID	= 1;
 		optional int32 num		= 2;
+		optional int32 op 		= 4;
 	}
 
 	message Formation {
-		optional uint32 idx		= 3;
+		optional int32 idx		= 3;
 		repeated int32 heroIDs	= 1;
 		repeated int32 runeIDs  = 2;
+		optional int32 op 		= 4;
 	}
 
 	optional string userId		= 1;
@@ -47,5 +49,6 @@ message User {
 	repeated Hero heroes		= 10;
 	repeated Item items			= 11;
 	repeated Formation formations =12;
+	optional fixed32 last_summmon_time1	=13;
 	
 }

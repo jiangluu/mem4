@@ -1,7 +1,7 @@
 
-È
+ü
 
-User.protoA2Data"§
+User.protoA2Data"Û
 User
 userId (	
 displayName (	
@@ -16,7 +16,8 @@ User.protoA2Data"§
  (2.A2Data.User.Hero 
 items (2.A2Data.User.Item*
 
-formations (2.A2Data.User.Formatione
+formations (2.A2Data.User.Formation
+last_summmon_time1 (e
 Hero
 
 id (
@@ -32,13 +33,17 @@ formations (2.A2Data.User.Formatione
 Skill
 
 id (
-level (0
+level (<
 Item
-idx (
+idx (
 itemID (
-num (:
+num (
+
+op (F
 	Formation
-idx (
+idx (
 heroIDs (
-runeIDs (B
+runeIDs (
+
+op (B
 A2Data
