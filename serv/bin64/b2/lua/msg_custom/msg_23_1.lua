@@ -9,7 +9,8 @@ function onMsg(me,merge_meta,merge)
 	if 1==summon_typr then
 		local item = {itemID=15001,num=10}
 		
-		me.last_summmon_time1 = tonumber(lcf.cur_game_time()) + 900
+		me.last_summmon_time1 = lcf.cur_game_time() + 900
+		me.summon_times1 = (me.summon_times1 or 0) + 1
 		
 		table.insert(me.items,item)
 		
