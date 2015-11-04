@@ -49,6 +49,9 @@ message User {
 	repeated Hero heroes		= 10;
 	repeated Item items			= 11;
 	repeated Formation formations =12;
-	optional fixed32 last_summmon_time1	=13;
+	optional int32 last_summmon_time1	=13;
+	optional int32 summon_times1		=14;
+	optional int32 summon_times2		=15;
+	optional int32 summon_times3		=16;
 	
 }
