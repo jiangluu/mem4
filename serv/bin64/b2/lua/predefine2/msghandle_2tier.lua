@@ -24,7 +24,7 @@ local function gen_first_tier_common_handle(ud)
 		if hd_second_tier then
 			local merge_meta = {}
 			local for_merge = {}
-			local ok,ret1,r2,r3,r4 = pcall(hd_second_tier,me,merge_meta,for_merge)
+			local ok,ret,r2,r3,r4 = pcall(hd_second_tier,me,merge_meta,for_merge)
 			if ok then
 				if 0==ret then
 					-- logic suc, push merge data
