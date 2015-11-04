@@ -1,6 +1,9 @@
 
 local lcf = ffi.C
 
+local cur_init_version = 10
+
+
 function onMsg(me)
 	print('MSG 1 recv')
 	
@@ -26,6 +29,8 @@ function onMsg(me)
 		redis.set(0,db_key, 'u'..sn)
 		
 		me.userId = 'u'..sn
+		me.create_time = lcf.cur_game_time()
+		me.versions = { cur_init_version }
 		
 		-- ========  初始化玩家数据开始 ========
 		me.displayName = 'guest'..sn
