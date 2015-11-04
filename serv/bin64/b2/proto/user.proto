@@ -53,5 +53,7 @@ message User {
 	optional int32 summon_times1		=14;
 	optional int32 summon_times2		=15;
 	optional int32 summon_times3		=16;
+	repeated int32 versions		=17;
+	optional int32 create_time	=18;
 	
 }
