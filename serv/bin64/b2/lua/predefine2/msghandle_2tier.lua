@@ -7,6 +7,8 @@ local hd4 = {}
 local typr_2_int = {}
 typr_2_int['User'] = 1
 typr_2_int['User.Formation'] = 2
+typr_2_int['User.Hero'] = 3
+typr_2_int['User.Item'] = 4
 
 local function gen_first_tier_common_handle(ud)
 	local function first_tier_common_handle(me)
@@ -22,7 +24,7 @@ local function gen_first_tier_common_handle(ud)
 		if hd_second_tier then
 			local merge_meta = {}
 			local for_merge = {}
-			local ok,ret = pcall(hd_second_tier,me,merge_meta,for_merge)
+			local ok,ret1,r2,r3,r4 = pcall(hd_second_tier,me,merge_meta,for_merge)
 			if ok then
 				if 0==ret then
 					-- logic suc, push merge data
@@ -51,6 +53,15 @@ local function gen_first_tier_common_handle(ud)
 				lcf.cur_write_stream_cleanup()
 				lcf.cur_stream_push_int32(c_frame_no)
 				lcf.cur_stream_push_int16(ret)
+				if nil~=r2 then
+					lcf.cur_stream_push_int32(r2)
+				end
+				if nil~=r3 then
+					lcf.cur_stream_push_int32(r3)
+				end
+				if nil~=r4 then
+					lcf.cur_stream_push_int32(r4)
+				end
 				lcf.cur_stream_write_back()
 				
 				return ret
