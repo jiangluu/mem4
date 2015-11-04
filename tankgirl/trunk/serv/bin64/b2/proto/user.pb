@@ -1,7 +1,7 @@
 
-Á
+è
 
-User.protoA2Data" 
+User.protoA2Data"Ç
 User
 userId (	
 displayName (	
@@ -20,7 +20,9 @@ formations (2.A2Data.User.Formation
 last_summmon_time1 (
 summon_times1 (
 summon_times2 (
-summon_times3 (e
+summon_times3 (
+versions (
+create_time (e
 Hero
 
 id (
