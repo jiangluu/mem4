@@ -9,8 +9,8 @@ message User {
 		optional int32  dis_lv  = 3; 
 		repeated int32  skill_lv = 4;
 		optional int32  star_lv = 5;
-		optional int32  skillLv = 6;
-		optional int32  exp     = 7;
+		optional int32  exp     = 6;
+		
 		
 	}
 

@@ -1,7 +1,7 @@
 
-õ
+ä
 
-User.protoA2Data"Ô
+User.protoA2Data"Ã
 User
 userId (	
 displayName (	
@@ -22,16 +22,15 @@ formations (2.A2Data.User.Formation
 summon_times2 (
 summon_times3 (
 versions (
-create_time (r
+create_time (a
 Hero
 
 id (
 level (
 dis_lv (
 skill_lv (
-star_lv (
-skillLv (
-exp (!
+star_lv (
+exp (!
 Rune
 
 id (
