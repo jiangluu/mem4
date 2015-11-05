@@ -26,12 +26,12 @@ local function init_player_data(me)
 		me.items = bag
 		
 		me.heroes = {}
-		table.insert(me.heroes,{id=1001,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,skillLv=1})
-		table.insert(me.heroes,{id=1002,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,skillLv=1})
-		table.insert(me.heroes,{id=1036,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,skillLv=1})
-		table.insert(me.heroes,{id=1050,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,skillLv=1})
-		table.insert(me.heroes,{id=1049,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,skillLv=1})
-		table.insert(me.heroes,{id=1051,level=20,dis_lv=1,skill_lv={30,30,30,30},star_lv=4,skillLv=1})
+		table.insert(me.heroes,{id=1001,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1})
+		table.insert(me.heroes,{id=1002,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2})
+		table.insert(me.heroes,{id=1036,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2})
+		table.insert(me.heroes,{id=1050,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3})
+		table.insert(me.heroes,{id=1049,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3})
+		table.insert(me.heroes,{id=1051,level=20,dis_lv=1,skill_lv={30,30,30,30},star_lv=4})
 		
 
 		me.formations = {}
