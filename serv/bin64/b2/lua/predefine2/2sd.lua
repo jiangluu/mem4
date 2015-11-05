@@ -10,6 +10,7 @@ sd = data		-- sd means static data
 local protofiles = {
 	'proto/P01_base.pb',
 	'proto/P02_unit.pb',
+	'proto/P03_item.pb',
 	'proto/P05_discipline.pb',
 }
 
@@ -20,6 +21,10 @@ local metas = {
 	p02_unit = {typr='com.artme.data.UnitSheet'},
 	p02_unit_evo = {typr='com.artme.data.UEvoSheet',key='star_lv'},
 	p02_unit_lv = {typr='com.artme.data.ULvSheet',key='lv'},
+	p03_item = { typr='com.artme.data.ItemSheet',key='unitId' }
+	p03_group = { typr='com.artme.data.GroupSheet',key='groupId' }
+	p03_group_content = { typr='com.artme.data.GContentSheet',key='groupId' }
+	--p03_item_bag = { typr='com.artme.data.BagSheet',key='bagId' }
 	p05_dis_item = {typr='com.artme.data.DisItemSheet',key='item_id'},
 	p05_dis_lv = {typr='com.artme.data.DisLvSheet',key='dis_lv'},
 	p05_dis_play = {typr='com.artme.data.DisPlaySheet'},
@@ -44,7 +49,7 @@ function o.init()
 		-- local meta = {typr='com.artme.data.UnitSheet'}
 		-- o.read_a_dat('p02_unit.dat',meta)
 		for k,v in pairs(metas) do
-			local filename = g_data_dir..k..'.dat'
+			local filename = g_data_dir..k..'.bytes'
 			local ok,msg = pcall(o.read_a_dat,filename,v)
 			if not ok then
 				print('read sd error!',k)
