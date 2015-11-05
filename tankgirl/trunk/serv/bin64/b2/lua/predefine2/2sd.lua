@@ -28,7 +28,7 @@ local metas = {
 	p05_dis_item = {typr='com.artme.data.DisItemSheet',key='item_id'},
 	p05_dis_lv = {typr='com.artme.data.DisLvSheet',key='dis_lv'},
 	p05_dis_play = {typr='com.artme.data.DisPlaySheet'},
-	p05_dis_script = {typr='com.artme.data.DisScriptSheet'},
+	--p05_dis_script = {typr='com.artme.data.DisScriptSheet'},
 	p05_dis_support = {typr='com.artme.data.DisSupportSheet',key='item_id'},
 	p05_dis_type = {typr='com.artme.data.DisTypeSheet',key='dis_type'},
 }
