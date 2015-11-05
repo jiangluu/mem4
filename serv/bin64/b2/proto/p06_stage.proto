@@ -1,0 +1,98 @@
+package com.artme.data;
+
+option java_package = "com.artme.data";
+option java_outer_classname = "P06Stage";
+
+
+message Chapter {
+
+  required int32    stageId        = 1;   // 关卡
+  required int32    chapterId      = 2;   // 属于章节
+  required string   chapterName    = 3;   // 章节名称
+  required string   stageName      = 4;   // 关卡名称
+  required string   stageDes       = 5;   // 关卡描述
+  required int32    limitlv        = 6;   //开启等级
+  required int32    forwardstage   = 7;   //前置关卡
+  required int32    hidestage      = 8;   //是否隐藏
+  required int32    hidestars      = 9;   //隐藏关卡开启星数
+
+ 
+}
+
+message ChapterSheet {
+  repeated Chapter value = 1;
+}
+
+message Stage {
+  required int32    NPCId          = 1;   // NPC配置
+  required int32    diff           = 2;   // 难度
+  required int32    stageId        = 3;   // 属于关卡
+  required int32    condition      = 4;   // 达成条件
+  required int32    para           = 5;   // 条件参数
+  required string   des            = 6;   // 条件描述
+  required int32    expDevil       = 7;   // 魔王经验
+  required int32    gold           = 8;   // 关卡金币
+  required int32    expHero        = 9;   // 魔娘经验
+  required int32    discount_fail  = 10;  // 战斗失败折算
+  required int32    item1          = 11;  // 掉落物品1
+  required int32    prob1          = 12;  // 掉落概率1
+  required int32    item2          = 13;  // 掉落物品2
+  required int32    prob2          = 14;  // 掉落概率2
+  required int32    item3          = 15;  // 掉落物品3
+  required int32    prob3          = 16;  // 掉落概率3
+  required int32    item4          = 17;  // 掉落物品4
+  required int32    prob4          = 18;  // 掉落概率4
+  required int32    item5          = 19;  // 掉落物品5
+  required int32    prob5          = 20;  // 掉落概率5
+  required int32    captureId      = 21;  // Boss魔娘(可捕捉)
+  required int32    special_item   = 22;  // Boss魔娘掉落
+}
+
+message StageSheet {
+  repeated Stage value = 1;
+}
+
+message Npc {
+  required int32    NPCId          = 1;   // 对应NPCId
+  required int32    wave           = 2;   // 所属波次
+  required float    team           = 3;   // 队伍
+  required int32    startPoint     = 4;   //出生点
+  required int32    unitId1        = 5;   //单位ID1
+  required int32    unitNum1       = 6;   // 数量1
+  required int32    birthInterval1 = 7;   // 出生间隔1
+  required int32    unitLv1        = 8;   // 等级1
+  required int32    hp_add1        = 9;  // 生命加成1
+  required int32    atk_add1       = 10;  // 攻击加成1
+  required int32    def_add1       = 11;  // 防御加成1
+  required int32    skill_1st1     = 12;  // 技能1等级1
+  required int32    skill_2nd1     = 13;  // 技能2等级1
+  required int32    skill_3rd1     = 14;  // 技能3等级1
+  required int32    skill_4th1     = 15;  // 技能4等级1
+  required int32    unitId2        = 16;  // 单位ID2
+  required int32    unitNum2       = 17;  // 数量2
+  required int32    birthInterval2 = 18;  // 出生间隔2
+  required int32    unitLv2        = 19;  // 等级2
+  required int32    hp_add2        = 20;  // 生命加成2
+  required int32    atk_add2       = 21;  // 攻击加成2
+  required int32    def_add2       = 22;  // 防御加成2
+  required int32    skill_1st2     = 23;  // 技能1等级2
+  required int32    skill_2nd2     = 24;  // 技能2等级2
+  required int32    skill_3rd2     = 25;  // 技能3等级2
+  required int32    skill_4th2     = 26;  // 技能4等级2
+  required int32    unitId3        = 27;  // 单位ID3
+  required int32    unitNum3       = 28;  // 数量3
+  required int32    birthInterval3 = 29;  // 出生间隔3
+  required int32    unitLv3        = 30;  // 等级3
+  required int32    hp_add3        = 31;  // 生命加成3
+  required int32    atk_add3       = 32;  // 攻击加成3
+  required int32    def_add3       = 33;  // 防御加成3
+  required int32    skill_1st3     = 34;  // 技能1等级3
+  required int32    skill_2nd3     = 35;  // 技能2等级3
+  required int32    skill_3rd3     = 36;  // 技能3等级3
+  required int32    skill_4th3     = 37;  // 技能4等级3
+}
+
+message NpcSheet {
+  repeated Npc value = 1;
+}
+

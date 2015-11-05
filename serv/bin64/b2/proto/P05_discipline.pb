@@ -1,17 +1,6 @@
 
-Ã
-P05_discipline.protocom.artme.data"…
-DisLv
-dis_lv (
-dis_exp (
-dis_name (	
-dis_hp (
-dis_att (
-dis_def (
-dis_skillunlock ("2
-
-DisLvSheet$
-value (2.com.artme.data.DisLv"p
+‡
+P05_discipline.protocom.artme.data"p
 DisType
 dis_type (
 dis_des (	

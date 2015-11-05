@@ -3,21 +3,6 @@ package com.artme.data;
 option java_package = "com.artme.data";
 option java_outer_classname = "P05Discipline";
 
-
-message DisLv {
-  required int32    dis_lv             = 1;   // 调教等级
-  required int32    dis_exp            = 2;   // 升下一级经验
-  required string   dis_name           = 3;   // 调教等级描述
-  required int32    dis_hp             = 4;   // 生命增加
-  required int32    dis_att            = 5;   // 攻击增加
-  required int32    dis_def            = 6;   // 防御增加
-  required int32    dis_skillunlock    = 7;   // 开启技能个数
-}
-
-message DisLvSheet {
-  repeated DisLv value = 1;
-}
-
 message DisType {
   required int32    dis_type           = 1;   // 类型id
   required string   dis_des            = 2;   // 调教类型

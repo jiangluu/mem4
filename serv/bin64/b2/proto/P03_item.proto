@@ -1,0 +1,101 @@
+package com.artme.data;
+
+option java_package = "com.artme.data";
+option java_outer_classname = "P03Item";
+
+enum QualityType {
+    white       = 0;
+    green       = 1;
+    blue        = 2;
+    purple      = 3;
+    orange      = 4;
+    red         = 5;
+}
+
+
+message Item {
+  
+  enum ItemType {
+    currency      = 0;
+    regular       = 1;
+    discipline    = 2;
+    supplementA   = 3;
+    supplementB   = 4;
+    equipment     = 5;
+    stone         = 6;
+  }
+
+
+  required int32    unitId        = 1;   // 道具ID
+  required string   name          = 2;   // 道具名称
+  required string   icon          = 3;   // ICON
+  required ItemType type          = 4;   // 道具类型
+  required QualityType  quality   = 5;   // 物品品质
+  required string   des1          = 6;   //道具描述
+  required string   des2          = 7;   //额外说明
+  required string 	exp			  = 8;
+  required int32    show          = 9;   //是否在仓库中显示
+  required int32    maxNum        = 10;   //可叠加上限，0为无限
+  required int32    sellPrice     = 11;  //出售金币价格，0为不可售
+}
+
+message ItemSheet {
+  repeated Item value = 1;
+}
+
+message Group {
+  required int32    groupId       = 1;   // 随机包ID
+  required string    name          = 2;   // 道具名称
+  required string   icon          = 3;   // ICON
+  required QualityType  quality       = 4;   // 物品品质
+  required string   groupName     = 5;   // 物品描述
+}
+
+message GroupSheet {
+  repeated Group value = 1;
+}
+
+message GContent {
+  required int32    groupId       = 1;   // 随机包ID
+  required int32    itemId        = 2;   // 物品ID
+  required int32    num           = 3;   // 物品数量
+  required int32    weight        = 4;   // 权重
+  
+}
+
+message GContentSheet {
+  repeated GContent value = 1;
+}
+
+message Bag {
+  required int32    bagId         = 1;   // 礼包ID
+  required string   name          = 2;   // 礼包名
+  required string   icon          = 3;   // ICON
+  required int32    quality       = 4;   // 物品品质
+  required string   groupName     = 5;   // 物品描述
+  required int32    item1         = 6;   // 物品1
+  required int32    num1          = 7;   // 数量1
+  required int32    prob1         = 8;   // 概率1
+  required int32    item2         = 9;   // 物品2
+  required int32    num2          = 10;  // 数量2
+  required int32    prob2         = 11;  // 概率2
+  required int32    item3         = 12;  // 物品3
+  required int32    num3          = 13;  // 数量3
+  required int32    prob3         = 14;  // 概率3
+  required int32    item4         = 15;  // 物品4
+  required int32    num4          = 16;  // 数量4
+  required int32    prob4         = 17;  // 概率4
+  required int32    item5         = 18;  // 物品5
+  required int32    num5          = 19;  // 数量5
+  required int32    prob5         = 20;  // 概率5
+  required int32    item6         = 21;  // 物品6
+  required int32    num6          = 22;  // 数量6
+  required int32    prob6         = 23;  // 概率6
+  
+}
+
+message BagSheet {
+  repeated Bag value = 1;
+}
+
+

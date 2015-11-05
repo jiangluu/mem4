@@ -1,0 +1,19 @@
+package com.artme.data;
+
+option java_package = "com.artme.data";
+option java_outer_classname = "P11Skill";
+
+
+message Skill {
+
+  required int32    skillId        = 1;   // 关卡
+  required string   skillIcon      = 2;   // 属于章节
+  required string   skillName      = 3;   // 章节名称
+  required string   desc           = 4;   // 章节名称
+ 
+}
+
+message SkillSheet {
+  repeated Skill value = 1;
+}
+

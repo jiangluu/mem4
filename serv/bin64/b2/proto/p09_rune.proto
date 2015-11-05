@@ -1,0 +1,18 @@
+package com.artme.data;
+
+option java_package = "com.artme.data";
+option java_outer_classname = "P09Rune";
+
+
+message Rune {
+
+  required int32    runeId        = 1;   // 关卡
+  required string   runeIcon      = 2;   // 属于章节
+  required string   name          = 3;   // 章节名称
+  required string   desc          = 4;   // 关卡名称
+ 
+}
+
+message RuneSheet {
+  repeated Rune value = 1;
+}

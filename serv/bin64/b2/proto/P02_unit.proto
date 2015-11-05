@@ -34,6 +34,7 @@ message Unit {
   }
 
   enum DISType {   // 调教类型
+    none          = 0;   // 无类型（不能调教）
     Pride         = 1;   // 高傲类
     Mild          = 2;   // 温柔类
     Brave         = 3;   // 凶狠类
@@ -59,17 +60,21 @@ message Unit {
   required float    att_r         = 16;  //攻击范围
   required float    limited_r     = 17;  //攻击范围限制
   required float    interval_s    = 18;  //攻击间隔
-  required float    reg_s         = 19;  //生命恢复每秒
-  required DISType  dis_type      = 20;  //调教类型
-  required int32    dis_1st       = 21;  //初次调教所需经验
-  required float    dis_up        = 22;  //调教经验加成
-  required int32    port_1        = 23;  //立绘编号
-  required int32    port_2        = 24;  //破衣立绘
-  required int32    model         = 25;  //模型ID
-  required int32    skill_1       = 26;  //技能1
-  required int32    skill_2       = 27;  //技能2
-  required int32    skill_3       = 28;  //技能3
-  required int32    skill_4       = 29;  //技能4
+  required float    reg_s         = 19;  // 生命恢复每秒
+  required int32    star_stone    = 20;  // 专属星曜石
+  required int32    moon_stone    = 21;  // 专属月曜石
+  required int32    sun_stone     = 22;  // 专属日曜石
+  required DISType  dis_type      = 23;  //调教类型
+  required int32    dis_1st       = 24;  //初次调教所需经验
+  required int32    episodeId     = 25;  //初次调教魔化剧情
+  required float    dis_up        = 26;  //调教经验加成
+  required string   port_1        = 27;  //立绘编号
+  required string   port_2        = 28;  //破衣立绘
+  required int32    model         = 29;  //模型ID
+  required int32    skill_1       = 30;  //技能1
+  required int32    skill_2       = 31;  //技能2
+  required int32    skill_3       = 32;  //技能3
+  required int32    skill_4       = 33;  //技能4
  
 }
 
@@ -87,15 +92,35 @@ message ULvSheet {
 }
 
 message UEvo {
+  enum StoneType {
+    star  = 1;
+    moon  = 2;
+    sun   = 3;
+  }
+
   required int32    star_lv      = 1;   // 进化等级
   required string   star_des     = 2;   // 进化等级描述
-  required int32    stone        = 3;   // 进化需求灵魂石
-  required float    evo_para     = 4;   // 进化系数
-  required int32    cost         = 5;   //进化消耗金币
-  required int32    limit_lv     = 6;   //要求魔娘等级
+  required StoneType stone_type   = 3;   // 曜石需求类型
+  required int32    stone_count  = 4;   // 曜石需求数量
+  required float    evo_para     = 5;   // 进化系数
+  required int32    cost         = 6;   //进化消耗金币
+  required int32    limit_lv     = 7;   //要求魔娘等级
 }
 
 message UEvoSheet {
   repeated UEvo value = 1;
 }
+
+message USkill {
+  required int32    skillLv     = 1;   // 技能等级
+  required int32    money1      = 2;   // 技能1消耗
+  required int32    money2      = 3;   // 技能2消耗
+  required int32    money3      = 4;   // 技能3消耗
+  required int32    money4      = 5;   // 技能4消耗
+}
+
+message USkillSheet {
+  repeated USkill value = 1;
+}
+
 
