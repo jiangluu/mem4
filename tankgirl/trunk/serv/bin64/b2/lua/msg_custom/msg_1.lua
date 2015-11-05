@@ -18,7 +18,10 @@ local function init_player_data(me)
 		table.insert(bag,{ itemID=10003 ,num=5000 ,idx=3})
 		table.insert(bag,{ itemID=10004 ,num=500 ,idx=4})
 		table.insert(bag,{ itemID=10011 ,num=1000 ,idx=5})
-		table.insert(bag,{ itemID=10012 ,num=500 ,idx=5})
+		table.insert(bag,{ itemID=10012 ,num=800 ,idx=6})
+		table.insert(bag,{ itemID=10013 ,num=600 ,idx=7})
+		table.insert(bag,{ itemID=10014 ,num=300 ,idx=8})
+		
 		
 		me.items = bag
 		
