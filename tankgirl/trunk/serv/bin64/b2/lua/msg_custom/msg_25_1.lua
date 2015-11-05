@@ -48,7 +48,7 @@ function onMsg(me,merge_meta,merge)
 	
 	
 	local the_hero = me.heroes[hero_i]
-	the_hero.exp = the_hero.exp + exp_add
+	the_hero.exp = (the_hero.exp or 0)+ exp_add
 	
 	
 	local me2 = {}

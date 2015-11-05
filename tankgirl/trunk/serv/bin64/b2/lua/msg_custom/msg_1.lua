@@ -37,15 +37,15 @@ function onMsg(me)
 		me.curExp = 0
 		me.level = 1
 		me.diamond = 100
-		me.coin = 9999
+		me.coin = 999999
 		me.energy = 999
 		
 		local bag = {}
-		table.insert(bag,{ itemID=10001 ,num=1000 ,idx=1})
-		table.insert(bag,{ itemID=10002 ,num=5000 ,idx=2})
-		table.insert(bag,{ itemID=10003 ,num=50 ,idx=3})
-		table.insert(bag,{ itemID=10004 ,num=5 ,idx=4})
-		table.insert(bag,{ itemID=10011 ,num=10 ,idx=5})
+		table.insert(bag,{ itemID=10001 ,num=10000 ,idx=1})
+		table.insert(bag,{ itemID=10002 ,num=50000 ,idx=2})
+		table.insert(bag,{ itemID=10003 ,num=5000 ,idx=3})
+		table.insert(bag,{ itemID=10004 ,num=500 ,idx=4})
+		table.insert(bag,{ itemID=10011 ,num=1000 ,idx=5})
 		
 		me.items = bag
 		
