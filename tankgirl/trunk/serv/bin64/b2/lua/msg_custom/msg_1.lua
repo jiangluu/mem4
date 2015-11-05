@@ -1,7 +1,43 @@
 
 local lcf = ffi.C
 
-local cur_init_version = 10
+local cur_init_version = 11
+
+
+local function init_player_data(me)
+		-- ========  初始化玩家数据开始 ========
+		me.curExp = 0
+		me.level = 1
+		me.diamond = 100
+		me.coin = 999999
+		me.energy = 999
+		
+		local bag = {}
+		table.insert(bag,{ itemID=10001 ,num=10000 ,idx=1})
+		table.insert(bag,{ itemID=10002 ,num=50000 ,idx=2})
+		table.insert(bag,{ itemID=10003 ,num=5000 ,idx=3})
+		table.insert(bag,{ itemID=10004 ,num=500 ,idx=4})
+		table.insert(bag,{ itemID=10011 ,num=1000 ,idx=5})
+		table.insert(bag,{ itemID=10012 ,num=500 ,idx=5})
+		
+		me.items = bag
+		
+		me.heroes = {}
+		table.insert(me.heroes,{id=1001,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,skillLv=1})
+		table.insert(me.heroes,{id=1002,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,skillLv=1})
+		table.insert(me.heroes,{id=1036,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,skillLv=1})
+		table.insert(me.heroes,{id=1050,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,skillLv=1})
+		table.insert(me.heroes,{id=1049,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,skillLv=1})
+		table.insert(me.heroes,{id=1051,level=20,dis_lv=1,skill_lv={30,30,30,30},star_lv=4,skillLv=1})
+		
+
+		me.formations = {}
+		table.insert(me.formations,{ idx=1,heroIDs={1001,1002,1036,1050,1049},runeIDs={1,2,3} })
+		table.insert(me.formations,{ idx=2,heroIDs={1002,1036,1050,1049,1051},runeIDs={1,2,3} })
+		
+
+		-- ======== 初始化玩家数据结束 ========
+end
 
 
 function onMsg(me)
@@ -31,39 +67,10 @@ function onMsg(me)
 		me.userId = 'u'..sn
 		me.create_time = lcf.cur_game_time()
 		me.versions = { cur_init_version }
-		
-		-- ========  初始化玩家数据开始 ========
+
 		me.displayName = 'guest'..sn
-		me.curExp = 0
-		me.level = 1
-		me.diamond = 100
-		me.coin = 999999
-		me.energy = 999
-		
-		local bag = {}
-		table.insert(bag,{ itemID=10001 ,num=10000 ,idx=1})
-		table.insert(bag,{ itemID=10002 ,num=50000 ,idx=2})
-		table.insert(bag,{ itemID=10003 ,num=5000 ,idx=3})
-		table.insert(bag,{ itemID=10004 ,num=500 ,idx=4})
-		table.insert(bag,{ itemID=10011 ,num=1000 ,idx=5})
-		
-		me.items = bag
-		
-		me.heroes = {}
-		table.insert(me.heroes,{id=1001,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,skillLv=1})
-		table.insert(me.heroes,{id=1002,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,skillLv=1})
-		table.insert(me.heroes,{id=1036,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,skillLv=1})
-		table.insert(me.heroes,{id=1050,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,skillLv=1})
-		table.insert(me.heroes,{id=1049,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,skillLv=1})
-		table.insert(me.heroes,{id=1051,level=20,dis_lv=1,skill_lv={30,30,30,30},star_lv=4,skillLv=1})
-		
+		init_player_data(me)
 
-		me.formations = {}
-		table.insert(me.formations,{ idx=1,heroIDs={1001,1002,1036,1050,1049},runeIDs={1,2,3} })
-		table.insert(me.formations,{ idx=2,heroIDs={1002,1036,1050,1049,1051},runeIDs={1,2,3} })
-		
-
-		-- ======== 初始化玩家数据结束 ========
 		
 		local ok,bin2 = pcall(pb.encode,'A2Data.User',me)				-- 调用protobuf序列化
 		if not ok then
@@ -78,13 +85,25 @@ function onMsg(me)
 		-- 读到了以前的存盘数据
 		
 		local player_data = pb.decode('A2Data.User',player_data_bin)		-- 调用protobuf反序列化
+		assert(player_data)
 		
-		for k,v in pairs(player_data) do		-- 遍历数据，复制到me上
-			me[k] = v
+		if nil==player_data.versions or player_data.versions[1]<cur_init_version then
+			init_player_data(me)
+			me.versions = me.versions or {}
+			me.versions[1] = cur_init_version
+			
+			local bin2 = pb.encode('A2Data.User',me)	
+			cf.cur_stream_push_string(bin2,#bin2)
+			lcf.cur_stream_write_back()
+		else
+			for k,v in pairs(player_data) do		-- 遍历数据，复制到me上
+				me[k] = v
+			end
+			
+			lcf.cur_stream_push_string(player_data_bin,#player_data_bin)
+			lcf.cur_stream_write_back()
 		end
 		
-		lcf.cur_stream_push_string(player_data_bin,#player_data_bin)		-- 放入发送缓冲
-		lcf.cur_stream_write_back()																	-- 返回消息给客户端，消息ID是1+1，内容是放入发送缓冲的字节
 	end
 	
 	return 0
