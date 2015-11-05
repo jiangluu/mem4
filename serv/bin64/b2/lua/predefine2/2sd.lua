@@ -69,7 +69,7 @@ function o.read_a_dat(dat_name,meta)
 	local lua_t = pb.decode(meta.typr,bin)
 	assert(lua_t)
 	
-	local level1 = string.match(dat_name,'.-_([^%.]+)%.dat')
+	local level1 = string.match(dat_name,'.-_([^%.]+)%.bytes')
 	assert(level1)
 	
 	data[level1] = {}
