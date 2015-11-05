@@ -96,7 +96,7 @@ function onMsg(me)
 			me.versions[1] = cur_init_version
 			
 			local bin2 = pb.encode('A2Data.User',me)	
-			cf.cur_stream_push_string(bin2,#bin2)
+			lcf.cur_stream_push_string(bin2,#bin2)
 			lcf.cur_stream_write_back()
 		else
 			for k,v in pairs(player_data) do		-- 遍历数据，复制到me上
