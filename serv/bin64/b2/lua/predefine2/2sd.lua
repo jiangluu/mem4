@@ -44,9 +44,7 @@ end
 
 function o.init()
 	--if 50 == g_box_id then
-	if 1 == g_box_id then
 		o.register()
-	end
 		
 		-- local meta = {typr='com.artme.data.UnitSheet'}
 		-- o.read_a_dat('p02_unit.dat',meta)
