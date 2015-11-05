@@ -37,7 +37,7 @@ function onMsg(me,merge_meta,merge)
 	end
 	
 	
-	local exp_add = ssd.item[item_id].exp
+	local exp_add = sd.item[item_id].exp
 	
 	-- modify
 	local the_item = me.items[item_i]
@@ -51,11 +51,12 @@ function onMsg(me,merge_meta,merge)
 	the_hero.exp = the_hero.exp + exp_add
 	
 	
-	table.insert(merge_meta,'User.Item')
-	table.insert(merge,the_item)
+	local me2 = {}
+	me2.items = { the_item }
+	me2.heroes = { the_hero }
+	table.insert(merge_meta,'User')
+	table.insert(merge,me2)
 	
-	table.insert(merge_meta,'User.Hero')
-	table.insert(merge,the_hero)
 	
 	return 0
 end
