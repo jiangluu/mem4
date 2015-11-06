@@ -26,6 +26,7 @@ function onMsg(me,merge_meta,merge)
 	local the_hero = me.heroes[hero_i]
 	
 	
+	print('AAAAAAAA',the_hero.star_lv, sd.unit_evo[the_hero.star_lv].stone_type)
 	local stone_col = stone_map[sd.unit_evo[the_hero.star_lv].stone_type]
 	assert(stone_col)
 	local item_id = sd.unit[hero_id][stone_col]
