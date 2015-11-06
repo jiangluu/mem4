@@ -21,6 +21,7 @@ local metas = {
 	p02_unit = {typr='com.artme.data.UnitSheet'},
 	p02_unit_evo = {typr='com.artme.data.UEvoSheet',key='star_lv'},
 	p02_unit_lv = {typr='com.artme.data.ULvSheet',key='lv'},
+	p02_unit_skill = {typr='com.artme.data.USkillSheet',key='skillLv'},
 	p03_item = { typr='com.artme.data.ItemSheet',key='unitId' },
 	p03_group = { typr='com.artme.data.GroupSheet',key='groupId' },
 	p03_group_content = { typr='com.artme.data.GContentSheet',key='groupId' },
