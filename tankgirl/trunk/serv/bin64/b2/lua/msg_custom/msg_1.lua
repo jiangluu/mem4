@@ -1,7 +1,7 @@
 
 local lcf = ffi.C
 
-local cur_init_version = 12
+local cur_init_version = 13
 
 
 local function init_player_data(me)
@@ -13,16 +13,13 @@ local function init_player_data(me)
 		me.energy = 999
 		
 		local bag = {}
-		table.insert(bag,{ itemID=10001 ,num=10000 ,idx=1})
-		table.insert(bag,{ itemID=10002 ,num=50000 ,idx=2})
-		table.insert(bag,{ itemID=10003 ,num=5000 ,idx=3})
-		table.insert(bag,{ itemID=10004 ,num=500 ,idx=4})
-		table.insert(bag,{ itemID=10011 ,num=1000 ,idx=5})
-		table.insert(bag,{ itemID=10012 ,num=800 ,idx=6})
-		table.insert(bag,{ itemID=10013 ,num=600 ,idx=7})
-		table.insert(bag,{ itemID=10014 ,num=300 ,idx=8})
-		table.insert(bag,{ itemID=15001 ,num=800 ,idx=9})
-		table.insert(bag,{ itemID=15036 ,num=800 ,idx=10})
+	
+		table.insert(bag,{ itemID=10011 ,num=99,idx=1})
+		table.insert(bag,{ itemID=10012 ,num=20 ,idx=2})
+		table.insert(bag,{ itemID=10013 ,num=20 ,idx=3})
+		table.insert(bag,{ itemID=10014 ,num=10 ,idx=4})
+		table.insert(bag,{ itemID=15001 ,num=300 ,idx=5})
+		table.insert(bag,{ itemID=15036 ,num=100 ,idx=6})
 		
 		
 		
