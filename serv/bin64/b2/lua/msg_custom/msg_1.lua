@@ -106,6 +106,10 @@ function onMsg(me)
 				me[k] = v
 			end
 			
+			for i=1,#me.formations do
+				print('FFFFFFFFFFFFF',i,#me.formations[i].heroIDs)
+			end
+			
 			lcf.cur_stream_push_string(player_data_bin,#player_data_bin)
 			lcf.cur_stream_write_back()
 		end
