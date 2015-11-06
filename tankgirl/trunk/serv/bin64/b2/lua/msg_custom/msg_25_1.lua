@@ -51,6 +51,22 @@ function onMsg(me,merge_meta,merge)
 	the_hero.exp = (the_hero.exp or 0)+ exp_add
 	
 	
+	-- level up auto
+	for lv=the_hero.level, 999 do
+		local raw = sd.unit_lv[lv]
+		if nil==raw then
+			break
+		end
+		
+		if the_hero.exp >= raw.exp then
+			the_hero.exp = the_hero.exp - raw.exp
+			the_hero.level = the_hero.level + 1
+		else
+			break
+		end
+	end
+	
+	
 	local me2 = {}
 	me2.items = { the_item }
 	me2.heroes = { the_hero }
