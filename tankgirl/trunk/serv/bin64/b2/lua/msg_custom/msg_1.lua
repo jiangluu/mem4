@@ -1,7 +1,7 @@
 
 local lcf = ffi.C
 
-local cur_init_version = 14
+local cur_init_version = 15
 
 
 local function init_player_data(me)
@@ -20,6 +20,9 @@ local function init_player_data(me)
 		table.insert(bag,{ itemID=10014 ,num=10 ,idx=4})
 		table.insert(bag,{ itemID=15001 ,num=300 ,idx=5})
 		table.insert(bag,{ itemID=15036 ,num=100 ,idx=6})
+		table.insert(bag,{ itemID=15005 ,num=100 ,idx=7})
+		table.insert(bag,{ itemID=15050 ,num=200 ,idx=8})
+		table.insert(bag,{ itemID=15002 ,num=100 ,idx=9})
 		
 		
 		
@@ -30,13 +33,13 @@ local function init_player_data(me)
 		table.insert(me.heroes,{id=1002,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,exp=3428})
 		table.insert(me.heroes,{id=1036,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,exp=3428})
 		table.insert(me.heroes,{id=1050,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,exp=12188})
-		table.insert(me.heroes,{id=1049,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,exp=12188})
-		table.insert(me.heroes,{id=1051,level=20,dis_lv=1,skill_lv={30,30,30,30},star_lv=4,exp=29648})
+		table.insert(me.heroes,{id=1005,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,exp=12188})
+
 		
 
 		me.formations = {}
-		table.insert(me.formations,{ idx=1,heroIDs={1001,1002,1036,1050,1049},runeIDs={1,2,3} })
-		table.insert(me.formations,{ idx=2,heroIDs={1002,1036,1050,1049,1051},runeIDs={1,2,3} })
+		table.insert(me.formations,{ idx=1,heroIDs={1001,1002,1036,1050,1005},runeIDs={1,2,3} })
+		table.insert(me.formations,{ idx=2,heroIDs={1001,1002,1036,1050,1005},runeIDs={1,2,3} })
 		
 
 		-- ======== 初始化玩家数据结束 ========
