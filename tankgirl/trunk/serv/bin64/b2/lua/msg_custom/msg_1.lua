@@ -94,6 +94,12 @@ function onMsg(me)
 		assert(player_data)
 		
 		if nil==player_data.versions or (player_data.versions[1] or 0)<cur_init_version then
+			print('Reinit player',player_data.userId)
+		
+			me.userId = player_data.userId
+			me.displayName = player_data.displayName
+			me.create_time = player_data.create_time or lcf.cur_game_time()
+			
 			init_player_data(me)
 			me.versions = me.versions or {}
 			me.versions[1] = cur_init_version
@@ -106,9 +112,6 @@ function onMsg(me)
 				me[k] = v
 			end
 			
-			for i=1,#me.formations do
-				print('FFFFFFFFFFFFF',i,#me.formations[i].heroIDs)
-			end
 			
 			lcf.cur_stream_push_string(player_data_bin,#player_data_bin)
 			lcf.cur_stream_write_back()
