@@ -59,7 +59,6 @@ function onMsg(me,merge_meta,merge)
 		end
 		
 		if the_hero.exp >= raw.exp then
-			the_hero.exp = the_hero.exp - raw.exp
 			the_hero.level = the_hero.level + 1
 		else
 			break
