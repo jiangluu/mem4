@@ -42,7 +42,7 @@ function onMsg(me,merge_meta,merge)
 	
 	
 	-- modify
-	me.coin = me.cpoin - coin_dec
+	me.coin = me.coin - coin_dec
 	the_hero.skill_lv[skill_index] = lv_now + 1
 	
 	
