@@ -1,7 +1,7 @@
 
 local lcf = ffi.C
 
-local stone_map = { 'star_stone','moon_stone','sun_stone' }
+--local stone_map = { 'star_stone','moon_stone','sun_stone' }
 
 function onMsg(me,merge_meta,merge)
 	local hero_id = lcf.cur_stream_get_int32() 
@@ -27,7 +27,7 @@ function onMsg(me,merge_meta,merge)
 	
 	
 	print('AAAAAAAA',the_hero.star_lv, sd.unit_evo[the_hero.star_lv].stone_type)
-	local stone_col = stone_map[sd.unit_evo[the_hero.star_lv].stone_type]
+	local stone_col = sd.unit_evo[the_hero.star_lv].stone_type .. '_stone'
 	assert(stone_col)
 	local item_id = sd.unit[hero_id][stone_col]
 	
