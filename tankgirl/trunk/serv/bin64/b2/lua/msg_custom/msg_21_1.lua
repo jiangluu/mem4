@@ -24,9 +24,10 @@ function onMsg(me,merge_meta,merge)
 		
 		me.formations[forma_id] = forma
 		
-		--merge.formations = me.formations
-		table.insert(merge_meta,'User.Formation')
-		table.insert(merge,forma)
+		local me2 = {}
+		me2.formations = { forma }
+		table.insert(merge_meta,'User')
+		table.insert(merge,me2)
 	
 	return 0
 end
