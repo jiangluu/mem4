@@ -24,7 +24,7 @@ local metas = {
 	p02_unit_skill = {typr='com.artme.data.USkillSheet',key='skillLv'},
 	p03_item = { typr='com.artme.data.ItemSheet',key='unitId' },
 	p03_group = { typr='com.artme.data.GroupSheet',key='groupId' },
-	p03_group_content = { typr='com.artme.data.GContentSheet',key='groupId' },
+	p03_group_content = { typr='com.artme.data.GContentSheet',key='groupId',keydup=true },
 	--p03_item_bag = { typr='com.artme.data.BagSheet',key='bagId' },
 	p05_dis_item = {typr='com.artme.data.DisItemSheet',key='item_id'},
 	--p05_dis_lv = {typr='com.artme.data.DisLvSheet',key='dis_lv'},
@@ -32,6 +32,8 @@ local metas = {
 	p05_dis_script = {typr='com.artme.data.DisScriptSheet'},
 	p05_dis_support = {typr='com.artme.data.DisSupportSheet',key='item_id'},
 	p05_dis_type = {typr='com.artme.data.DisTypeSheet',key='dis_type'},
+	p10_summon = { typr='com.artme.data.SummonSheet', key='summonId',keydup=true },
+	p10_summon_trans = { typr='com.artme.data.TransSheet', key='maxlv'},
 }
 -- CONFIG SEGMENT END
 
@@ -58,6 +60,11 @@ function o.init()
 				os.exit(-2)
 			end
 		end
+		
+		-- 特殊处理
+		for k,v in pairs(data.group) do
+			data.item[k] = v
+		end
 	--end
 end
 
@@ -79,7 +86,14 @@ function o.read_a_dat(dat_name,meta)
 	for i=1,#lua_t.value do
 		local v = lua_t.value[i]
 		local key_name = meta.key or 'id'
-		d[v[key_name]] = v
+		local the_key = v[key_name]
+		
+		if true~=meta.keydup then
+			d[the_key] = v
+		else
+			d[the_key] = d[the_key] or {}
+			table.insert(d[the_key],v)
+		end
 	end
 	
 	print(string.format('%s loaded %d row',level1,#lua_t.value))
