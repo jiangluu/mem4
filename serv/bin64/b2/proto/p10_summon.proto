@@ -1,0 +1,31 @@
+package com.artme.data;
+
+option java_package = "com.artme.data";
+option java_outer_classname = "P10Summon";
+
+
+message Summon {
+  required int32   summonId		= 1;   // 召唤ID
+  required int32   maxlv		= 2;   // 最大适用魔王等级
+  required int32   maxnum		= 3;   // 额外开启条件（根据该召唤的总使用次数）
+  required int32   costId		= 4;   // 消耗物品id
+  required int32   costNum		= 5;   // 消耗物品数量
+  required int32   staticGroup	= 6;   // 固定物品包
+  required int32   randomGroup	= 7;   // 随机包
+  required int32   solidGroup	= 8;   // 随机保底包
+}
+
+message SummonSheet {
+  repeated Summon value = 1;
+}
+
+message Trans {
+	required int32   maxlv		= 1;   // 魔王等级上限
+	required int32   stoneId	= 2;   // 转化的曜石ID
+	required int32   stoneNum	= 3;   // 转化曜石的数量
+}
+
+message TransSheet {
+  repeated Trans value = 1;
+}
+
