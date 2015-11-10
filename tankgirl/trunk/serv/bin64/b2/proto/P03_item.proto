@@ -23,6 +23,7 @@ message Item {
     supplementB   = 4;
     equipment     = 5;
     stone         = 6;
+	tokenOfLove   = 7;
   }
 
 

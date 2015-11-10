@@ -64,17 +64,18 @@ message Unit {
   required int32    star_stone    = 20;  // 专属星曜石
   required int32    moon_stone    = 21;  // 专属月曜石
   required int32    sun_stone     = 22;  // 专属日曜石
-  required DISType  dis_type      = 23;  //调教类型
-  required int32    dis_1st       = 24;  //初次调教所需经验
-  required int32    episodeId     = 25;  //初次调教魔化剧情
-  required float    dis_up        = 26;  //调教经验加成
-  required string   port_1        = 27;  //立绘编号
-  required string   port_2        = 28;  //破衣立绘
-  required int32    model         = 29;  //模型ID
-  required int32    skill_1       = 30;  //技能1
-  required int32    skill_2       = 31;  //技能2
-  required int32    skill_3       = 32;  //技能3
-  required int32    skill_4       = 33;  //技能4
+  required int32    tokenOfLove   = 23;  // 专属信物
+  required DISType  dis_type      = 24;  //调教类型
+  required int32    dis_1st       = 25;  //初次调教所需经验
+  required int32    episodeId     = 26;  //初次调教魔化剧情
+  required float    dis_up        = 27;  //调教经验加成
+  required string   port_1        = 28;  //立绘编号
+  required string   port_2        = 29;  //破衣立绘
+  required int32    model         = 30; //模型ID
+  required int32    skill_1       = 31;  //技能1
+  required int32    skill_2       = 32;  //技能2
+  required int32    skill_3       = 33;  //技能3
+  required int32    skill_4       = 34;  //技能4
  
 }
 
