@@ -1,7 +1,7 @@
 
 local lcf = ffi.C
 
-local cur_init_version = 16
+local cur_init_version = 17
 
 
 local function init_player_data(me)
@@ -44,8 +44,8 @@ local function init_player_data(me)
 		table.insert(me.heroes,{id=1009,level=2,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=20})
 		table.insert(me.heroes,{id=1010,level=2,dis_lv=2,skill_lv={1,1,1,1},star_lv=1,exp=20})
 		
-		table.insert(me.heroes,{id=1011,level=4,dis_lv=0,skill_lv={1,1,1,1},star_lv=1,exp=176})
-		table.insert(me.heroes,{id=1012,level=4,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=176})
+		table.insert(me.heroes,{id=1016,level=4,dis_lv=0,skill_lv={1,1,1,1},star_lv=1,exp=176})
+		table.insert(me.heroes,{id=1017,level=4,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=176})
 		table.insert(me.heroes,{id=1013,level=4,dis_lv=2,skill_lv={1,1,1,1},star_lv=1,exp=176})
 
 		
