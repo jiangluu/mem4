@@ -1,7 +1,7 @@
 
 local lcf = ffi.C
 
-local cur_init_version = 15
+local cur_init_version = 16
 
 
 local function init_player_data(me)
@@ -34,6 +34,19 @@ local function init_player_data(me)
 		table.insert(me.heroes,{id=1036,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,exp=3428})
 		table.insert(me.heroes,{id=1050,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,exp=12188})
 		table.insert(me.heroes,{id=1005,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,exp=12188})
+		
+		table.insert(me.heroes,{id=1003,level=1,dis_lv=0,skill_lv={1,1,1,1},star_lv=1,exp=20})
+		table.insert(me.heroes,{id=1004,level=3,dis_lv=0,skill_lv={1,1,1,1},star_lv=1,exp=68})
+		table.insert(me.heroes,{id=1006,level=3,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=68})
+		table.insert(me.heroes,{id=1007,level=3,dis_lv=2,skill_lv={1,1,1,1},star_lv=1,exp=68})
+		
+		table.insert(me.heroes,{id=1008,level=2,dis_lv=0,skill_lv={1,1,1,1},star_lv=1,exp=20})
+		table.insert(me.heroes,{id=1009,level=2,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=20})
+		table.insert(me.heroes,{id=1010,level=2,dis_lv=2,skill_lv={1,1,1,1},star_lv=1,exp=20})
+		
+		table.insert(me.heroes,{id=1011,level=4,dis_lv=0,skill_lv={1,1,1,1},star_lv=1,exp=176})
+		table.insert(me.heroes,{id=1012,level=4,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=176})
+		table.insert(me.heroes,{id=1013,level=4,dis_lv=2,skill_lv={1,1,1,1},star_lv=1,exp=176})
 
 		
 
