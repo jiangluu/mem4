@@ -17,6 +17,7 @@ function onMsg(me,merge_meta,merge)
 			break
 		end
 	end
+	conf1 = conf1 or s_conf[1]
 	
 	local item_change = {}
 	
