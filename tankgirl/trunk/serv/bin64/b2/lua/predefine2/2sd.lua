@@ -33,7 +33,7 @@ local metas = {
 	p05_dis_support = {typr='com.artme.data.DisSupportSheet',key='item_id'},
 	p05_dis_type = {typr='com.artme.data.DisTypeSheet',key='dis_type'},
 	p10_summon = { typr='com.artme.data.SummonSheet', key='summonId',keydup=true },
-	p10_summon_trans = { typr='com.artme.data.TransSheet', key='maxlv'},
+	--p10_summon_trans = { typr='com.artme.data.TransSheet', key='maxlv'},
 }
 -- CONFIG SEGMENT END
 
