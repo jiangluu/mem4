@@ -57,6 +57,8 @@ function onMsg(me,merge_meta,merge)
 		for i=1,#item_change do
 			local a = item_change[i]
 			
+			print(i,a.itemID,a.num)
+			
 			if a.itemID < 10000 then
 				local found = false
 				for j=1,#me.heroes do
@@ -82,7 +84,7 @@ function onMsg(me,merge_meta,merge)
 					end
 					tr = tr or sd.summon_trans[20]
 					
-					item_change[i] = { tr.stoneId, num=tr.stoneNum,op=4 }
+					item_change[i] = { itemID=tr.stoneId, num=tr.stoneNum,op=4 }
 					bag.add(me,tr.stoneId, tr.stoneNum,'summon')
 				end
 			else
