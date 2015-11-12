@@ -1,7 +1,7 @@
 
 local lcf = ffi.C
 
-local cur_init_version = 17
+local cur_init_version = 18
 
 
 local function init_player_data(me)
@@ -48,6 +48,20 @@ local function init_player_data(me)
 		table.insert(me.heroes,{id=1017,level=4,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=176})
 		table.insert(me.heroes,{id=1013,level=4,dis_lv=2,skill_lv={1,1,1,1},star_lv=1,exp=176})
 
+		
+		me.runes = {}
+		table.insert(me.runes, { id=701,level=4 })
+		table.insert(me.runes, { id=702,level=3 })
+		table.insert(me.runes, { id=703,level=2 })
+		table.insert(me.runes, { id=704,level=1 })
+		table.insert(me.runes, { id=705,level=2 })
+		table.insert(me.runes, { id=706,level=3 })
+		table.insert(me.runes, { id=707,level=4 })
+		table.insert(me.runes, { id=708,level=5 })
+		table.insert(me.runes, { id=709,level=6 })
+		table.insert(me.runes, { id=710,level=7 })
+		table.insert(me.runes, { id=711,level=8 })
+		table.insert(me.runes, { id=712,level=9 })
 		
 
 		me.formations = {}
