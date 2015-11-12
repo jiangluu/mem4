@@ -93,13 +93,13 @@ function onMsg(me,merge_meta,merge)
 					table.insert(hero_change, h)
 				else
 					local tr = nil
-					for kk=me.level,1,-1 do
-						tr = sd.summon_trans[kk]
-						if nil~=tr then
+					for i3=1,#sd.summon_trans do
+						if me.level <= sd.summon_trans[i3].maxlv then
+							tr =  sd.summon_trans[i3]
 							break
 						end
 					end
-					tr = tr or sd.summon_trans[20]
+					assert(tr)
 					
 					item_change[i] = { itemID=tr.stoneId, num=tr.stoneNum,op=a.itemID }
 					bag.add(me,tr.stoneId, tr.stoneNum,'summon')
