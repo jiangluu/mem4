@@ -71,7 +71,7 @@ function onMsg(me,merge_meta,merge)
 		
 		local hero_change = {}
 		
-		for i=1,#item_change do
+		for i=#item_change,1,-1 do
 			local a = item_change[i]
 			
 			print(i,a.itemID,a.num)
