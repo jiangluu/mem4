@@ -9,9 +9,7 @@ message User {
 		optional int32  dis_lv  = 3; 
 		repeated int32  skill_lv = 4;
 		optional int32  star_lv = 5;
-		optional int32  exp     = 6;
-		
-		
+		optional int32  exp     = 6;	
 	}
 
 	message Rune {
@@ -38,6 +36,12 @@ message User {
 		optional int32 op 		= 4;
 	}
 
+	message Stage{
+		optional int32 stageId  =1;
+		optional int32 star     =2;
+	}
+	
+	
 	optional string userId		= 1;
 	optional string displayName = 2;
 	optional int32 curExp		= 3;
@@ -57,5 +61,6 @@ message User {
 	repeated int32 versions		=17;
 	optional int32 create_time	=18;
 	repeated Rune  runes		=19;
+	repeated Stage stages       =20;
 	
 }
