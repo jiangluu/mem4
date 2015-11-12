@@ -13,6 +13,7 @@ local protofiles = {
 	'proto/P03_item.pb',
 	'proto/P05_discipline.pb',
 	'proto/p10_summon.pb',
+	'proto/p06_stage.pb',
 }
 
 local metas = {
