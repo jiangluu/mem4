@@ -1,7 +1,7 @@
 
-ä
+†
 
-User.protoA2Data"Ã
+User.protoA2Data"å
 User
 userId (	
 displayName (	
@@ -22,7 +22,8 @@ formations (2.A2Data.User.Formation
 summon_times2 (
 summon_times3 (
 versions (
-create_time (a
+create_time ( 
+runes (2.A2Data.User.Runea
 Hero
 
 id (

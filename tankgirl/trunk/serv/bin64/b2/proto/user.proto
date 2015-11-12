@@ -56,5 +56,6 @@ message User {
 	optional int32 summon_times3		=16;
 	repeated int32 versions		=17;
 	optional int32 create_time	=18;
+	repeated Rune  runes		=19;
 	
 }
