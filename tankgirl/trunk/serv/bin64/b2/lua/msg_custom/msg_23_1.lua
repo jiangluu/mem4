@@ -84,7 +84,7 @@ function onMsg(me,merge_meta,merge)
 					end
 					tr = tr or sd.summon_trans[20]
 					
-					item_change[i] = { itemID=tr.stoneId, num=tr.stoneNum,op=4 }
+					item_change[i] = { itemID=tr.stoneId, num=tr.stoneNum,op=a.itemID }
 					bag.add(me,tr.stoneId, tr.stoneNum,'summon')
 				end
 			else
