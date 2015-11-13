@@ -75,3 +75,11 @@ function o.add(me,item_id,num,tag)
 	end
 end
 
+
+-- ================================
+local lcf = ffi.C
+
+function now()
+	return tonumber(lcf.cur_game_time())
+end
+

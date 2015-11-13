@@ -98,7 +98,7 @@ function onMsg(me)
 		redis.set(0,db_key, 'u'..sn)
 		
 		me.userId = 'u'..sn
-		me.create_time = lcf.cur_game_time()
+		me.create_time = now()
 		me.versions = { cur_init_version }
 
 		me.displayName = 'guest'..sn
@@ -111,7 +111,7 @@ function onMsg(me)
 			print(bin2)
 			return 1
 		end
-		lcf.cur_stream_push_int32(lcf.cur_game_time())
+		lcf.cur_stream_push_int32(now())
 		lcf.cur_stream_push_string(bin2,#bin2)		-- 放入发送缓冲
 		lcf.cur_stream_write_back()							-- 返回消息给客户端，消息ID是1+1，内容是放入发送缓冲的字节
 		
@@ -126,7 +126,7 @@ function onMsg(me)
 		
 			me.userId = player_data.userId
 			me.displayName = player_data.displayName
-			me.create_time = player_data.create_time or lcf.cur_game_time()
+			me.create_time = player_data.create_time or now()
 			
 			init_player_data(me)
 			me.versions = me.versions or {}
@@ -140,7 +140,7 @@ function onMsg(me)
 				me[k] = v
 			end
 			
-			lcf.cur_stream_push_int32(lcf.cur_game_time())
+			lcf.cur_stream_push_int32(now())
 			lcf.cur_stream_push_string(player_data_bin,#player_data_bin)
 			lcf.cur_stream_write_back()
 		end
