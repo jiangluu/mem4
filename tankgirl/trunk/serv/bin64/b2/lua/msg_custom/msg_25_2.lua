@@ -34,18 +34,6 @@ function onMsg(me,merge_meta,merge)
 	print(stone_col,item_id)
 	
 	
-	local item_i = -1
-	for i=1,#me.items do
-		if item_id == me.items[i].itemID then
-			item_i = i
-			break
-		end
-	end
-	
-	if item_i<0 then
-		return 1
-	end
-	
 	local need_item_num = sd.unit_evo[the_hero.star_lv].stone_count
 	local coin_dec = sd.unit_evo[the_hero.star_lv].cost
 	
@@ -54,20 +42,16 @@ function onMsg(me,merge_meta,merge)
 		return 4
 	end
 	
-	if me.items[item_i].num<need_item_num then
+	if not bag.check(me,item_id,need_item_num) then
 		return 3
 	end
 	
 	
 	
 	-- modify
-	me.coin = me.coin - coin_dec
+	bag.dec(me,10001,coin_dec,'hero_star_up')
 	
-	local the_item = me.items[item_i]
-	the_item.num = the_item.num - need_item_num
-	if the_item.num<=0 then
-		table.remove(me.items,item_i)
-	end
+	local the_item = bag.dec(me,item_id,need_item_num,'hero_star_up')
 	
 	
 	the_hero.star_lv = the_hero.star_lv + 1
