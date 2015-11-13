@@ -7,18 +7,6 @@ function onMsg(me,merge_meta,merge)
 	
 	print('msg 25_1',hero_id,item_id)
 	
-	local item_i = -1
-	for i=1,#me.items do
-		if item_id == me.items[i].itemID then
-			item_i = i
-			break
-		end
-	end
-	
-	if item_i<0 then
-		return 1
-	end
-	
 	
 	local hero_i = -1
 	for i=1,#me.heroes do
@@ -32,7 +20,7 @@ function onMsg(me,merge_meta,merge)
 		return 2
 	end
 	
-	if me.items[item_i].num<1 then
+	if not bag.check(me,item_id,1) then
 		return 3
 	end
 	
@@ -40,12 +28,7 @@ function onMsg(me,merge_meta,merge)
 	local exp_add = sd.item[item_id].exp
 	
 	-- modify
-	local the_item = me.items[item_i]
-	the_item.num = the_item.num - 1
-	if the_item.num<=0 then
-		table.remove(me.items,item_i)
-	end
-	
+	local the_item = bag.dec(me,item_id,1,'hero_add_exp')
 	
 	local the_hero = me.heroes[hero_i]
 	the_hero.exp = (the_hero.exp or 0)+ exp_add
