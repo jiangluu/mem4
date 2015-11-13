@@ -45,7 +45,7 @@ function onMsg(me,merge_meta,merge)
 		table.insert(item_change,{ itemID=conf[idx].itemId, num=conf[idx].num })
 	end
 	
-	local now = lcf.cur_game_time()
+	local now = now()
 	
 	local could_summon = false
 	local is_free_summon = false
