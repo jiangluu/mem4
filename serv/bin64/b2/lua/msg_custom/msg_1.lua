@@ -1,14 +1,14 @@
 
 local lcf = ffi.C
 
-local cur_init_version = 18
+local cur_init_version = 19
 
 
 local function init_player_data(me)
 		-- ========  初始化玩家数据开始 ========
 		me.curExp = 0
 		me.level = 1
-		me.diamond = 100
+		me.diamond = 99999999
 		me.coin = 999999
 		me.energy = 999
 		

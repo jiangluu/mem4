@@ -49,7 +49,7 @@ function onMsg(me,merge_meta,merge)
 	
 	local could_summon = false
 	local is_free_summon = false
-	if 2==summon_typr then
+	if 1==summon_typr then
 		could_summon = now >= (me.last_summmon_time1 or 0)
 		is_free_summon = could_summon
 		
