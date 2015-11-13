@@ -1,7 +1,7 @@
 
 local lcf = ffi.C
 
-local free_cd = 900		-- 多久能免费召唤一次
+local free_cd = 60		-- 多久能免费召唤一次
 
 function onMsg(me,merge_meta,merge)
 	local summon_typr = lcf.cur_stream_get_int32() 
