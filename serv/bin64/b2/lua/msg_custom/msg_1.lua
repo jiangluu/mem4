@@ -1,7 +1,7 @@
 
 local lcf = ffi.C
 
-local cur_init_version = 19
+local cur_init_version = 20
 
 
 local function init_player_data(me)
@@ -9,7 +9,7 @@ local function init_player_data(me)
 		me.curExp = 0
 		me.level = 1
 		me.diamond = 99999999
-		me.coin = 999999
+		me.coin = 9999999
 		me.energy = 999
 		
 		local bag = {}
@@ -23,6 +23,7 @@ local function init_player_data(me)
 		table.insert(bag,{ itemID=15005 ,num=100 ,idx=7})
 		table.insert(bag,{ itemID=15050 ,num=200 ,idx=8})
 		table.insert(bag,{ itemID=15002 ,num=100 ,idx=9})
+		table.insert(bag,{ itemID=10004 ,num=1000 ,idx=9})
 		
 		
 		
