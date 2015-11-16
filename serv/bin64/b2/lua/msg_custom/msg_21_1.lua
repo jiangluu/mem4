@@ -20,6 +20,10 @@ function onMsg(me,merge_meta,merge)
 			print(forma.heroIDs[i])
 		end
 		print('========')
+		for i=1,#forma.runeIDs do
+			print(forma.runeIDs[i])
+		end
+		print('runes end')
 		
 		
 		me.formations[forma_id] = forma
