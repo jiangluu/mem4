@@ -1,7 +1,7 @@
 
 local lcf = ffi.C
 
-local cur_init_version = 21
+local cur_init_version = 22
 
 
 local function init_player_data(me)
@@ -68,6 +68,12 @@ local function init_player_data(me)
 		me.formations = {}
 		table.insert(me.formations,{ idx=1,heroIDs={1001,1002,1036,1050,1005},runeIDs={1,2,3} })
 		table.insert(me.formations,{ idx=2,heroIDs={1001,1002,1036,1050,1005},runeIDs={1,2,3} })
+		
+		
+		me.stages = {}
+		table.insert(me.stages, { stageId=101010, star=2 })
+		table.insert(me.stages, { stageId=101020, star=3 })
+		table.insert(me.stages, { stageId=101030, star=1 })
 		
 
 		-- ======== 初始化玩家数据结束 ========
