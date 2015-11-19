@@ -46,6 +46,7 @@ message Stage {
   required int32    prob5          = 20;  // 掉落概率5
   required int32    captureId      = 21;  // Boss魔娘(可捕捉)
   required int32    special_item   = 22;  // Boss魔娘掉落
+  required string   special_des    = 23;  // Boss介绍
 }
 
 message StageSheet {

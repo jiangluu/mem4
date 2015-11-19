@@ -1,0 +1,39 @@
+package com.artme.data;
+
+option java_package = "com.artme.data";
+option java_outer_classname = "P14Story";
+
+
+message Story {
+  required int32   storyId	= 1;   // 剧情ID
+  required int32   charaId	= 2;   // 角色id
+  required int32   face 	= 3;   // 表情
+  required string content 	= 4;   // 内容
+}
+
+message StorySheet {
+  repeated Story value = 1;
+}
+
+message Chara {
+  required string   scriptId    = 1;   // 台词ID
+  required int32    charaId  	= 2;   // 角色id
+  required int32 	face 		= 3;   // 表情
+  required string 	content		= 4;   // 内容
+}
+
+message CharaSheet {
+  repeated Chara value = 1;
+}
+
+message Capture {
+  required int32   preyId    	= 1;   // 被捕捉角色id
+  required int32   preyer    	= 2;   // 天敌id
+  required int32   episodeId1 	= 3;   // 遭遇剧情ID
+  required int32   episodeId2 	= 4;   // 成功捕捉剧情
+}
+
+message CaptureSheet {
+  repeated Capture value = 1;
+}
+
