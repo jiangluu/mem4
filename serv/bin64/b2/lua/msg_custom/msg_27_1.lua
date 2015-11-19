@@ -58,7 +58,7 @@ function onMsg(me,merge_meta,merge)
 	if 0~=support_item_id2 then
 		multi3 = sd.dis_support[support_item_id2][colname2]
 	end
-	local multi4 = sd.dis_play[play_add]
+	local multi4 = sd.dis_play[play_add].add
 	assert(multi4)
 	
 	local rand = math.random(80,120)
