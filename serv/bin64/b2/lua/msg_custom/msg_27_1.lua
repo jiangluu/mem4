@@ -42,16 +42,12 @@ function onMsg(me,merge_meta,merge)
 	
 	local nan = me.heroes[hero_i]
 	local nan_dis_type = sd.unit[hero_id].dis_type
+	nan_dis_type = pb.enum_id('com.artme.data.Unit.DISType',nan_dis_type)
 	local item_dis_type1 = sd.dis_item[item_id].type
 	local colname1 = 'effect'..item_dis_type1
 	local colname2 = 'up'..nan_dis_type
 	
 	print(nan_dis_type,type(nan_dis_type))
-	print(sd.dis_type[1])
-	local pbc = require('protobuf')
-	print('pbc',pbc,pbc.enum_id)
-	local aa = pbc.enum_id('com.artme.data.Unit.DISType',nan_dis_type)
-	print('bbbbbbbb',aa)
 	
 	local multi1 = sd.dis_type[nan_dis_type][colname1]
 	local multi2 = 0
