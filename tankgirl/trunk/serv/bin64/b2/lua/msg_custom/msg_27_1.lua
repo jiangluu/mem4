@@ -49,6 +49,7 @@ function onMsg(me,merge_meta,merge)
 	print(nan_dis_type,type(nan_dis_type))
 	print(sd.dis_type[1])
 	local pbc = require('protobuf')
+	print('pbc',pbc,pbc.enum_id)
 	local aa = pbc.enum_id('com.artme.data.Unit.DISType',nan_dis_type)
 	print('bbbbbbbb',aa)
 	
