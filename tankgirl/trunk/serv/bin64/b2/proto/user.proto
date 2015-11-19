@@ -4,12 +4,14 @@ option java_package = "A2Data";
 
 message User {
 	message Hero {
-		optional int32 	id		= 1;
+		optional int32 	id	= 1;
 		optional int32 	level	= 2;
 		optional int32  dis_lv  = 3; 
-		repeated int32  skill_lv = 4;
-		optional int32  star_lv = 5;
-		optional int32  exp     = 6;	
+		optional int32  dis_cd  = 4;
+		repeated int32  skill_lv = 5;
+		optional int32  star_lv = 6;
+		optional int32  exp     = 7;
+		optional int32	dis_exp = 8;	
 	}
 
 	message Rune {

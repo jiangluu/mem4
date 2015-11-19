@@ -74,24 +74,25 @@ message Bag {
   required string   icon          = 3;   // ICON
   required int32    quality       = 4;   // 物品品质
   required string   groupName     = 5;   // 物品描述
-  required int32    item1         = 6;   // 物品1
-  required int32    num1          = 7;   // 数量1
-  required int32    prob1         = 8;   // 概率1
-  required int32    item2         = 9;   // 物品2
-  required int32    num2          = 10;  // 数量2
-  required int32    prob2         = 11;  // 概率2
-  required int32    item3         = 12;  // 物品3
-  required int32    num3          = 13;  // 数量3
-  required int32    prob3         = 14;  // 概率3
-  required int32    item4         = 15;  // 物品4
-  required int32    num4          = 16;  // 数量4
-  required int32    prob4         = 17;  // 概率4
-  required int32    item5         = 18;  // 物品5
-  required int32    num5          = 19;  // 数量5
-  required int32    prob5         = 20;  // 概率5
-  required int32    item6         = 21;  // 物品6
-  required int32    num6          = 22;  // 数量6
-  required int32    prob6         = 23;  // 概率6
+  required string   extraDesc     = 6;   // 额外说明
+  required int32    item1         = 7;   // 物品1
+  required int32    num1          = 8;   // 数量1
+  required int32    prob1         = 9;   // 概率1
+  required int32    item2         = 10;   // 物品2
+  required int32    num2          = 11;  // 数量2
+  required int32    prob2         = 12;  // 概率2
+  required int32    item3         = 13;  // 物品3
+  required int32    num3          = 14;  // 数量3
+  required int32    prob3         = 15;  // 概率3
+  required int32    item4         = 16;  // 物品4
+  required int32    num4          = 17;  // 数量4
+  required int32    prob4         = 18;  // 概率4
+  required int32    item5         = 19;  // 物品5
+  required int32    num5          = 20;  // 数量5
+  required int32    prob5         = 21;  // 概率5
+  required int32    item6         = 22;  // 物品6
+  required int32    num6          = 23;  // 数量6
+  required int32    prob6         = 24;  // 概率6
   
 }
 

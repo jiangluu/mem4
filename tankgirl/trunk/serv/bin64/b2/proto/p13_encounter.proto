@@ -1,0 +1,43 @@
+package com.artme.data;
+
+option java_package = "com.artme.data";
+option java_outer_classname = "P13Encounter";
+
+
+message Scene {
+  required int32   chapterId    = 1;	// 对应章节(场景)ID
+  required int32   charaId		= 2;	// 可能出现的角色
+}
+
+message SceneSheet {
+  repeated Scene value = 1;
+}
+
+message Encounter {
+	  required string   charaId      = 1;   // 角色ID
+  	required string   name         = 2;   // 角色名称
+    required string   marriage_succ	= 3;   // 结婚失败剧情
+    required string   marriage_fail	= 4;   // 结婚成功剧情
+    required string   encounter1    = 5;   // 邂逅剧情1
+    required string   love1			    = 6;   // 好感度变化1
+    required string   encounter2    = 7;   // 邂逅剧情2
+    required string   love2         = 8;   // 好感度变化2
+    required string   encounter3    = 9;   // 邂逅剧情3
+    required string   love3         = 10;   // 好感度变化3
+}
+
+message EncounterSheet {
+  repeated Encounter value = 1;
+}
+
+message Episode {
+	required string   episodeId   = 1;   // 剧情ID
+	required string   charaId    	= 2;   // 角色
+	required string   face    		= 3;   // 表情
+	required string   content    	= 4;   // 内容
+}
+
+message EpisodeSheet {
+  repeated Episode value = 1;
+}
+

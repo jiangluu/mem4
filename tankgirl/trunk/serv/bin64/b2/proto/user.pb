@@ -1,7 +1,7 @@
 
-Ò
+ô
 
-User.protoA2Data"±
+User.protoA2Data"Ó
 User
 userId (	
 displayName (	
@@ -24,15 +24,17 @@ formations (2.A2Data.User.Formation
 versions (
 create_time ( 
 runes (2.A2Data.User.Rune"
-stages (2.A2Data.User.Stagea
+stages (2.A2Data.User.Stage‚
 Hero
 
 id (
 level (
-dis_lv (
-skill_lv (
-star_lv (
-exp (!
+dis_lv (
+dis_cd (
+skill_lv (
+star_lv (
+exp (
+dis_exp (!
 Rune
 
 id (

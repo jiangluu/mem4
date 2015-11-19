@@ -1,5 +1,5 @@
 
-·
+Ì
 p06_stage.protocom.artme.data"´
 Chapter
 stageId (
@@ -12,7 +12,7 @@
 	hidestage (
 	hidestars	 ("6
 ChapterSheet&
-value (2.com.artme.data.Chapter"ê
+value (2.com.artme.data.Chapter"ÿ
 Stage
 NPCId (
 diff (
@@ -36,7 +36,8 @@
 item5 (
 prob5 (
 	captureId (
-special_item ("2
+special_item (
+special_des (	"2
 
 StageSheet$
 value (2.com.artme.data.Stage"·
