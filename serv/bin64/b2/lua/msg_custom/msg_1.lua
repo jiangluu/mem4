@@ -24,6 +24,9 @@ local function init_player_data(me)
 		table.insert(bag,{ itemID=15050 ,num=200 ,idx=8})
 		table.insert(bag,{ itemID=15002 ,num=100 ,idx=9})
 		table.insert(bag,{ itemID=10004 ,num=1000 ,idx=9})
+		for aa=10100,10135 do
+			table.insert(bag,{ itemID=aa ,num=500,idx=aa-10100+10})
+		end
 		
 		
 		
