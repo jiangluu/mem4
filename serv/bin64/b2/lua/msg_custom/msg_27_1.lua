@@ -46,6 +46,12 @@ function onMsg(me,merge_meta,merge)
 	local colname1 = 'effect'..item_dis_type1
 	local colname2 = 'up'..nan_dis_type
 	
+	print(nan_dis_type,type(nan_dis_type))
+	print(sd.dis_type[1])
+	local pbc = require('protobuf')
+	local aa = pbc.enum_id('com.artme.data.Unit.DISType',nan_dis_type)
+	print('bbbbbbbb',aa)
+	
 	local multi1 = sd.dis_type[nan_dis_type][colname1]
 	local multi2 = 0
 	local multi3 = 0
