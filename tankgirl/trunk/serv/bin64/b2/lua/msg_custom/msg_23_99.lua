@@ -12,10 +12,12 @@ function onMsg(me,merge_meta,merge)
 			-- lcf.cur_stream_push_string(bin,#bin)		-- 放入发送缓冲
 			-- lcf.cur_stream_write_back()
 		-- end
-		
-		local forma = { idx=2,heroIDs={1002,1036,1050,1049,1051},runeIDs={1,2,3} }
-		table.insert(merge_meta,'User.Formation')
-		table.insert(merge,forma)
+	
+	local hero_id = 1002
+	local nan_dis_type = sd.unit[hero_id].dis_type
+	
+	print(nan_dis_type,type(nan_dis_type))
+	print(sd.dis_type[1])
 	
 	return 0
 end
