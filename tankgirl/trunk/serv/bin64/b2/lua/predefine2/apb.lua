@@ -19,10 +19,10 @@ pb.register_file()
 pb.register_file = o.register_file
 pb.encode = o.encode
 pb.enum_id = o.enum_id
+pb.extract = o.extract
 
 function pb.decode(typr,aa)
 	local not_a_real_table = o.decode(typr,aa)
-	o.extract(not_a_real_table)
 	return not_a_real_table
 end
 
