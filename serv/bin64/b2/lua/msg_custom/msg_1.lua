@@ -133,6 +133,7 @@ function onMsg(me)
 		
 		local player_data = pb.decode('A2Data.User',player_data_bin)		-- 调用protobuf反序列化
 		assert(player_data)
+		pb.extract(player_data)
 		
 		if nil==player_data.versions or (player_data.versions[1] or 0)<cur_init_version then
 			print('Reinit player',player_data.userId)
