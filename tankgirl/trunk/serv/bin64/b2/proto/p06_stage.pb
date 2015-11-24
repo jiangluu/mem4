@@ -1,5 +1,5 @@
 
-Ã
+⁄
 p06_stage.protocom.artme.data"¥
 Chapter
 stageId (
@@ -12,32 +12,33 @@
 	hidestage (
 	hidestars	 ("6
 ChapterSheet&
-value (2.com.artme.data.Chapter"ˇ
+value (2.com.artme.data.Chapter"ç
 Stage
 NPCId (
 diff (
-stageId (
-	condition (
-para (
-des (	
-expDevil (
-gold (
-expHero	 (
-discount_fail
- (
-item1 (
-prob1 (
-item2 (
-prob2 (
-item3 (
-prob3 (
-item4 (
-prob4 (
-item5 (
-prob5 (
-	captureId (
-special_item (
-special_des (	"2
+stageId (
+cost (
+	condition (
+para (
+des (	
+expDevil (
+gold	 (
+expHero
+ (
+discount_fail (
+item1 (
+prob1 (
+item2 (
+prob2 (
+item3 (
+prob3 (
+item4 (
+prob4 (
+item5 (
+prob5 (
+	captureId (
+special_item (
+special_des (	"2
 
 StageSheet$
 value (2.com.artme.data.Stage"∑
@@ -49,7 +50,7 @@ StageSheet$
 startPoint (
 unitId1 (
 unitNum1 (
-birthInterval1 (
+birthInterval1 (
 unitLv1 (
 hp_add1	 (
 atk_add1
@@ -65,7 +66,7 @@ skill_3rd1 (
 skill_4th1 (
 unitId2 (
 unitNum2 (
-birthInterval2 (
+birthInterval2 (
 unitLv2 (
 hp_add2 (
 atk_add2 (
@@ -80,7 +81,7 @@ skill_3rd2 (
 skill_4th2 (
 unitId3 (
 unitNum3 (
-birthInterval3 (
+birthInterval3 (
 unitLv3 (
 hp_add3 (
 atk_add3  (
