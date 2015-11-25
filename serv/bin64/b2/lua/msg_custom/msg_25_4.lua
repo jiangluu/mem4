@@ -18,14 +18,20 @@ function onMsg(me,merge_meta,merge)
 	assert(forma)
 	
 	-- 为了测试方便先不检查状态
-	
-	
-	
 	local conf = sd.stage_stage[stage_id]
+	
+	if me.energy < conf.cost then
+		return 1
+	end
+	
+	
+	
 	
 	-- modify
 	local t_item_get = {}
 	local t_hero_changed = {}
+	
+	me.energy = me.energy - conf.cost
 	
 	me.curExp = me.curExp + (conf.expDevil * math.random(80,120) / 100)
 	-- level up auto
@@ -87,6 +93,7 @@ function onMsg(me,merge_meta,merge)
 	
 	
 	local me2 = {}
+	me2.energy = me.energy
 	me2.coin = me.coin
 	me2.curExp = me.curExp
 	me2.level = me.level
