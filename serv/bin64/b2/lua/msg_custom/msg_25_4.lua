@@ -81,6 +81,10 @@ function onMsg(me,merge_meta,merge)
 		loot(i)
 	end
 	
+	for i=1,#t_item_get do
+		bag.add(me,t_item_get[i].itemID, t_item_get[i].num, 'saodang')
+	end
+	
 	
 	local me2 = {}
 	me2.coin = me.coin
