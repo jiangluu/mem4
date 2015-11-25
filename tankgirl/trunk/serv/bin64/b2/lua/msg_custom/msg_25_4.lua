@@ -33,7 +33,7 @@ function onMsg(me,merge_meta,merge)
 	
 	me.energy = me.energy - conf.cost
 	
-	me.curExp = me.curExp + (conf.expDevil * math.random(80,120) / 100)
+	me.curExp = (me.curExp or 0) + (conf.expDevil * math.random(80,120) / 100)
 	-- level up auto
 	for lv=me.level,999 do
 		local raw = sd.lv[lv]
