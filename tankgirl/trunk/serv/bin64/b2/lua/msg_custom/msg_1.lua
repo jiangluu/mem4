@@ -79,7 +79,9 @@ local function init_player_data(me)
 		me.stages = {}
 		table.insert(me.stages, { stageId=101010, star=2 })
 		table.insert(me.stages, { stageId=101020, star=3 })
-		table.insert(me.stages, { stageId=101030, star=1 })
+		for i=101030,108080,10 do
+			table.insert(me.stages, { stageId=i, star=1 })
+		end
 		
 
 		-- ======== 初始化玩家数据结束 ========
