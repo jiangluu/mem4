@@ -55,12 +55,22 @@ function onMsg(me,merge_meta,merge)
 	
 	
 	the_hero.star_lv = the_hero.star_lv + 1
+	local mo = nil
+	if 6==the_hero.star_lv then
+		mo = table.deepclone(the_hero)
+		
+		mo.id = mo.id + 4000	-- 魔化
+		the_hero.flag = 1
+	end
 	
 	
 	local me2 = {}
 	me2.coin = me.coin
 	me2.items = { the_item }
 	me2.heroes = { the_hero }
+	if mo then
+		table.insert(me2.heroes, mo)
+	end
 	table.insert(merge_meta,'User')
 	table.insert(merge,me2)
 	
