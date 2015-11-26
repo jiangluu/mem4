@@ -62,6 +62,9 @@ function o.add(me,item_id,num,tag)
 	elseif 10002==item_id then
 		me.diamond = me.diamond + num
 		return true
+	elseif 10005==item_id then
+		me.curExp = (me.curExp or 0) + num
+		return true
 	end
 	
 	local it = o.find(me,item_id)
