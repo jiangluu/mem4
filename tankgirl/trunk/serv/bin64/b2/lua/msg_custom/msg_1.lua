@@ -1,7 +1,7 @@
 
 local lcf = ffi.C
 
-local cur_init_version = 24
+local cur_init_version = 25
 
 
 local function init_player_data(me)
@@ -80,7 +80,9 @@ local function init_player_data(me)
 		table.insert(me.stages, { stageId=101010, star=2 })
 		table.insert(me.stages, { stageId=101020, star=3 })
 		for i=101030,108080,10 do
-			table.insert(me.stages, { stageId=i, star=1 })
+			if 0 ~= (i % 100) then
+				table.insert(me.stages, { stageId=i, star=1 })
+			end
 		end
 		
 
