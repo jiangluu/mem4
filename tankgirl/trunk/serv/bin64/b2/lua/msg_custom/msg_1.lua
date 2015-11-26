@@ -18,16 +18,16 @@ local function init_player_data(me)
 		table.insert(bag,{ itemID=10012 ,num=20 ,idx=2})
 		table.insert(bag,{ itemID=10013 ,num=20 ,idx=3})
 		table.insert(bag,{ itemID=10014 ,num=10 ,idx=4})
-		table.insert(bag,{ itemID=15001 ,num=300 ,idx=5})
+		--table.insert(bag,{ itemID=15001 ,num=300 ,idx=5})
 		table.insert(bag,{ itemID=15036 ,num=100 ,idx=6})
-		table.insert(bag,{ itemID=15005 ,num=100 ,idx=7})
+		--table.insert(bag,{ itemID=15005 ,num=100 ,idx=7})
 		table.insert(bag,{ itemID=15050 ,num=200 ,idx=8})
-		table.insert(bag,{ itemID=15002 ,num=100 ,idx=9})
+		--table.insert(bag,{ itemID=15002 ,num=100 ,idx=9})
 		table.insert(bag,{ itemID=10004 ,num=1000 ,idx=9})
 		for i=1,10 do
-			bag.add(me,15000+i,999,'init')
-			bag.add(me,16000+i,999,'init')
-			bag.add(me,17000+i,999,'init')
+			table.insert(bag,{ itemID=15000+i ,num=999 ,idx=9})
+			table.insert(bag,{ itemID=16000+i ,num=999 ,idx=9})
+			table.insert(bag,{ itemID=17000+i ,num=999 ,idx=9})
 		end
 		
 		for aa=10100,10135 do
