@@ -1,7 +1,7 @@
 
 local lcf = ffi.C
 
-local cur_init_version = 26
+local cur_init_version = 27
 
 
 local function init_player_data(me)
@@ -24,6 +24,12 @@ local function init_player_data(me)
 		table.insert(bag,{ itemID=15050 ,num=200 ,idx=8})
 		table.insert(bag,{ itemID=15002 ,num=100 ,idx=9})
 		table.insert(bag,{ itemID=10004 ,num=1000 ,idx=9})
+		for i=1,10 do
+			bag.add(me,15000+i,999,'init')
+			bag.add(me,16000+i,999,'init')
+			bag.add(me,17000+i,999,'init')
+		end
+		
 		for aa=10100,10135 do
 			table.insert(bag,{ itemID=aa ,num=500,idx=aa-10100+10})
 		end
