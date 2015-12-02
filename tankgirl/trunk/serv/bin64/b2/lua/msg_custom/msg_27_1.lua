@@ -9,7 +9,7 @@ function onMsg(me,merge_meta,merge)
 	local support_item_id3 = lcf.cur_stream_get_int32() 
 	local support_item_id4 = lcf.cur_stream_get_int32() 
 	local dis_times = lcf.cur_stream_get_int32() 	-- 调教次数
-	local play_add = lcf.cur_stream_get_int32() 
+	local play_add = lcf.cur_stream_get_float32() 
 	
 	print('msg 27_1',hero_id,item_id)
 	print('----',support_item_id1,support_item_id2,support_item_id3,support_item_id4)
