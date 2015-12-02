@@ -1,6 +1,6 @@
 
-Ã
-P05_discipline.protocom.artme.data"…
+ñ
+P05_discipline.protocom.artme.data"›
 DisLv
 dis_lv (
 dis_exp (
@@ -8,7 +8,8 @@
 dis_hp (
 dis_att (
 dis_def (
-dis_skillunlock ("2
+dis_skillunlock (
+dis_max_item ("2
 
 DisLvSheet$
 value (2.com.artme.data.DisLv"p
@@ -29,30 +30,31 @@ DisLvSheet$
 
 cd ("6
 DisItemSheet&
-value (2.com.artme.data.DisItem"l
+value (2.com.artme.data.DisItem"S
 
 DisSupport
 item_id (
 name (	
 pos (
-up1 (
-up2 (
-up3 (
-up4 ("<
+des (	
+para ("<
 DisSupportSheet)
-value (2.com.artme.data.DisSupport"/
+value (2.com.artme.data.DisSupport"N
 DisPlay
 
-id (
-des (	
-add ("6
+id (
+speed (
+add1 (
+add2 (
+add3 ("6
 DisPlaySheet&
-value (2.com.artme.data.DisPlay":
+value (2.com.artme.data.DisPlay"L
 	DisScript
 
 id (
 	upperrang (
-script (	":
+script (	
+shock_lv (":
 DisScriptSheet(
 value (2.com.artme.data.DisScriptB
 com.artme.dataBP05Discipline

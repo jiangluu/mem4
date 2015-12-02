@@ -11,6 +11,7 @@ message DisLv {
   required int32    dis_att            = 5;   //攻击增加
   required int32    dis_def            = 6;   //防御增加
   required int32    dis_skillunlock    = 7;   //开启技能个数
+  required int32    dis_max_item       = 8;   //调教最大次数
 }
 
 message DisLvSheet {
@@ -47,10 +48,8 @@ message DisSupport {
   required int32    item_id     = 1;   // 道具Id
   required string   name        = 2;   // 道具名称
   required int32    pos         = 3;   // 辅助位置1或2
-  required int32    up1         = 4;   // 痛感型加成
-  required int32    up2         = 5;   // 羞耻型加成
-  required int32    up3         = 6;   // 忍耐型加成
-  required int32    up4         = 7;   // 洗脑型加成
+  required string   des         = 4;   // 辅助效果描述
+  required float    para        = 5;   // 参数
 }
 
 message DisSupportSheet {
@@ -59,8 +58,10 @@ message DisSupportSheet {
 
 message DisPlay {
   required int32    id      = 1;   // id
-  required string   des     = 2;   // 操作效果
-  required int32    add     = 3;   // 加成率
+  required float    speed   = 2;   // 速度(s)
+  required float    add1    = 3;   // 调教操作加成miss   
+  required float    add2    = 4;   // 调教操作加成hit
+  required float    add3    = 5;   // 调教操作加成perfect 
 }
 
 message DisPlaySheet {
@@ -71,6 +72,7 @@ message DisScript {
   required int32    id           = 1;   // id
   required int32    upperrang    = 2;   // 上限值
   required string   script       = 3;   // 对应角色的台词
+  required int32    shock_lv     = 4;   // 震屏等级
 }
 
 message DisScriptSheet {
