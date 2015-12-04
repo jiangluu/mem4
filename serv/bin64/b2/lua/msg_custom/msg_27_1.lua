@@ -79,7 +79,7 @@ function onMsg(me,merge_meta,merge)
 		base_exp = base_exp + sd.dis_support[10204].para
 	end
 	
-	local final_exp = base_exp * multi1 * play_add
+	local final_exp = base_exp * multi1 * play_add / 100
 	if t_sup[10202] then
 		final_exp = final_exp + sd.dis_support[10202].para * dis_times
 	end
