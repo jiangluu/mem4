@@ -47,6 +47,10 @@ function onMsg(me,merge_meta,merge)
 		end
 	end
 	
+	-- cache things
+	local ca = { stage_id=stage_id, forma=(me.CurrentForm or 0)+1, pool=t_item_get }
+	me._cache = ca
+	
 	
 	local me2 = {}
 	me2.items = t_item_get
