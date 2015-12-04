@@ -112,7 +112,7 @@ function onMsg(me,merge_meta,merge)
 			break
 		end
 		
-		if nan.dis_exp >= raw.dis_exp then
+		if nan.dis_exp >= raw.dis_exp and nil~=sd.dis_lv[lv+1] then
 			nan.dis_lv = nan.dis_lv + 1
 		else
 			break
