@@ -127,7 +127,7 @@ function onMsg(me)
 		me.create_time = now()
 		me.versions = { cur_init_version }
 
-		me.displayName = 'guest'..sn
+		me.displayName = bin
 		init_player_data(me)
 
 		
