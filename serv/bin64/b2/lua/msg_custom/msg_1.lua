@@ -1,16 +1,16 @@
 
 local lcf = ffi.C
 
-local cur_init_version = 29
+local cur_init_version = 30
 
 
 local function init_player_data(me)
 		-- ========  初始化玩家数据开始 ========
 		me.curExp = 0
 		me.level = 1
-		me.diamond = 10
-		me.coin = 9999999
-		me.energy = 999
+		me.diamond = 500000
+		me.coin = 300000
+		me.energy = 100
 		
 		local bag = {}
 	
@@ -29,9 +29,9 @@ local function init_player_data(me)
 		table.insert(bag,{ itemID=17000 ,num=500 ,idx=9})
 		
 		for i=1,10 do
-			table.insert(bag,{ itemID=15000+i ,num=999 ,idx=9})
-			table.insert(bag,{ itemID=16000+i ,num=999 ,idx=9})
-			table.insert(bag,{ itemID=17000+i ,num=999 ,idx=9})
+			table.insert(bag,{ itemID=15000+i ,num=99 ,idx=9})
+			table.insert(bag,{ itemID=16000+i ,num=99 ,idx=9})
+			table.insert(bag,{ itemID=17000+i ,num=99 ,idx=9})
 		end
 		
 		for aa=10100,10123 do
@@ -47,23 +47,19 @@ local function init_player_data(me)
 		
 		me.heroes = {}
 		table.insert(me.heroes,{id=1001,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
-		table.insert(me.heroes,{id=1002,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,exp=3428})
-		table.insert(me.heroes,{id=1036,level=10,dis_lv=1,skill_lv={10,10,10,10},star_lv=2,exp=3428})
-		table.insert(me.heroes,{id=1050,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,exp=12188})
-		table.insert(me.heroes,{id=1005,level=15,dis_lv=1,skill_lv={20,20,20,20},star_lv=3,exp=12188})
+		table.insert(me.heroes,{id=1002,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
+		table.insert(me.heroes,{id=1036,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
+		table.insert(me.heroes,{id=1050,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
+		table.insert(me.heroes,{id=1005,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
 		
-		table.insert(me.heroes,{id=1003,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=20})
-		table.insert(me.heroes,{id=1004,level=3,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=68})
-		table.insert(me.heroes,{id=1006,level=3,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=68})
-		table.insert(me.heroes,{id=1007,level=3,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=68})
+		table.insert(me.heroes,{id=1010,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
+		table.insert(me.heroes,{id=1032,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
+		table.insert(me.heroes,{id=1034,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
+		table.insert(me.heroes,{id=1007,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
 		
-		table.insert(me.heroes,{id=1008,level=2,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=20})
-		table.insert(me.heroes,{id=1009,level=2,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=20})
-		table.insert(me.heroes,{id=1010,level=2,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=20})
-		
-		table.insert(me.heroes,{id=1016,level=4,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=176})
-		table.insert(me.heroes,{id=1017,level=4,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=176})
-		table.insert(me.heroes,{id=1013,level=4,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=176})
+		table.insert(me.heroes,{id=1039,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
+		table.insert(me.heroes,{id=1040,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
+		table.insert(me.heroes,{id=1045,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
 
 		
 		me.runes = {}
@@ -82,17 +78,16 @@ local function init_player_data(me)
 		
 
 		me.formations = {}
-		table.insert(me.formations,{ idx=1,heroIDs={1001,1002,1036,1050,1005},runeIDs={1,2,3} })
-		table.insert(me.formations,{ idx=2,heroIDs={1001,1002,1036,1050,1005},runeIDs={1,2,3} })
+		table.insert(me.formations,{ idx=1,heroIDs={1001,1002,1036,1050,1005} })
 		
 		
-		me.stages = {}
-		for i=101,108 do
-			for j=1,9 do
-				local aa = i*1000 + j*10
-				table.insert(me.stages, { stageId=aa, star=1 })
-			end
-		end
+		--me.stages = {}
+		--for i=101,108 do
+			--for j=1,9 do
+				--local aa = i*1000 + j*10
+				--table.insert(me.stages, { stageId=aa, star=1 })
+			--end
+		--end
 		
 
 		-- ======== 初始化玩家数据结束 ========
