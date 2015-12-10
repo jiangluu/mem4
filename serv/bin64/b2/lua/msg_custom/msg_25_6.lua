@@ -4,6 +4,7 @@ local lcf = ffi.C
 
 function onMsg(me,merge_meta,merge)
 	local stage_id = lcf.cur_stream_get_int32() 
+	local star = 3		-- for now
 	
 	print('msg 25_6',stage_id)
 	
@@ -22,6 +23,19 @@ function onMsg(me,merge_meta,merge)
 	
 	
 	-- modify
+	local stage_found = false
+	for i=1,#me.stages do
+		if stage_id == me.stages[i].stageId then
+			stage_found = true
+			me.stages[i].star = star
+			break
+		end
+	end
+	if false == stage_found then
+		table.insert(me.stages, { stageId=stage_id, star=star })
+	end
+	
+	
 	local t_item_get = {}
 	local t_hero_changed = {}
 	
@@ -90,6 +104,7 @@ function onMsg(me,merge_meta,merge)
 	me2.coin = me.coin
 	me2.curExp = me.curExp
 	me2.level = me.level
+	me2.stages = me.stages
 	me2.heroes = t_hero_changed
 	me2.items = t_item_get
 	table.insert(merge_meta,'User')
