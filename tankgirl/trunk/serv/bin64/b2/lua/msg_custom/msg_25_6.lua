@@ -23,6 +23,7 @@ function onMsg(me,merge_meta,merge)
 	
 	
 	-- modify
+	me.stages = me.stages or {}
 	local stage_found = false
 	for i=1,#me.stages do
 		if stage_id == me.stages[i].stageId then
