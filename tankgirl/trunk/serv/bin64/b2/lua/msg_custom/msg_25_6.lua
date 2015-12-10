@@ -22,18 +22,19 @@ function onMsg(me,merge_meta,merge)
 	assert(forma)
 	
 	
+	stage_id = math.floor(stage_id / 10) * 10
 	-- modify
 	me.stages = me.stages or {}
 	local stage_found = false
 	for i=1,#me.stages do
 		if stage_id == me.stages[i].stageId then
 			stage_found = true
-			me.stages[i].star = star
+			me.stages[i].star = math.min(3, me.stages[i].star+1)
 			break
 		end
 	end
 	if false == stage_found then
-		table.insert(me.stages, { stageId=stage_id, star=star })
+		table.insert(me.stages, { stageId=stage_id, star=1 })
 	end
 	
 	
