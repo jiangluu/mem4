@@ -22,6 +22,8 @@ function onMsg(me,merge_meta,merge)
 	assert(forma)
 	
 	
+	local gewei = stage_id % 10
+	star = math.min(3,gewei)
 	stage_id = math.floor(stage_id / 10) * 10
 	-- modify
 	me.stages = me.stages or {}
@@ -29,7 +31,7 @@ function onMsg(me,merge_meta,merge)
 	for i=1,#me.stages do
 		if stage_id == me.stages[i].stageId then
 			stage_found = true
-			me.stages[i].star = math.min(3, me.stages[i].star+1)
+			me.stages[i].star = math.max(star, me.stages[i].star)
 			break
 		end
 	end
