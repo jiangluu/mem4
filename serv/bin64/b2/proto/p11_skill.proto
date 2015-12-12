@@ -10,27 +10,27 @@ message Skill {
   required string   desc           = 4;   // 技能说明
   required string 	eff 		   = 5;   // 技能特效		
   required int32 	hit 		   = 6;   // HIT数
-  required int32 	time 		   = 7;   // 持续时间1
+  required float 	time 		   = 7;   // 持续时间1
   required int32 	specialty 	   = 8;   // 特殊效果
-  required int32 	specialNum 	   = 9;   // 特殊效果参数
+  required float 	specialNum 	   = 9;   // 特殊效果参数
   required int32 	skillType 	   = 10;  // 技能类型
-  required int32 	triggerProb    = 11;  // 触发概率
+  required float 	triggerProb    = 11;  // 触发概率
   required int32 	range 		   = 12;  // 技能范围
-  required int32 	rangeNum 	   = 13;  // 范围参数
-  required int32 	cd 		   	   = 14;  // 技能CD
+  required float 	rangeNum 	   = 13;  // 范围参数
+  required float 	cd 		   	   = 14;  // 技能CD
   required int32 	target 		   = 15;  // 技能目标
   required int32 	effType1 	   = 16;  // 技能效果1
-  required int32 	effNum1 	   = 17;  // 技能参数1
-  required int32 	effGrow1 	   = 18;  // 技能成长1
+  required float 	effNum1 	   = 17;  // 技能参数1
+  required float 	effGrow1 	   = 18;  // 技能成长1
   required int32 	effType2 	   = 19;  // 技能效果2
-  required int32 	effNum2 	   = 20;  // 技能参数2
-  required int32 	effGrow2 	   = 21;  // 技能成长2
+  required float 	effNum2 	   = 20;  // 技能参数2
+  required float 	effGrow2 	   = 21;  // 技能成长2
   required int32 	effType3 	   = 22;  // 技能效果3
-  required int32 	effNum3 	   = 23;  // 技能参数3
-  required int32 	effGrow3 	   = 24;  // 技能成长3
+  required float 	effNum3 	   = 23;  // 技能参数3
+  required float 	effGrow3 	   = 24;  // 技能成长3
   required int32 	effType4 	   = 25;  // 技能效果4
-  required int32 	effNum4 	   = 26;  // 技能参数4
-  required int32 	effGrow4 	   = 27;  // 技能成长4
+  required float 	effNum4 	   = 26;  // 技能参数4
+  required float 	effGrow4 	   = 27;  // 技能成长4
  
 }
 
