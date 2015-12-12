@@ -8,30 +8,30 @@
 desc (	
 eff (	
 hit (
-time (
+time (
 	specialty (
 
-specialNum	 (
+specialNum	 (
 	skillType
  (
-triggerProb (
+triggerProb (
 range (
-rangeNum (
+rangeNum (
 
-cd (
+cd (
 target (
 effType1 (
-effNum1 (
-effGrow1 (
+effNum1 (
+effGrow1 (
 effType2 (
-effNum2 (
-effGrow2 (
+effNum2 (
+effGrow2 (
 effType3 (
-effNum3 (
-effGrow3 (
+effNum3 (
+effGrow3 (
 effType4 (
-effNum4 (
-effGrow4 ("2
+effNum4 (
+effGrow4 ("2
 
 SkillSheet$
 value (2.com.artme.data.SkillB

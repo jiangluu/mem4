@@ -71,11 +71,12 @@ message Unit {
   required float    dis_up        = 27;  //调教经验加成
   required string   port_1        = 28;  //立绘编号
   required string   port_2        = 29;  //破衣立绘
-  required int32    model         = 30; //模型ID
-  required int32    skill_1       = 31;  //技能1
-  required int32    skill_2       = 32;  //技能2
-  required int32    skill_3       = 33;  //技能3
-  required int32    skill_4       = 34;  //技能4
+  required string 	head		  = 30; // 魔娘头像
+  required int32    model         = 31; //模型ID
+  required int32    skill_1       = 32;  //技能1
+  required int32    skill_2       = 33;  //技能2
+  required int32    skill_3       = 34;  //技能3
+  required int32    skill_4       = 35;  //技能4
  
 }
 
