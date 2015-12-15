@@ -24,18 +24,29 @@ function onMsg(me,merge_meta,merge)
 		return 3
 	end
 	
+	local exp_max = sd.unit_lv[me.level].exp
+	local the_hero = me.heroes[hero_i]
+	if (the_hero.exp or 0)>=exp_max then
+		return 4
+	end
+	
 	
 	local exp_add = sd.item[item_id].exp
 	
 	-- modify
 	local the_item = bag.dec(me,item_id,1,'hero_add_exp')
 	
-	local the_hero = me.heroes[hero_i]
+	
 	the_hero.exp = (the_hero.exp or 0)+ exp_add
+	the_hero.exp = math.min(exp_max, the_hero.exp)
 	
 	
 	-- level up auto
 	for lv=the_hero.level, 999 do
+		if lv>=me.level then
+			break
+		end
+		
 		local raw = sd.unit_lv[lv]
 		if nil==raw then
 			break
