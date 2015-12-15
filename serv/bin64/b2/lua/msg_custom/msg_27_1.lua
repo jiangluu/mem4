@@ -95,6 +95,7 @@ function onMsg(me,merge_meta,merge)
 	end
 	
 	nan.dis_exp = (nan.dis_exp or 0) + final_exp
+	nan.dis_exp = math.floor(nan.dis_exp + 0.01)	-- 如果很接近可能是浮点误差
 	
 	local cd_fix = sd.dis_item[item_id].cd
 	cd_fix = final_exp / sd.dis_item[item_id].exp * cd_fix
