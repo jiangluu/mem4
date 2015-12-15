@@ -31,12 +31,16 @@ function onMsg(me,merge_meta,merge)
 	local lv_now = the_hero.skill_lv[skill_index]
 	assert(lv_now)
 	
+	if lv_now >= the_hero.level then
+		return 4
+	end
+	
 	local colname = 'money'..skill_index
 	local coin_dec = sd.unit_skill[lv_now][colname]
 	
 	
 	if me.coin<coin_dec then
-		return 4
+		return 3
 	end
 	
 	
