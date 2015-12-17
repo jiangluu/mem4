@@ -7,7 +7,9 @@ bag = o
 function o.find(me,item_id)
 	for i=1,#me.items do
 		if item_id == me.items[i].itemID then
-			return me.items[i] , i
+			local dd = me.items[i]
+			dd.num = dd.num or 0		-- just fix
+			return  dd, i
 		end
 	end
 	return nil
@@ -15,9 +17,9 @@ end
 
 function o.check(me,item_id,num)
 	if 10001==item_id then
-		return me.coin >= num
+		return (me.coin or 0) >= num
 	elseif 10002==item_id then
-		return me.diamond >= num
+		return (me.diamond or 0) >= num
 	end
 	
 	local it = o.find(me,item_id)
@@ -29,15 +31,15 @@ end
 
 function o.dec(me,item_id,num,tag)
 	if 10001==item_id then
-		if me.coin >= num then
-			me.coin = me.coin - num
+		if (me.coin or 0) >= num then
+			me.coin = (me.coin or 0) - num
 			return true
 		else
 			return false
 		end
 	elseif 10002==item_id then
-		if me.diamond >= num then
-			me.diamond = me.diamond - num
+		if (me.diamond or 0) >= num then
+			me.diamond = (me.diamond or 0) - num
 			return true
 		else
 			return false
@@ -57,10 +59,10 @@ function o.add(me,item_id,num,tag)
 	-- @TODO: 记运营日志
 	
 	if 10001==item_id then
-		me.coin = me.coin + num
+		me.coin = (me.coin or 0) + num
 		return true
 	elseif 10002==item_id then
-		me.diamond = me.diamond + num
+		me.diamond = (me.diamond or 0) + num
 		return true
 	elseif 10005==item_id then
 		me.curExp = (me.curExp or 0) + num
