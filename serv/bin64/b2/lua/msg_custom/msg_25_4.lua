@@ -58,6 +58,10 @@ function onMsg(me,merge_meta,merge)
 				
 				-- level up auto
 				for lv=h.level, 999 do
+					if lv>=me.level then
+						break
+					end
+					
 					local raw = sd.unit_lv[lv]
 					if nil==raw then
 						break
