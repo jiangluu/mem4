@@ -69,6 +69,7 @@ function onMsg(me,merge_meta,merge)
 	me2.items = { the_item }
 	me2.heroes = { the_hero }
 	if mo then
+		table.insert(me.heroes, mo)
 		table.insert(me2.heroes, mo)
 	end
 	table.insert(merge_meta,'User')
