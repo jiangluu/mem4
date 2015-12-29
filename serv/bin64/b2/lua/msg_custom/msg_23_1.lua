@@ -88,7 +88,7 @@ function onMsg(me,merge_meta,merge)
 				-- 是否抽到重复的魔娘
 				if not found then
 					table.remove(item_change,i)
-					local h = { id=a.itemID,level=1,dis_lv=0,skill_lv={1,1,1,1},star_lv=1,exp=0 }
+					local h = { id=a.itemID,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0 }
 					table.insert(me.heroes, h)
 					table.insert(hero_change, h)
 				else
