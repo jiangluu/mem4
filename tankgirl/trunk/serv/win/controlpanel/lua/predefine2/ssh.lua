@@ -3,8 +3,8 @@ local o = {}
 
 ssh = o
 
-local cmd = 'cd bbb;svn update'
---local cmd = 'ls -l'
+local cmd = 'ls -l'
+
 
 function o.update_all_file(remote_addr)
 	local ip = string.match(remote_addr,'([^:]+)')
