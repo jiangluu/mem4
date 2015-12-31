@@ -1,7 +1,7 @@
 
 local lcf = ffi.C
 
-local cur_init_version = 31
+local cur_init_version = 32
 
 
 local function init_player_data(me)
@@ -19,16 +19,16 @@ local function init_player_data(me)
 		table.insert(bag,{ itemID=10013 ,num=20 ,idx=3})
 		table.insert(bag,{ itemID=10014 ,num=10 ,idx=4})
 		--table.insert(bag,{ itemID=15001 ,num=300 ,idx=5})
-		table.insert(bag,{ itemID=15036 ,num=100 ,idx=6})
+		--table.insert(bag,{ itemID=15036 ,num=100 ,idx=6})
 		--table.insert(bag,{ itemID=15005 ,num=100 ,idx=7})
-		table.insert(bag,{ itemID=15050 ,num=200 ,idx=8})
+		--table.insert(bag,{ itemID=15050 ,num=200 ,idx=8})
 		--table.insert(bag,{ itemID=15002 ,num=100 ,idx=9})
 		table.insert(bag,{ itemID=10004 ,num=1000 ,idx=9})
 		table.insert(bag,{ itemID=15000 ,num=500 ,idx=9})
 		table.insert(bag,{ itemID=16000 ,num=500 ,idx=9})
 		table.insert(bag,{ itemID=17000 ,num=500 ,idx=9})
 		
-		for i=1,10 do
+		for i=1,64 do
 			table.insert(bag,{ itemID=15000+i ,num=99 ,idx=9})
 			table.insert(bag,{ itemID=16000+i ,num=99 ,idx=9})
 			table.insert(bag,{ itemID=17000+i ,num=99 ,idx=9})
@@ -67,6 +67,7 @@ local function init_player_data(me)
 		table.insert(me.heroes,{id=1046,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
 		table.insert(me.heroes,{id=1042,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
 		table.insert(me.heroes,{id=1049,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
+		table.insert(me.heroes,{id=1064,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
 
 		
 		me.runes = {}
