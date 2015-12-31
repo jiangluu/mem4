@@ -66,6 +66,7 @@ local function init_player_data(me)
 		table.insert(me.heroes,{id=1054,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
 		table.insert(me.heroes,{id=1046,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
 		table.insert(me.heroes,{id=1042,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
+		table.insert(me.heroes,{id=1049,level=1,dis_lv=1,skill_lv={1,1,1,1},star_lv=1,exp=0})
 
 		
 		me.runes = {}
