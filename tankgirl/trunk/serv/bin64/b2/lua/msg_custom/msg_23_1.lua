@@ -54,10 +54,7 @@ function onMsg(me,merge_meta,merge)
 		is_free_summon = could_summon
 		
 		if not could_summon then
-			print('could_summon1', me.diamond,conf1.costId,conf1.costNum)
 			could_summon = bag.dec(me,conf1.costId,conf1.costNum,'summon')
-			print('could_summon2',could_summon)
-			
 		end
 	else
 		could_summon = bag.dec(me,conf1.costId,conf1.costNum,'summon')
