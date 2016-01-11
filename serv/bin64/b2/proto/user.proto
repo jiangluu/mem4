@@ -65,6 +65,8 @@ message User {
 	optional int32 create_time	=18;
 	repeated Rune  runes		=19;
 	repeated Stage stages       =20;
-	optional int32 CurrentForm   =21;
+	optional int32 CurrentForm  =21;
+	optional int32 buyEnergy  	=22;
+	optional int32 buyCoin   	=23;
 	
 }

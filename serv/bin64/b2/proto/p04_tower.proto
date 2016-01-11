@@ -14,16 +14,17 @@ message Tower {
   required int32    level         = 6;   // 等级
   required int32    pre_tower     = 7;   // 前提基础塔
   required int32    cost          = 8;   // 建造价格
-  required int32    hp            = 9;   //生命
-  required int32    atk           = 10;   //攻击
-  required int32    def           = 11;   //防御
-  required int32    bs            = 12;   //建造速度
-  required int32    rs            = 13;  //摧毁后重建速度
-  required int32    range         = 14;  //攻击范围
-  required int32    restrict      = 15;  //攻击范围限制
-  required int32    interval      = 16;  //攻击间隔
-  required string    model         = 17;  //塔模型
- 
+  required float    hp            = 9;   //生命
+  required float    atk           = 10;   //攻击
+  required float    def           = 11;   //防御
+  required float    bs            = 12;   //建造速度
+  required float    rs            = 13;  //摧毁后重建速度
+  required float    range         = 14;  //攻击范围
+  required float    restrict      = 15;  //攻击范围限制
+  required float    atkspd        = 16;  //攻击速度
+  required float    reg_s         = 17;  //生命恢复每秒
+  required string   model         = 18;  //塔模型
+  required int32   	unlock_level  = 19;  //魔王等级要求
 }
 
 message TowerSheet {

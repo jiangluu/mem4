@@ -1,0 +1,26 @@
+package com.artme.data;
+
+option java_package = "com.artme.data";
+option java_outer_classname = "P16Illustration";
+
+                      
+message Illustration {
+  required string   pictureId = 1;   // 图鉴ID
+  required string   name	    = 2;   // 魔娘名字
+  required int32    status 	  = 3;   // 形态（1普通2魔化）
+  required int32    id 	      = 4;   // 魔娘序号
+  required int32    attr_type = 5;   // 属性类型
+  required string   starlv    = 6;   // 背景ID
+  required int32    atk       = 7;   // 攻击
+  required int32    hp        = 8;   // 生存
+  required int32    ass       = 9;   // 辅助
+  required int32    rev       = 10;  // 回复
+  required int32    con       = 11;  //  控制
+  required string   explain   = 12;  //  角色说明
+}
+
+message IllustrationSheet {
+  repeated Illustration value = 1;
+}
+
+

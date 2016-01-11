@@ -1,5 +1,5 @@
 
-â
+Š
 P01_base.protocom.artme.data"ö
 Common
 energy_recov (
@@ -25,13 +25,17 @@ rune_slot2 (
 
 rune_slot3 ("4
 CommonSheet%
-value (2.com.artme.data.Common"G
+value (2.com.artme.data.Common"o
 Lv
 
 lv (
 exp (
 energybonus (
-energylimit (",
+energylimit (
+
+crystal_hp (
+
+base_power (",
 LvSheet!
 value (2.com.artme.data.Lv"E
 Purchase

@@ -1,6 +1,6 @@
 
-ö
-p04_tower.protocom.artme.data"‚
+™
+p04_tower.protocom.artme.data"¥
 Tower
 
 id (
@@ -12,18 +12,20 @@
 	pre_tower (
 cost (
 
-hp	 (
+hp	 (
 atk
- (
-def (
+ (
+def (
 
-bs (
+bs (
 
-rs (
-range (
-restrict (
-interval (
-model (	"2
+rs (
+range (
+restrict (
+atkspd (
+reg_s (
+model (	
+unlock_level ("2
 
 TowerSheet$
 value (2.com.artme.data.TowerB

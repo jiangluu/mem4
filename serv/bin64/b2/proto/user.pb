@@ -1,7 +1,7 @@
 
-ó
+ª
 
-User.protoA2Data"ˆ
+User.protoA2Data"ö
 User
 userId (	
 displayName (	
@@ -25,7 +25,9 @@ formations (2.A2Data.User.Formation
 create_time ( 
 runes (2.A2Data.User.Rune"
 stages (2.A2Data.User.Stage
-CurrentForm (ê
+CurrentForm (
+	buyEnergy (
+buyCoin (ê
 Hero
 
 id (
