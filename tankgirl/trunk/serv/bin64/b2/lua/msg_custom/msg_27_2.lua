@@ -4,6 +4,8 @@ local lcf = ffi.C
 function onMsg(me,merge_meta,merge)
 	local hero_id = lcf.cur_stream_get_int32() 
 	
+	print('msg_27_2.lua',hero_id)
+	
 	
 	local hero_i = -1
 	for i=1,#me.heroes do
@@ -25,7 +27,11 @@ function onMsg(me,merge_meta,merge)
 	end
 	
 	local cost = math.floor(sd.dis_cd[1].price_perSec * (nan.dis_cd - now))
+	print('aaaa',nan.dis_cd,(nan.dis_cd - now),cost)
+	
 	cost = math.max(1,cost)
+	
+	
 	
 	if not bag.dec(me,10002,cost,'clear_dis_cd') then
 		return 4
