@@ -24,7 +24,7 @@ function onMsg(me,merge_meta,merge)
 		return 3
 	end
 	
-	local cost = math.floor(sd.dis_cd[1] * (nan.dis_cd - now))
+	local cost = math.floor(sd.dis_cd[1].price_perSec * (nan.dis_cd - now))
 	cost = math.max(1,cost)
 	
 	if not bag.dec(me,10002,cost,'clear_dis_cd') then
