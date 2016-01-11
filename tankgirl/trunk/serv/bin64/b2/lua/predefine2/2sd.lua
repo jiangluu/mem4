@@ -34,6 +34,7 @@ local metas = {
 	p05_dis_script = {typr='com.artme.data.DisScriptSheet'},
 	p05_dis_support = {typr='com.artme.data.DisSupportSheet',key='item_id'},
 	p05_dis_type = {typr='com.artme.data.DisTypeSheet',key='dis_type'},
+	p05_dis_cd = { typr='com.artme.data.DisCdSheet' }
 	p06_stage_stage = { typr='com.artme.data.StageSheet', key='NPCId' },
 	p10_summon = { typr='com.artme.data.SummonSheet', key='summonId',keydup=true },
 	p10_summon_trans = { typr='com.artme.data.TransSheet', as_array=true },
