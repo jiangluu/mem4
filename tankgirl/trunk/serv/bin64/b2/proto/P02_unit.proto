@@ -18,6 +18,7 @@ message Unit {
   }
 
   enum AttrType {   // 属性类型
+    None        = 0;   // 无类型
     Earth       = 1;   // 地
     Water       = 2;   // 水
     Fire        = 3;   // 火
@@ -48,35 +49,38 @@ message Unit {
   required Status   status        = 4;   // 形态（1普通2魔化）
   required int32    devil_id      = 5;   // 魔化形态ID
   required AttrType attr_type     = 6;   //属性类型
-  required float    baseHp        = 7;   //基础生命
-  required float    baseAtt       = 8;   //基础攻击
-  required float    baseDef       = 9;   //基础防御
-  required float    growHp        = 10;  //生命成长
-  required float    growAtt       = 11;  //攻击成长
-  required float    growDef       = 12;  //防御成长
-  required float    search_r      = 13;  //索敌范围
-  required float    speed         = 14;  //移动速度（m/s）
-  required AIType   ai_type       = 15;  //AI类型
-  required float    att_r         = 16;  //攻击范围
-  required float    limited_r     = 17;  //攻击范围限制
-  required float    interval_s    = 18;  //攻击间隔
-  required float    reg_s         = 19;  // 生命恢复每秒
-  required int32    star_stone    = 20;  // 专属星曜石
-  required int32    moon_stone    = 21;  // 专属月曜石
-  required int32    sun_stone     = 22;  // 专属日曜石
-  required int32    tokenOfLove   = 23;  // 专属信物
-  required DISType  dis_type      = 24;  //调教类型
-  required int32    dis_1st       = 25;  //初次调教所需经验
-  required int32    episodeId     = 26;  //初次调教魔化剧情
-  required float    dis_up        = 27;  //调教经验加成
-  required string   port_1        = 28;  //立绘编号
-  required string   port_2        = 29;  //破衣立绘
-  required string 	head		  = 30; // 魔娘头像
-  required int32    model         = 31; //模型ID
-  required int32    skill_1       = 32;  //技能1
-  required int32    skill_2       = 33;  //技能2
-  required int32    skill_3       = 34;  //技能3
-  required int32    skill_4       = 35;  //技能4
+  required int32    power_onkill  = 7;   //杀死魔力获得
+  required float    baseHp        = 8;   //基础生命
+  required float    baseAtt       = 9;   //基础攻击
+  required float    baseDef       = 10;  //基础防御
+  required float    growHp        = 11;  //生命成长
+  required float    growAtt       = 12;  //攻击成长
+  required float    growDef       = 13;  //防御成长
+  required float    search_r      = 14;  //索敌范围
+  required float    speed         = 15;  //移动速度（m/s）
+  required AIType   ai_type       = 16;  //AI类型
+  required float    att_r         = 17;  //攻击范围
+  required float    limited_r     = 18;  //攻击范围限制
+  required float    atkspd        = 19;  //攻击间隔
+  required float    flyspd        = 20;  //远程飞行速度
+  required float    flyround      = 21;  //远程飞行旋转
+  required float    reg_s         = 22;  // 生命恢复每秒
+  required int32    star_stone    = 23;  // 专属星曜石
+  required int32    moon_stone    = 24;  // 专属月曜石
+  required int32    sun_stone     = 25;  // 专属日曜石
+  required int32    tokenOfLove   = 26;  // 专属信物
+  required DISType  dis_type      = 27;  //调教类型
+  required int32    dis_1st       = 28;  //初次调教所需经验
+  required int32    episodeId     = 29;  //初次调教魔化剧情
+  required float    dis_up        = 30;  //调教经验加成
+  required string   port_1        = 31;  //立绘编号
+  required string   port_2        = 32;  //破衣立绘
+  required string 	head		  = 33;  // 魔娘头像
+  required int32    model         = 34;  //模型ID
+  required int32    skill_1       = 35;  //技能1
+  required int32    skill_2       = 36;  //技能2
+  required int32    skill_3       = 37;  //技能3
+  required int32    skill_4       = 38;  //技能4
  
 }
 

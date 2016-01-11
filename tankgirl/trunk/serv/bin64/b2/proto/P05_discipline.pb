@@ -1,5 +1,5 @@
 
-ñ
+Ð
 P05_discipline.protocom.artme.data"›
 DisLv
 dis_lv (
@@ -56,5 +56,12 @@ DisSupport
 script (	
 shock_lv (":
 DisScriptSheet(
-value (2.com.artme.data.DisScriptB
+value (2.com.artme.data.DisScript")
+DisCd
+
+id (
+price_perSec ("2
+
+DisCdSheet$
+value (2.com.artme.data.DisCdB
 com.artme.dataBP05Discipline

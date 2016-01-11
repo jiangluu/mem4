@@ -28,6 +28,8 @@ message Lv {
   required int32    exp           = 2;  // 升级一级需求总经验
   required int32    energybonus   = 3;  // 升级当前等级奖励能量
   required int32    energylimit   = 4;  // 能量上限
+  required int32    crystal_hp    = 5;  // 魔晶核心（魔王）生命值
+  required int32    base_power    = 6;  // 初始魔力
 }
 
 message LvSheet {

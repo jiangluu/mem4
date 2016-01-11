@@ -48,6 +48,11 @@ message Stage {
   required int32    captureId      = 22;  // Boss魔娘(可捕捉)
   required int32    special_item   = 23;  // Boss魔娘掉落
   required string   special_des    = 24;  // Boss介绍
+  required string   story_1        = 25;  // 开场剧情
+  required string   music_1        = 26;  // 播放音乐1
+  required string   story_2        = 27;  // 中间剧情
+  required string   music_2        = 28;  // 播放音乐2
+  required string   story_3        = 29;  // 结束剧情
 }
 
 message StageSheet {
@@ -57,41 +62,42 @@ message StageSheet {
 message Npc {
   required int32    NPCId          = 1;   // 对应NPCId
   required int32    wave           = 2;   // 所属波次
-  required float    team           = 3;   // 队伍
-  required int32    startPoint     = 4;   //出生点
-  required int32    unitId1        = 5;   //单位ID1
-  required int32    unitNum1       = 6;   // 数量1
-  required float    birthInterval1 = 7;   // 出生间隔1
-  required int32    unitLv1        = 8;   // 等级1
-  required int32    hp_add1        = 9;  // 生命加成1
-  required int32    atk_add1       = 10;  // 攻击加成1
-  required int32    def_add1       = 11;  // 防御加成1
-  required int32    skill_1st1     = 12;  // 技能1等级1
-  required int32    skill_2nd1     = 13;  // 技能2等级1
-  required int32    skill_3rd1     = 14;  // 技能3等级1
-  required int32    skill_4th1     = 15;  // 技能4等级1
-  required int32    unitId2        = 16;  // 单位ID2
-  required int32    unitNum2       = 17;  // 数量2
-  required float    birthInterval2 = 18;  // 出生间隔2
-  required int32    unitLv2        = 19;  // 等级2
-  required int32    hp_add2        = 20;  // 生命加成2
-  required int32    atk_add2       = 21;  // 攻击加成2
-  required int32    def_add2       = 22;  // 防御加成2
-  required int32    skill_1st2     = 23;  // 技能1等级2
-  required int32    skill_2nd2     = 24;  // 技能2等级2
-  required int32    skill_3rd2     = 25;  // 技能3等级2
-  required int32    skill_4th2     = 26;  // 技能4等级2
-  required int32    unitId3        = 27;  // 单位ID3
-  required int32    unitNum3       = 28;  // 数量3
-  required float    birthInterval3 = 29;  // 出生间隔3
-  required int32    unitLv3        = 30;  // 等级3
-  required int32    hp_add3        = 31;  // 生命加成3
-  required int32    atk_add3       = 32;  // 攻击加成3
-  required int32    def_add3       = 33;  // 防御加成3
-  required int32    skill_1st3     = 34;  // 技能1等级3
-  required int32    skill_2nd3     = 35;  // 技能2等级3
-  required int32    skill_3rd3     = 36;  // 技能3等级3
-  required int32    skill_4th3     = 37;  // 技能4等级3
+  required int32    timeout        = 3;   // 波次时间
+  required float    team           = 4;   // 队伍
+  required int32    startPoint     = 5;   //出生点
+  required int32    unitId1        = 6;   //单位ID1
+  required int32    unitNum1       = 7;   // 数量1
+  required float    birthInterval1 = 8;   // 出生间隔1
+  required int32    unitLv1        = 9;   // 等级1
+  required int32    hp_add1        = 10;  // 生命加成1
+  required int32    atk_add1       = 11;  // 攻击加成1
+  required int32    def_add1       = 12;  // 防御加成1
+  required int32    skill_1st1     = 13;  // 技能1等级1
+  required int32    skill_2nd1     = 14;  // 技能2等级1
+  required int32    skill_3rd1     = 15;  // 技能3等级1
+  required int32    skill_4th1     = 16;  // 技能4等级1
+  required int32    unitId2        = 17;  // 单位ID2
+  required int32    unitNum2       = 18;  // 数量2
+  required float    birthInterval2 = 19;  // 出生间隔2
+  required int32    unitLv2        = 20;  // 等级2
+  required int32    hp_add2        = 21;  // 生命加成2
+  required int32    atk_add2       = 22;  // 攻击加成2
+  required int32    def_add2       = 23;  // 防御加成2
+  required int32    skill_1st2     = 24;  // 技能1等级2
+  required int32    skill_2nd2     = 25;  // 技能2等级2
+  required int32    skill_3rd2     = 26;  // 技能3等级2
+  required int32    skill_4th2     = 27;  // 技能4等级2
+  required int32    unitId3        = 28;  // 单位ID3
+  required int32    unitNum3       = 29;  // 数量3
+  required float    birthInterval3 = 30;  // 出生间隔3
+  required int32    unitLv3        = 31;  // 等级3
+  required int32    hp_add3        = 32;  // 生命加成3
+  required int32    atk_add3       = 33;  // 攻击加成3
+  required int32    def_add3       = 34;  // 防御加成3
+  required int32    skill_1st3     = 35;  // 技能1等级3
+  required int32    skill_2nd3     = 36;  // 技能2等级3
+  required int32    skill_3rd3     = 37;  // 技能3等级3
+  required int32    skill_4th3     = 38;  // 技能4等级3
 }
 
 message NpcSheet {

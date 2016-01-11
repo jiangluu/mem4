@@ -79,4 +79,12 @@ message DisScriptSheet {
   repeated DisScript value = 1;
 }
 
+message DisCd {
+  required int32 id 		  = 1;		//id
+  required float price_perSec = 2;		//每秒钻石价格
+}
+
+message DisCdSheet {
+  repeated DisCd value = 1;
+}
 
