@@ -32,6 +32,11 @@ function onMsg(me,merge_meta,merge)
 		loot(i)
 	end
 	
+	print('aaaaaaaaaaaaaaa')
+	for i=1,#t_item_get do
+		print(t_item_get[i].itemID,'num',t_item_get[i].num)
+	end
+	
 	if nil~=conf.captureId and 0~=conf.captureId then
 		local found = false
 		for i=1,#me.heroes do
@@ -50,6 +55,11 @@ function onMsg(me,merge_meta,merge)
 			table.insert(t_item_get, 1,{ itemID=-1, num=1 })
 			table.insert(t_item_get, 1,{ itemID=-1, num=1 })
 		end
+	end
+	
+	print('++++++++++++++++++++++++++++++++')
+	for i=1,#t_item_get do
+		print(t_item_get[i].itemID,'num',t_item_get[i].num)
 	end
 	
 	-- cache things
