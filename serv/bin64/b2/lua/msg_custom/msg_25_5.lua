@@ -22,7 +22,7 @@ function onMsg(me,merge_meta,merge)
 	
 	local function loot(a)
 		local col2 = 'prob'..a
-		if math.random(100)<=conf[col2] then
+		if true or math.random(100)<=conf[col2] then
 			local col1 = 'item'..a
 			table.insert(t_item_get, { itemID=conf[col1],num=1 })
 		end
@@ -40,7 +40,9 @@ function onMsg(me,merge_meta,merge)
 				break
 			end
 		end
-	
+		
+		found = false	-- TEST
+		
 		if false==found then
 			table.insert(t_item_get, 1,{ itemID=conf.special_item, num=1 })
 			table.insert(t_item_get, 1,{ itemID=conf.captureId, num=1 })
