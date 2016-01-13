@@ -24,7 +24,9 @@ function onMsg(me,merge_meta,merge)
 		local col2 = 'prob'..a
 		if true or math.random(100)<=conf[col2] then
 			local col1 = 'item'..a
-			table.insert(t_item_get, { itemID=conf[col1],num=1 })
+			if tonumber(conf[col1])  >0 then
+				table.insert(t_item_get, { itemID=conf[col1],num=1 })
+			end
 		end
 	end
 	
@@ -55,6 +57,9 @@ function onMsg(me,merge_meta,merge)
 			table.insert(t_item_get, 1,{ itemID=-1, num=1 })
 			table.insert(t_item_get, 1,{ itemID=-1, num=1 })
 		end
+	else
+		table.insert(t_item_get, 1,{ itemID=-1, num=1 })
+		table.insert(t_item_get, 1,{ itemID=-1, num=1 })
 	end
 	
 	print('++++++++++++++++++++++++++++++++')
