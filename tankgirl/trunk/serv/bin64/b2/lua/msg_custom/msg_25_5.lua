@@ -42,8 +42,11 @@ function onMsg(me,merge_meta,merge)
 		end
 	
 		if false==found then
-			table.insert(t_item_get, { itemID=conf.captureId, num=1 })
-			table.insert(t_item_get, { itemID=conf.special_item, num=1 })
+			table.insert(t_item_get, 1,{ itemID=conf.special_item, num=1 })
+			table.insert(t_item_get, 1,{ itemID=conf.captureId, num=1 })
+		else
+			table.insert(t_item_get, 1,{ itemID=-1, num=1 })
+			table.insert(t_item_get, 1,{ itemID=-1, num=1 })
 		end
 	end
 	
